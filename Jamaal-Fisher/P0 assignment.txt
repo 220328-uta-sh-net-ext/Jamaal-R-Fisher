@@ -1,0 +1,394 @@
+Restaurant Review  May 3
+
+Overview:
+The restaurant review application is a software that lets customers leave reviews for restaurants. Designed with functionality that would help choosing the next restaurant to eat at much easier!
+
+Functionality:
+add a new user
+ability to search user as admin
+display details of a restaurant for user
+add reviews to a restaurant as a user
+view details of restaurants as a user
+view reviews of restaurants as a user
+calculate reviews’ average rating for each restaurant
+search restaurant (by name, rating, zip code, etc.)
+
+Models:
+User
+Restaurant
+Review
+
+Note:
+Add as much models as you would need for your design
+
+Additional requirements:
+Exception Handling
+Input validation
+Logging (to a file, no logging to the console)
+At least 10 unit tests
+Data should be persisted, (no data should be hard coded)
+You should use a DB to store data
+DB structure should be 3NF
+Should have an ER Diagram
+Code should have xml documentation
+
+Tech Stack:
+C#
+Xunit or NUnit
+SQLServer DB
+EF Core
+Serilog or Nlog (or any other logging frameworks)
+
+
+Model Setup 										4/14/2022  1:42 pm recording @2:02:00
+Repository Interface and Database Folder						4/18/2022
+Testing											4/19/2022
+Code Coverage and Logging								4/20/2022  (averaging reviews is business logic, ....  is data logic)
+LINQ / SOLID										4/21/2022
+Azure/SQL Server set up									4/22/2022
+Liskov substitution/dependency inversion principles/SQL Query/Nuget			4/25/2022
+Creating Tables										4/26/2022
+Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
+DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
+Normalization (and Pokemon dependency inversion)					4/29/2022
+_____________________________________________________________________________________________________
+
+
+xUnit VS. NUnit
+
+The xUnit framework follows a unique style of testing, and tags like [Test] & [TestFixture], a part of the NUnit framework, are no longer used in the xUnit framework.
+The popular attributes [SetUp] and [TearDown] are also not a part of the xUnit framework.
+As per the creators of NUnit (and xUnit), usage of [SetUp] and [TearDown] led to code duplication, and they wanted to implement the same features in a much more optimized manner in xUnit.
+For initialization, constructor of the test class is used, whereas, for de-initialization, IDisposable interface is used. This also encourages writing much cleaner tests.
+This makes this C# unit testing framework a much better option when it comes to Selenium automation testing as it is more robust and extensible.
+As far as NUnit vs. XUnit vs. MSTest is concerned, the biggest difference between xUnit and the other two test frameworks (NUnit and MSTest) is that xUnit is much more extensible when compared to NUnit and MSTest.
+The [Fact] attribute is used instead of the [Test] attribute. Non-parameterized tests are implemented under the [Fact] attribute, whereas the [Theory] attribute is used if you plan to use parameterized tests.
+In NUnit and MSTest, the class that contains the tests is under the [TestClass] attribute. This was not a very robust approach hence [TestClass] attribute was also removed in xUnit.
+Instead, intelligence is built in the xUnit framework so that it can locate the test methods, irrespective of the location of the tests.
+
+
+
+Should I use NUnit or xUnit?
+
+xUnit was created to succeed NUnit, a popular unit testing library that is part of the .NET framework.
+Although the .NET framework has evolved since NUnit was first written, xUnit leverages some of its advanced features to write cleaner tests that are easier to debug and run than in NUnit.
+
+
+
+What Does SQL Server Mean?
+
+SQL Server is Microsoft's relational database management system (RDBMS). It is a full-featured database primarily designed to compete against competitors Oracle Database (DB) and MySQL.
+Like all major RBDMS, SQL Server supports ANSI SQL, the standard SQL language. However, SQL Server also contains T-SQL, its own SQL implemention.
+SQL Server Management Studio (SSMS) (previously known as Enterprise Manager) is SQL Server's main interface tool, and it supports 32-bit and 64-bit environments.
+SQL Server is sometimes referred to as MSSQL and Microsoft SQL Server.
+Examples of some features include: XML data type support, dynamic management views (DMVs), full-text search capability and database mirroring.
+SQL Server is offered in several editions with different feature set and pricing options to meet a variety of user needs, including the following:
+-- Enterprise: Designed for large enterprises with complex data requirements, data warehousing and Web-enabled databases. Has all the features of SQL Server, and its license pricing is the most expensive.
+-- Standard: Targeted toward small and medium organizations. Also supports e-commerce and data warehousing.
+-- Workgroup: For small organizations. No size or user limits and may be used as the backend database for small Web servers or branch offices.
+-- Express: Free for distribution. Has the fewest number of features and limits database size and users. May be used as a replacement for an Access database.
+
+
+"hot commands"
+
+Serilog
+Serilog.Sinks.File
+
+_____________________________________________________________________________________
+
+
+
+    Suggested development philosophy: Suffering Oriented Programming
+        Functionality - Make it possible: build a prototype without any bells or whistles, make it as fast as you can, don't care about complex architecture (OOP), don't care about many features at first, just think about what is your MVP (minimal viable product).
+            if you're going to make a calculator i want to see something that is the minimum that counts as a calculator (maybe it can ONLY do 2+2=4) running as fast as possible. if it takes you three hours, five hours, two days, whatever it takes.
+            start with saving data to files, maybe later can replace with sql database
+            if you try to make the whole thing at once, long list of things to study, too much to manage
+        Quality - Make it beautiful: once you have your prototype, beautify it with added features, architecture changes (OOP, packages), refactor for readability, maintainability, extensibility
+        Performance - Make it fast: consider your bottlenecks and future scalability issues, and improve what is economical at that moment.
+            "could i make this a teeny bit faster by using a hashset instead of a sortedset"
+                maybe, not really worth your time.
+            "if i make this multi-threaded i could improve performance by 50%"
+                that's more like it.
+            what if 1000 people use your program at the same time
+
+
+minimum functionality, quality, performance in that specific order of priorities
+
+
+
+_______________________________________________________________________________________
+
+
+UI  --->  logic  ----->  data access
+
+
+
+UI  -------------
+		|
+|		|
+|		|
+V		V
+
+logic  <-----  data access
+
+
+
+Tests
+|
+|	--------UI----------------------
+|	|				|
+|	|		--------------	BL
+|	|		|		|
+|	|		|		|
+|   ----		DL		|
+|   |	---------------	|		|
+	|				|
+models ----------------------------------
+
+
+The presentation logic manages the interaction with the user, the data logic handles data persistence while business logic handles the “stuff” that happens between the two.
+It can be difficult to precisely define what this “stuff” really means.
+
+____________________________________________________________________________________
+
+
+
+Reviews  (Abilities)
+- Cleanliness/Sanitation Standards
+- Customer Service/Hospitality Awareness/Perks & Incentives/Carryout & Delivery Options
+- Atmosphere/Interior Design/Music Variety/Sports Hosting/Dining Moods/Seating & Parking Availability
+- Cuisine Styles/Portioning vs. Pricing/Drinks & Sides/Range of Menu Selections
+- "Plate Palate Pleasantness"/How Does Your Taste Buds And Stomach Feel About The Food?
+
+Rating System
+50	 	- Superb, Amazing and Highly Recommended
+40		- Very Impressive
+30		- Fairly Adequate
+20		- Questionable
+10		- Needs Significant Work
+1		- Absolutely Revolting
+
+
+max of 250, min of 5, divide by 5 for each pillar = total review rating
+total rating is averaged after each user.  each user can leave an optional paragraph comment
+each user's review will show their vote on each pillar, total review rating, and comment.
+total rating average posted as a double, if/else statement to range the rating title
+
+
+
+
+
+
+Restaurant
+- Business Name
+- Address, City, Zip Code
+- Intersection or Nearby Landmark
+- Cuisine Styles, Range of Menu Selections, Atmosphere, Seating & Parking Availability, Carryout & Delivery Options
+- Total Review Rating
+
+search filter options
+
+
+
+User
+- Name (default "anonymous")
+- Restaurants Tried
+- Reviews Given
+
+
+
+
+									//  (use prop keyword for property formatting)
+
+namespace RestaurantLog
+
+public class Restaurant
+{
+	public string Name { get; set; }
+
+	public string Zipcode { get; set; }					// (name, physical address, landmarks, maybe average review rating, would be string instead of int)
+
+	public double Rating { get; set; }
+
+
+
+									//  Abilities (each individual review pillar)
+	private List<Ability> _abilities;
+
+	public List<Ability> Abilities
+	{
+		get
+		{
+			return _abilities;
+		}
+		set
+		{
+			if (value.Count <= 5)
+				_abilities = value;
+			else
+				throw new Exception("cannot hold more than 5 abilities");
+		}
+	}
+
+									//  (use ctor keyword for default constructor formatting, add values to properties)
+	public Restaurant()
+	{
+		Name = "Ditto";
+		Level = 1;
+		Attack = 55;
+		Defense = 55;
+		Health = 55;
+		_abilities = New List<Ability>()
+		{
+			new Ability()
+		};
+	}
+	public override string ToString()
+	{
+		return $"Name: {Name}\nLevel: {Level}\nAttack: {Attack}\nDefense: {Defense}\nHealth: {Health}\n
+
+	}
+
+}
+
+
+
+
+namespace PokemonModels							//  same as RestaurantLog
+{
+	public class Review						//  changed from internal to public
+	{
+		public string Name { get; set; }
+		private int _PP;					// ability 
+		public int PP
+		get
+		{
+			return _PP;
+		}
+		set
+		{
+			if (value>0)
+				_PP = value;
+			else
+				throw new Exception("cannot be lower than 0")
+		}
+
+		public int Power { get; set; }
+		public int Accuracy { get; set; }
+
+									//  default constructor to add values
+ 		public Review()
+		{
+			Name = "Tackle";
+			PP = 40;
+			Power = 40;
+			Accuracy = 80;
+		}
+
+	}
+
+}
+
+
+									//  under UI program, add new interface.  implement abstraction.  every method is implicitly abstract and is by default public
+
+namespace PokemonUI
+{
+	public interface IMenu						//  display menu
+	{
+		void Display();
+		
+		string UserChoice();
+	}
+
+}
+
+
+									//  add new class, name MainMenu, highlight IMenu  press ctrl + . for options, implement interface
+									//  class implements interface, but since it's a class it needs to give actual implementation details to respective methods
+									//  remove using keywords at top, maybe already calling
+namespace PokemonUI
+{
+	class MainMenu : IMenu
+	{
+		public void Display()
+		{
+			Console.WriteLine("Welcome");
+			Console.WriteLine("What would you like to do?");
+			Console.WriteLine("Press <2> Search Pokemon");
+			Console.WriteLine("Press <1> Add Pokemon");
+			Console.WriteLine("Press <0> Exit");
+		}
+
+		public string UserChoice()
+		{
+			string userInput = Console.ReadLine();
+
+			switch (userInput)
+			{
+				case = "0":
+					return "Exit";
+				case = "1":
+					return "AddPokemon";
+				case = "2":
+					return "SearchPokemon";
+				default:
+					Console.WriteLine("Input valid response");
+					Console.WriteLine("Press <enter> to continue");
+					Console.ReadLine();
+					return "Main Menu";
+			}
+		}	
+
+	}
+
+}
+
+
+									//  in Program.cs
+using PokemonUI;
+
+bool repeat = true;
+IMenu menu = new MainMenu();
+
+while (repeat)
+{
+	menu.Display();
+	string ans = menu.UserChoice();
+
+	switch (ans)
+	{
+		case "SearchPokemon":
+			Console.WriteLine("SearchPokemon() Method implementation is in progress");
+			break;
+		case "AddPokemon":
+			Console.WriteLine("AddPokemon() Method implementation is in progress");
+			break;
+		case "MainMenu":
+			menu = new MainMenu();
+			break;
+		case "Exit":
+			repeat = false;
+			break;
+		default:
+			Console.WriteLine("View does not exist");
+			Console.WriteLine("Press <enter> to continue");
+			Console.ReadLine();
+			break;
+	}
+}
+
+
+
+
+
+
+
+add a new user  
+ability to search user as admin
+display details of a restaurant for user
+add reviews to a restaurant as a user
+view details of restaurants as a user
+view reviews of restaurants as a user
+calculate reviews’ average rating for each restaurant
+search restaurant (by name, rating, zip code, etc.)

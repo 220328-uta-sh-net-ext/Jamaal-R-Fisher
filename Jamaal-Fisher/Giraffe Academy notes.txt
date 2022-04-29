@@ -1,0 +1,539 @@
+string.IndexOf()  finds the specific index position of a character
+string.Substring(,)  1st value index, 2nd value prints length from index
+string.Contains()  check to see if exact format string or char can be found
+
+string name = Console.ReadLine();   takes user input and stores it into variable
+int number = Console.ReadLine();
+
+Convert.ToInt32
+Convert.ToDouble
+Convert.ToDecimal
+Convert.ToString
+
+
+string name, age, height, weight;   declare multiple string variables with a comma on the same line
+string[] arrayName = new string[?]    must give value at ? to inform how many total values it can hold
+
+
+public static void Main(string[] args);
+{
+	DoTask();				//  methods must be called with the main method in order to be executed.
+	Console.ReadLine();
+}
+
+math with ints returns an int always, regardless if the answer is a double or decimal
+Math.Abs()  returns the absolute value
+Math.Pow(,)  1st value initial, 2nd value exponent
+Math.Sqrt()  square root
+Math.Max(,)  will return whichever is the largest number between two values
+Math.Min(,)  will return whichever is the smallest number between two values
+Math.Round()  will round up or down decimals.
+
+________________________________________________________________________________________
+
+bool conditionValue = true;
+
+if ()
+{
+	execute...
+}
+else if ()
+{
+	execute...
+}
+else
+{
+	execute...
+}
+
+
+_____________________________________________________________________________________
+
+
+int index = 1;
+while (index <= 5)
+{
+	Console.WriteLine(index);
+	index++;	
+}
+
+
+
+
+int index = 6;
+do
+{
+	Console.WriteLine(index);
+	index++;	
+}
+while (index <= 5);
+
+____________________________________________________________________________
+
+int [] arrayName = { 30, 40, 50, 60, 70, 80 };
+
+for (int i = 0; i < arrayName.Length; i++)
+{
+	Console.WriteLine(arrayName[i]);
+}
+
+
+________________________________________________________________________________
+
+
+try
+{
+	Console.Write("Enter a number: ");
+	int num1 = Convert.ToInt32(Console.ReadLine());
+	Console.Write("Enter another number: ");
+	int num2 = Convert.ToInt32(Console.ReadLine());
+
+	Console.WriteLine(num1 / num2);
+}
+catch(Exception e)
+{
+	Console.WriteLine(e.Message);
+}
+
+
+____________________________________________________________________________________
+
+
+
+for (int i = 9; i >= 0; i--)
+{
+	for (int j = 9; j >= 0; j--)
+	{
+		Console.WriteLine(j + " ");
+	}
+	Console.WriteLine();
+}
+
+
+OUTPUT is 10 for loop iterations of a nested for loop iteration
+
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+9 8 7 6 5 4 3 2 1 0
+
+
+
+
+for (int i = 9; i >= 0; i--)
+{
+	for (int j = i; j >= 0; j--)
+	{
+		Console.WriteLine(j + " ");
+	}
+	Console.WriteLine();
+}
+
+
+OUTPUT is 10 for loop iterations of a nested for loop iteration, decreasing
+
+9 8 7 6 5 4 3 2 1 0
+8 7 6 5 4 3 2 1 0
+7 6 5 4 3 2 1 0
+6 5 4 3 2 1 0
+5 4 3 2 1 0
+4 3 2 1 0
+3 2 1 0
+2 1 0
+1 0
+0
+
+
+
+int i = 9;
+while (i >= 0)
+{
+	int j = i;
+	while (j >= 0)
+	{
+		Console.WriteLine(j + " ");
+		j--;
+	}
+	Console.WriteLine();
+	i--;
+}
+
+
+
+OUTPUT same as above nested for loop
+
+
+
+
+
+
+for (int i = 9; i >= 0; i--)
+{
+	for (int j = i; j >= 0; j--)
+	{
+		if (j == 3)
+		{
+			break;
+		}
+		Console.WriteLine(j + " ");
+	}
+	Console.WriteLine();
+}
+
+
+OUTPUT is 10 for loop iterations of a nested for loop iteration, decreasing, then breaks out of the loop when nested iteration equals 3
+
+9 8 7 6 5 4
+8 7 6 5 4
+7 6 5 4
+6 5 4
+5 4
+4
+
+2 1 0
+1 0
+0
+
+
+
+
+
+for (int i = 9; i >= 0; i--)
+{
+	if (i == 5)
+	{
+		break;
+	}
+	for (int j = i; j >= 0; j--)
+	{
+		if (j == 3)
+		{
+			break;
+		}
+		Console.WriteLine(j + " ");
+	}
+	Console.WriteLine();
+}
+
+
+OUTPUT is 10 for loop iterations of a nested for loop iteration, decreasing until it breaks on 5th iteration, each iteration breaks out of the loop when nested iteration equals 3
+
+9 8 7 6 5 4
+8 7 6 5 4
+7 6 5 4
+6 5 4
+
+
+
+
+int[] grades = new int[4];
+for (int i = 0; i < grades.Length; i++)
+{
+	grades[i] = Convert.Int32(Console.In.ReadLine());
+}
+
+for (int i = 0; i < grades.Length; i++)
+{
+	Console.Write(grades[i] + " ");
+}
+
+
+
+OUTPUT is whatever 4 numbers the user inputs gets put into an array
+
+
+
+
+
+int size = Convert.Int32(Console.In.ReadLine());
+int[] grades = new int[size];
+for (int i = 0; i < grades.Length; i++)
+{
+	grades[i] = Convert.Int32(Console.In.ReadLine());
+}
+
+for (int i = 0; i < grades.Length; i++)
+{
+	Console.Write(grades[i] + " ");
+}
+
+
+
+
+OUTPUT gathers the size of the array from the 1st input, then whatever size of inputs after gets put into an array
+
+
+
+
+
+int[] grades = { 50, 60, 70, 80 };
+bool found = false
+for (int i = 0; i < grades.Length; i++)
+{
+	if (grades[i] == 40)
+	{
+		Console.WriteLine("Found it!");
+		found = true;
+		break;
+	}
+}
+if (!found)
+{
+	Console.WriteLine("NOT FOUND");
+}
+
+
+
+OUTPUT is NOT FOUND.  if output is placed inside an if/else statement with out the boolean and break, it will output NOT FOUND for each array iteration, being 4 times.
+
+
+
+
+
+int[] grades = { 50, 60, 70, 80 };
+Console.WriteLine(Array.IndexOf(grades, 70));
+
+OUTPUT is 2. if value is not in the array, you get -1.
+
+
+
+
+
+
+int[] grades = { 70, 40, 60, 50 };
+Array.Sort(grades);
+
+for (int i = 0; i < grades.Length; i++)
+{
+	Console.WriteLine(grades[i]);
+}
+
+
+
+OUTPUT
+40
+50
+60
+70
+
+
+
+
+using System.Linq;
+
+namespace
+class
+method
+
+int[] grades1 = { 70, 40, 60, 50 };
+int[] grades2 = { 70, 40, 60, 50 };
+
+if (Enumerable.SequenceEquals(grades1, grades2))
+{
+	Console.WriteLine("Equal");
+}
+
+
+OUTPUT is Equal
+
+
+
+
+INITIALIZE A 2D ARRAY
+
+int[,] grades = {
+	{ 5, 4, 1, 3 },
+	{ 1, 2, 3, 5 },
+	{ 5, 3, 7, 3 }
+};
+
+Console.WriteLine(grades[0, 2]);
+
+
+
+Console.WriteLine(grades.GetLength(0));		// gives the number of rows
+Console.WriteLine(grades.GetLength(1));		// gives the number of columns
+
+
+
+
+INITIALIZE A JAGGED ARRAY
+
+int[][] grades = {
+	{ 5, 4, 1, 3 },
+	{ 1, 2, 3, 5, 3, 5, 2 },
+	{ 5, 3 }
+};
+
+Console.WriteLine(grades[1][4]);
+
+
+
+
+Console.Write(grades.Length);			//  gives the number of rows
+Console.Write(grades[0].Length);		//  gives number of columns for 1st row
+Console.Write(grades[1].Length);		//  gives number of columns for 2nd row
+
+
+
+ITERATING THROUGH A JAGGED ARRAY
+
+
+int[][] grades = {
+	{ 5, 4, 1, 3 },
+	{ 1, 2, 3, 5, 3, 5, 2 },
+	{ 5, 3 }
+};
+
+for (int i = 0; i < grades.Length; i++)
+{
+	for (int j = 0; j < grades[i].Length; j++)
+	{
+		Console.WriteLine(grades[i][j] + " ");
+	}
+	Console.WriteLine();
+}
+
+
+
+NESTED FOREACH LOOP  (doesn't work for 2D arrays)
+
+int[][] grades = {
+	{ 5, 4, 1, 3 },
+	{ 1, 2, 3, 5, 3, 5, 2 },
+	{ 5, 3 }
+};
+
+foreach (int[] grade in grades)
+{
+	foreach (int g in grade)
+	{
+		Console.Write(grade + " ");
+	}
+	Console.WriteLine();
+}
+
+
+
+
+ITERATING THROUGH A 2D ARRAY
+
+
+int[,] grades = {
+	{ 5, 4, 1, 3 },
+	{ 1, 2, 3, 5 },
+	{ 5, 3, 7, 3 }
+};
+
+for (int i = 0; i < grades.GetLength(0); i++)
+{
+	for (int j = 0; j < grades.GetLength(1); j++)
+	{
+		Console.WriteLine(grades[i, j] + " ");
+	}
+	Console.WriteLine();
+}
+
+
+__________________________________________________________________________________________________
+
+
+LIST
+
+
+List<int> grades = new List<int>();						//  declaring a list
+
+grades.Add(5);									//  adds an element to the list
+
+grades.Count;									//  gives the number of elements in the list
+
+grades.Insert(2, 15);								//  adds an element at a specified index, while shifting the remaining elements down the index
+
+grades.Clear();									//  clears the entire list
+
+grades = new List<int>();							//  same as above by assigning a new list
+
+grades.Remove(10);								//  removes a specified element of the list, if found
+
+grades.RemoveAt[1];								//  removes an element at the specified index
+
+grades[0]									//  first index
+
+List<int> grades = new List<int>(){ 5, 10, 15, 20 };				//  initializing a list
+
+var grades = new List<int>(){ 5, 10, 15, 20 };					//  same as above
+
+grades.Contains(10);								//  determines whether an element is in the list (boolean.  doesn't print anything unless specified.)
+
+grades.IndexOf(10);								//  determines index where element is found.  (boolean.  prints -1 if false)
+
+grades.LastIndexOf(10);								//  determines the last index where element is found, if repeated  (it's not just the element in the last index)
+
+grades1.SequenceEqual(grades2)							//  determines if the individual elements are the same  (using System.Linq)
+
+grades.ToArray();								//  passes list into an array (returns an array)
+
+int[] gradesArray = grades.ToArray();						//  assign converted array
+
+gradesArray[0].ToList();							//  passes jagged array row into a list
+
+List<int> gradesList = gradesArray[0].ToList();					//  assign converted list
+
+grades.Sort();									//  sorts list (for reverse, always sort first then reverse)
+
+grades.Reverse();								//  reverses list (doesn't return a new list, it modifies the current list
+
+
+
+
+ITERATE THROUGH A LIST
+
+List<int> grades = new List<int>(){ 5, 10, 15, 20 };
+
+for (int i = 0; i < grades.Count; i++)
+{
+	Console.WriteLine(grades[i]);
+}
+
+
+
+foreach (int grade in grades)							//   same as above.  foreach is better for reading elements in a list, not updating them
+{
+	Console.WriteLine(grade);
+}
+
+
+
+
+
+
+ITERATING THROUGH A 2D LIST WITH NESTED FOREACH LOOP
+
+
+List<List<int>> grades = new List<List<int>>()
+{
+	new List<int>{ 5, 10, 15, 20 },
+	new List<int>{ 3, 6, 9, 12, 15, 18, 21 },
+	new List<int>{ 12, 24 }
+};
+
+
+
+foreach (List<int> grade in grades)
+{
+	foreach (int g in grade)
+	{
+		Console.Write(grade + " ");
+	}
+	Console.WriteLine();
+}
+
+
+
+

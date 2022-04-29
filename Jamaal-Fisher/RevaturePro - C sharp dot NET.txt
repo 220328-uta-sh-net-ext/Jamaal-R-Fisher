@@ -1,0 +1,141 @@
+What are the major app models?
+You might wonder which frameworks support which app models. Use the following table to map an app model to a .NET framework.
+
+App model	Framework				Notes
+Web		ASP.NET Core				The framework for building server-side logic.
+Web		ASP.NET Core MVC			The framework for building server-side logic for web pages or web APIs.
+Web		ASP.NET Core Razor Pages		The framework for building server-generated HTML.
+Web client	Blazor					Blazor is a part of ASP.NET Core. Its two modes allow for either Document Object Model (DOM) manipulation via sockets as a communication vehicle for running server-side code, or a WebAssembly implementation for running compiled C# on a browser.
+Desktop		WinForms				A framework for building "battleship gray" Windows-style applications.
+Desktop		Windows Presentation Foundation (WPF)	A framework for building dynamic desktop applications that conform to different form factors. WPF allows form elements to perform movement, fades, glides, and other effects with the help of a rich library of animations.
+Mobile		Xamarin					Allows .NET developers to build apps for iOS and Android devices.
+
+
+
+https://docs.microsoft.com/en-us/
+https://docs.microsoft.com/en-us/azure/architecture/
+https://dotnet.microsoft.com/en-us/learn/videos
+https://docs.microsoft.com/en-us/learn/paths/csharp-first-steps/
+
+
+
+__________________________________________________________________________________________________________
+
+A for loop is constructed with an optional counting variable declaration, a loop condition, and a manipulation statement.
+(initializer, condition, iterator)
+
+
+
+for (int count = 1; count < 6; ++count)
+	Console.Out.WriteLine("count is " + count);
+
+
+int[] arr = { 1, 3, 5 };
+foreach (int i in arr)
+	Console.Out.WriteLine(i + " ");
+
+
+________________________________________________________________________________
+
+C#
+
+switch
+	case1
+ 		break
+	case2
+		break
+	case3
+		break
+	default
+		break
+
+
+_____________________________________________
+
+access modifiers:  public, private, protected, internal
+
+
+______________________________________________________________________________
+
+Dictionary<int,String> myDictionary = new Dictionary<int,String>();
+
+______________________________________________________________________________
+
+class Program
+	static void Main(string[] args)
+		EmptyOrNull
+		EscapeCharacters
+		StringFormatting
+		StringManipulation 
+
+
+__________________________________________________________________________
+
+
+ArithmeticException
+	thrown by math errors
+NullReferenceException
+	thrown when using a reference variable that points to null
+IndexOutOfRangeException
+	thrown when a collection is accessed out-of-bounds
+StackOverflowException
+	thrown when an application runs out of resources
+
+
+__________________________________________________________________________
+
+Debugging
+
+BreakPoint is a flag or marker indicating a place to pause the current execution of a program.
+
+Step Into (F11), Step Over (F10), and Continue (F5) are commands for controlling Debugging process.
+
+Step Into - execute just the current code statement
+Step Over - execute entire block and go to the next code statement
+Step Out - useful when inside a code block to complete execution and go to the end of the code block.
+red square - stops program execution, quits debugging, closes any open watch windows, and returns to code editor.
+
+______________________________________________________________________________________________________________
+
+SQL (Structured Query Language)
+
+DDL (Data Definition Language) - statements that define database structure or scheme, like CREATE, ALTER, DROP.
+DML (Data Manipulation Language) - statements used for managing data within tables, like SELECT, INSERT, UPDATE, DELETE.
+TCL (Transaction Control Language) - manages how DML statements are issued and executed. (WHERE, FROM)  ??
+
+CRUD - create, read, update, delete
+
+_______________________________________________________________________________
+
+4 core objects of ADO.NET Data Providers
+
+SqlConnection - represents connection to the database - connection string - stored in web.config - ConfigurationManager
+SqlCommand - command sent to the database for retrieving or manipulating data - used by SqlConnection
+SqlDataReader - provides access in read-only operations - uses both SqlConnection and SqlCommand
+SqlDataAdapter - stores data in DataSet - disconnected architecture
+
+
+_______________________________________________________________________________________
+
+
+ASP.NET
+
+Page Life Cycle  ->  Start phase (new page or post-back, request and response) -> Init phase  (assign unique IDs, themes applied, retrieving master page) ->  Load phase  (loads info, perform validation, data binding)
+->  Render phase (metadata/page saved in a state object, converted to HTML code and returned)  -> Unload phase  (clean-up process on the web server that releases unused resources)  
+
+runat
+-server controls
+-client controls
+
+
+HTML Controls
+HTML Server Controls
+ASP.NET Web Server Controls
+
+RequiredFieldValidator
+CompareValidator
+RangeValidator
+RegularExpressionValidator
+CustomValidator
+
+IIS (Internet Information Services)

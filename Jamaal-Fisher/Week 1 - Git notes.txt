@@ -1,0 +1,465 @@
+Git
+
+Version Control System - tracking changes
+
+1.) Local VCS  (RCS)
+2.) Centralized VCS  (CVS, SubVersion, Perforce, TFS)
+3.) Distributed VCS  (Git, Mercurial, BitBucket)
+
+right click "GitBash here"
+
+
+CREATE REPO, THEN ADD TO IT
+
+git config --global user.name " "
+git config --global user.email " "
+cd ~        						//  user directory
+git init						//  turn into a git repository
+
+git status
+git add .
+git status
+git commit -m "message"
+git status
+
+
+PUSH EXISTING REPO
+
+git remote add origin "https://github.com/repo.git"
+git branch -M main
+git push -u origin main
+
+
+
+
+git clone https://github.com/220328-uta-sh-net-ext/training-code.git
+git status 
+git add .
+git commit -m "your commit message"
+git push
+git pull
+git branch feature-1 (create a new branch)
+git checkout feature-1 (switch the named branch)
+git checkout main (merge with main/master)
+git branch -d ("safe" delete branch if it has unmerged changes)
+git branch -D (permanently delete)
+git branch -m aaaa* (rename)
+git branch -a (list all remote branch)
+git push --set-upstream origin feature-1
+
+pwd  (show file location "print working directory")
+mkdir (make directory/create folder)
+rmdir (remove directory)
+cd ..  (go one level up "back/previous")
+ls  (list all files within folder)
+ls -1 (more information)
+ls aaaa*  (listing using metacharacters)
+touch (create new file)
+rm  (remove file)
+git log (commit history)
+git log --oneline (see commit history on one line each)
+git log --pretty=oneline (see the whole command commit history, one line each)
+clear  (clear screen)
+notepad  (open file w/ notepad)
+
+
+add -> commit -m -> push
+
+
+https://github.com/220328-uta-sh-net-ext/jamaal-fisher.git
+
+
+
+Pushpinder — Today at 11:08 AM
+$BASH_VERSION
+cd c:\revature
+mkdir "Test Training"
+mkdir Test Training -> will create 2 folders
+cd dotnet\ Training\ 220328/
+cd ..
+ -> to go 1 level up 
+cd "dotnet Training 220328"
+rmdir "dotnet Training 220328"/
+mkdir dotnet-Training-220328
+cd dotnet-Training-220328
+ls -> to list all the files with in the folder
+ls -l -> get more information about the listed files
+ls 2107* -> listing using metacharacters
+pwd -> print where directory
+clear  -> clear screen
+touch Notes.md -> creates a new file
+rm program.java
+
+
+Pushpinder — Today at 12:46 PM
+git log --pretty=oneline 
+git log
+git log --oneline
+git branch -a -> List all remote branches. 
+git branch feature-1 create a new branch 
+git checkout feature-1 switch the named branch 
+git branch -m feature-x to rename the current branch 
+git branch -d <branch> -> This is a “safe” operation in that Git prevents you from deleting the branch if it has unmerged changes.
+git branch -D <branch> This is the command to use if you want to permanently throw away all of the commits associated with a particular line of development.
+git branch  List all of the branches in your repository. This is synonymous with git branch --list. 
+git checkout -b ＜new-branch＞simultaneously creates and checks out ＜new-branch＞
+git push --set-upstream origin feature-1
+
+_____________________________________________________________________________
+
+branching
+
+merging directly is not good as it can break the whole code.
+
+git pull request ->  code review/peer review  ->  comment  ->  code review/peer review  ->  merge to main/master
+
+______________________________________________________________________________________________________________________________________
+
+
+git clone  -->   cd other user  --->    git checkout -b (create new branch)  ---->  touch  filename  --->  notepad  filename    -->
+git status  --->   git add .   ----->  git  commit -m "message"   --->  git push   ---  create pull request (for other user to pull) -->
+
+
+
+Pull request Activity
+Create a repo in the git org - https://github.com/220328-uta-sh-net-ext/ as firstname-lastname
+Make a clone of this repo in your local machine (use command line to create,navigate to folders and clone it).
+create a markdown file using command-line and name it commandsUsed.md and add all the commands that you have used so far for this activity step by step.
+stage, commit and push your changes.
+Fork your partners repo
+Create a branch named as dev-branch-yourname and add your CommandUsed.md file into it
+Make Pull request to your partners CommandUsed.md file and suggest some changes if you can.
+Partners will review each others CommandUsed.md file and partners can comment or suggest any other ways to write the above program.
+
+
+____________________________________________________________________________________________________
+
+
+a) History of Linux and shell
+    b) Getting Started With Shell Programming
+    c) The Shell Variables and Environment
+
+
+______________________________________________________________________________________________
+
+
+Some typical shebang lines:
+
+#!/bin/sh – Execute the file using the Bourne shell, or a compatible shell, assumed to be in the /bin directory
+#!/bin/bash – Execute the file using the Bash shell
+#!/usr/bin/pwsh – Execute the file using PowerShell
+#!/usr/bin/env python3 – Execute with a Python interpreter, using the env program search path to find it
+
+#!/bin/false – Do nothing, but return a non-zero exit status, indicating failure.
+Used to prevent stand-alone execution of a script file intended for execution in a specific context, such as by the . command from sh/bash, source from csh/tcsh, or as a .profile, .cshrc, or .login file.
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+
+ctrl+k+c  (comment the selection)
+ctrl+k+u  (uncomment the selection)
+
+echo  (print command)
+
+${names[0]}, {names[1]}, {names[2]} (array values)
+
+-p (print)
+-sp (secure print)
+
+#!/bin/bash
+ 
+for number in {1..20}; do
+    if [ $((number%3)) -eq 0 ]; then
+        echo "Fizz"
+    elif [ $((number%5)) -eq 0 ]; then
+        echo "Buzz"
+    else
+        echo $number
+    fi
+done
+
+#!/bin/bash
+
+echo -n "Please input number => "
+read num
+
+for i in $(seq 1 ${num})
+do
+  if (( $i % 3 == 0 && $i % 5 == 0 ))
+  then
+    echo "FizzBuzz"
+  else if (( $i % 3 == 0))
+    then
+      echo "Fizz"
+    else if (( $i % 5 == 0 ))
+      then
+        echo "Buzz"
+      else
+      echo $i
+      fi
+    fi
+  fi
+  sleep 1
+done
+
+
+## Fizzbuzz activity
+- w.a.p. in shell scripting with following conditions:
+    - for a number between 1 to 20, print **fizz** if a number is divisible by 3 
+    - print **buzz** if the number is divisible by 5
+    - print **fizzbuzz** if the number is divisible by both 3 and 5
+    - print nothing if the number isn't divisible by 3 or 5.
+- create the file by name fizzbuzz.sh
+
+
+
+WORKS
+
+#!/bin/bash
+ 
+for number in {1..20}; do
+    if [ $((number%3)) -eq 0 ] && [ $((number%5)) -eq 0 ]; then
+        echo "FizzBuzz"
+    elif [ $((number%3)) -eq 0 ]; then
+        echo "Fizz"
+    elif [ $((number%5)) -eq 0 ]; then
+        echo "Buzz"
+    else
+        echo $number
+    fi
+done
+
+
+
+
+
+WORKS
+
+echo "Input a number between 1 to 20:"
+read number
+
+if [ $number -lt 1 ] || [ $number -gt 20 ]
+then
+	echo "Invalid number.  Please input a number between 1 to 20:"
+	read number
+elif [ $((number%3)) -eq 0 ] && [ $((number%5)) -eq 0 ]
+then
+	echo "FizzBuzz"
+elif [ $((number%3)) -eq 0 ]
+then
+	echo "Fizz"
+elif [ $((number%5)) -eq 0 ]
+then
+	echo "Buzz"
+else
+	echo $number
+fi
+
+
+
+WORKS
+
+#!/bin/bash
+
+echo "Input a number between 1 to 20:"
+read number
+
+if [ $number -lt 1 ] || [ $number -gt 20 ]
+then
+	echo "Invalid number.  Please input a number between 1 to 20:"
+	read number
+    while [ $number -lt 1 ] || [ $number -gt 20 ]
+    do
+        echo "Invalid number.  Please input a number between 1 to 20:"
+	    read number
+    done
+fi
+
+if [ $((number%3)) -eq 0 ] && [ $((number%5)) -eq 0 ]
+then
+	echo "FizzBuzz"
+elif [ $((number%3)) -eq 0 ]
+then
+	echo "Fizz"
+elif [ $((number%5)) -eq 0 ]
+then
+	echo "Buzz"
+else
+	echo $number
+fi
+
+
+__________________________________________________________________
+
+
+variable
+if []
+then
+	echo
+elif []
+then
+	echo
+elif []
+then
+	echo
+elif []
+then
+	echo
+else
+	echo
+fi
+
+
+while []
+do
+	command1
+	command2
+	command3
+done
+
+
+____________________________________________________________________________
+
+
+WORKS
+
+i=1
+
+for i in {1..99}
+    do
+    if (($i%2 != 0))
+    then
+        echo $i
+    fi
+    done
+
+
+WORKS
+
+read x
+read y
+
+num1=$x
+num2=$y
+
+echo $(( num1 + num2 ))
+echo $(( num1 - num2 ))
+echo $(( num1 * num2 ))
+echo $(( num1 / num2 ))
+
+
+
+WORKS
+
+read input
+
+if [ $input == 'Y' ]
+then
+    echo YES
+elif [ $input == 'y' ]
+then
+    echo YES
+elif [ $input == 'N' ]
+then
+    echo NO
+elif [ $input == 'n' ]
+then
+    echo NO
+else
+    echo
+fi
+
+
+WORKS
+
+
+read x
+read y
+read z
+
+num1=$x
+num2=$y
+num3=$z
+
+if [ $num1 == $num2 ] && [ $num2 == $num3 ]
+then
+    echo EQUILATERAL
+elif [ $num1 == $num2 ] && [ $num2 != $num3 ]
+then
+    echo ISOSCELES
+elif [ $num2 == $num3 ] && [ $num3 != $num1 ]
+then
+    echo ISOSCELES
+elif [ $num3 == $num1 ] && [ $num1 != $num2 ]
+then
+    echo ISOSCELES
+else
+    echo SCALENE
+fi
+
+
+
+WORKS
+
+
+read input
+
+input=`echo "$input" | bc -l`
+input2=`printf "%.3f" $input`
+
+echo $input2
+
+
+
+
+A for loop is constructed with an optional counting variable declaration, a loop condition, and a manipulation statement.
+
+
+read N
+
+i=1
+sum=0
+
+while [ $i -le $N ]
+    do
+    read num             
+    sum=$((sum + num))     
+    i=$((i + 1))
+    done
+
+avg=$(echo $sum / $N | bc -l)
+
+printf '%0.3f' "$avg"
+
+
+cut -c 3
+
+
+___________________________________________________________________
+
+array=( $(cat) )
+
+echo ${array[3]}
+
+
+
+
+________________________________________________________________________________
+
+C#
+
+switch
+	case1
+ 		break
+	case2
+		break
+	case3
+		break
+	default
+		break

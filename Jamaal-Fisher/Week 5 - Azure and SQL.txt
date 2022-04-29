@@ -1,0 +1,541 @@
+https://www.codingame.com/
+
+SQL Server DB on Azure
+
+file json db - file class .NET app
+
+ADO.NET
+Entity Framework  - .NET app
+
+SQL client app - Azure Data Studio
+
+______________________________________________________
+
+
+- .NET classes/objects, collections, fields/variables to store references to other data
+
+- text formats like XML/JSON, hierarchical containers with attributes
+
+- relational database, like a spreadsheet - tables, rows, columns, represent identity with primary keys, represent relationships with foreign keys
+
+
+
+__________________________________________________________________
+
+SQL  Structured Query Language
+allow very abstracted operations on a relational DB
+
+
+many variants of SQL
+- MySQL
+- PostgreSQL
+- Oracle SQL
+- SQLite
+
+
+SQL Server (Transact-SQL/T-SQL), Cross Join in SQL Server
+
+multiplicity:
+one to one - in C# - one class with all the data of both, or two classes with one having a reference to the other or both referencing each other
+	in SQL - one table with all the data of both, or one of them has a UNIQUE FOREIGN KEY to the other
+one to many - in C# - two classes, one with a property/field of the other and/or the other one with a collection property/field
+	in SQL - two tables and one of them has FOREIGN KEY (not UNIQUE) to the other.
+SQL does not support many to many relationships.
+
+______________________________________________________________
+
+
+
+--DROP TABLE Pokemon;
+
+CREATE TABLE Pokemon (
+	Name NVARCHAR(50) NOT NULL PRIMARY KEY,
+	Type NVARCHAR(50) NOT NULL FOREIGN KEY REFERENCES Type (Name)
+	Level INT NOT NULL,
+	Attack INT NOT NULL,
+	Defense INT NOT NULL,
+	Health INT NOT NULL
+);
+
+--ALTER TABLE Pokemon ADD PRIMARY KEY (Name);
+
+INSERT INTO Pokemon (Name, Type, Level, Attack, Defense, Health) VALUES
+	('Ditto', 'Normal', 1, 50, 51, 52),
+	('Pikachu', 'Electric', 4, 40, 45, 45),
+	('Snorlax', 'Normal', 15, 55, 55, 55),
+	('Charmander', 'Fire', 2, 55, 55, 55);
+
+
+
+CREATE TABLE Type (
+	Name NVARCHAR(50) NOT NULL PRIMARY KEY
+);
+
+
+CREATE TABLE Ability (
+	Name NVARCHAR(100) NOT NULL PRIMARY KEY,
+	PP INT NOT NULL,
+	Power INT NOT NULL,
+	Accuracy INT NOT NULL,
+)
+
+
+
+
+SELECT = FROM Pokemon;
+
+
+
+
+for various reasons, it's often a good idea to introduce a new unique ID for each row that doesn't have any business meaning.
+
+IDENTITY is a constraint that makes that column
+- disallow inserting values manually
+- automatically increment values to the next highest number
+
+
+unless you specify an ORDER BY clause on our SELECT statement, technically the order is undefined.
+
+
+Super Key.
+Candidate Key.
+Alternate Key.
+Foreign Key.
+Composite Key.
+Unique Key.
+
+
+_____________________________________________________
+
+new query
+
+SELECT SYSUTCDATETIME();
+
+
+prints to results and messages.
+
+
+_____________________________________________________
+
+
+private string filePath = "../../../../PokemonDL/Database/";
+
+
+
+
+
+string commandString = "";
+
+string connectionString = File.ReadAllText(connectionStringFilePath);
+using SqlConnection connection = new(connectionString);
+using SqlCommand command = new(commandString, connection);
+using SqlDataReader reader = command.ExecuteReader();
+
+
+SQL database --->  show database connection string  ---->  ADO.NET , fill in Password
+
+
+
+_____________________________________________________________________
+
+https://www.sqltutorial.org/sql-and/
+https://www.sqltutorial.org/sql-cheat-sheet/
+
+
+in SQL Server, schema is like namespace in c#.
+	the default schema is dbo.
+
+-- to create a schema
+CREATE SCHEMA ChatApp;
+GO
+
+
+
+chinook database
+
+chinook SQL server
+
+//  query for all customer IDs that have bought more than $40 worth of product outside of the US
+
+SELECT CustomerId, SUM(Total)
+FROM Invoice
+WHERE BillingCountry != 'USA'
+GROUP BY CustomerId
+HAVING SUM(Total) > 40
+ORDER BY SUM(Total) DESC, CustomerId;
+
+
+logical order of execution of the SELECT statement
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+
+the * pulls all of the columns
+the % pulls any number of any kind
+DECLARE or SET and the @ create a local variable for a query
+
+CROSS JOIN  allows you to cross reference two tables in one query, every possible combination that exists
+AS gives the tables an "alias" to navigate through similar named columns
+COALESCE to combine two elements together.
+ON  after on, put the expression that decides whether any two rows ....
+
+//  operators that combine entire queries into one query
+UNION
+UNION ALL
+INTERSECT
+EXCEPT
+MINUS
+
+//  operators for subqueries
+IN
+NOT IN
+EXISTS
+ANY
+ALL
+
+
+
+-- every track that has never been purchased
+SELECT Track.*
+FROM Track LEFT JOIN InvoiceLine ON Track.TrackId = InvoiceLine.TrackId
+WHERE InvoiceLine.TrackId IS NULL;
+
+
+-- subquery version, same as above
+SELECT *
+FROM Track
+WHERE TrackId NOT IN (
+	SELECT TrackId FROM InvoiceLine
+);
+
+
+
+
+
+pair every employee with every other employee, maybe 360 degree performance reviews
+
+SELECT *
+FROM Employee AS e1 CROSS JOIN Employee AS e2
+WHERE e1.EmployeeId != e2.EmployeeId;
+
+
+
+
+-- 1. list all customers (full names, customer ID, and country) who are not in the US
+
+
+SELECT CustomerId, FirstName, LastName, Country
+FROM Customer
+WHERE Country != 'USA';
+
+-- 2. list all customers from brazil
+
+SELECT *
+FROM Customer
+WHERE Country = 'Brazil';
+
+
+-- 3. list all sales agents
+
+SELECT, FirstName, LastName, Title
+FROM Employee
+WHERE Title >= 'Sales'
+
+
+-- 4. show a list of all countries in billing addresses on invoices.
+
+
+
+
+-- 5. how many invoices were there in 2009, and what was the sales total for that year?
+	(extra challenge: find the invoice count sales total for every year, using one query)
+
+SELECT Count(*) as 'Number of Invoices', SUM(Total) as 'Sales Total'
+FROM Invoice
+WHERE InvoiceDate
+LIKE '%2009%'
+
+
+-- 6. how many line items were there for invoice #37?
+-- 7. how many invoices per country?
+-- 8. show total sales per country, ordered by highest sales first.
+
+
+
+
+
+CROSS JOIN
+
+1	A
+2	B
+3	C
+
+
+1A, 1B, 1C
+2A, 2B, 2C
+3A, 3B, 3C
+
+
+//  need a condition, ON or USING
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL JOIN
+
+
+SELECT Title, Artist.Name
+FROM Artist
+RIGHT JOIN Album ON Artist.ArtistId = Album.ArtistId;
+
+
+SELECT COALESCE(Title, 'None'), Artist.Name AS Album
+FROM Artist
+LEFT JOIN Album ON Artist.ArtistId = Album.ArtistId;
+
+
+SELECT Title, Artist.Name
+FROM Artist
+LEFT JOIN Album ON Artist.ArtistId = Album.ArtistId;
+WHERE Title IS NOT NULL;
+
+
+
+-- 1. show all invoices of customers from brazil (mailing address not billing)
+
+
+SELECT c.FirstName as "First Name", c.LastName as "Last Name", c.Country as "Country" , i.InvoiceId as "Invoice ID", c.Address as "Mailing Address"
+FROM Customer c, Invoice i
+WHERE c.Country = 'Brazil' AND i.CustomerID = c.CustomerID;
+
+
+
+-- 2. show all invoices together with the name of the sales agent of each one
+
+SELECT c.FirstName as "First Name", c.LastName as "Last Name", c.Country as "Country" , i.InvoiceId as "Invoice ID", c.Address as "Mailing Address", s.SalesPerson as "Sales Agent"
+FROM dbo.Customer as c, dbo.Invoice as i, SalesLT.Customer as s
+WHERE i.CustomerID = c.CustomerID AND c.CustomerID = s.CustomerID;
+
+
+-- 3. show all playlists ordered by the total number of tracks they have
+
+
+
+
+
+-- 4. which sales agent made the most in sales in 2009?
+-- 5. how many customers are assigned to each sales agent?
+-- 6. which track was purchased the most since 2010?
+-- 7. show the top three best-selling artists.
+-- 8. which customers have the same initials as at least one other customer?
+
+
+
+
+_____________________________________________________________________________________
+
+
+-- 1. which artists did not make any albums at all?
+
+select a.Title, b.Name, b.ArtistId
+from Artist b
+left join Album a
+on b.ArtistId = a.ArtistId
+where a.Title is NULL
+
+
+SELECT Artist.*
+FROM Artist LEFT JOIN Album ON Artist.ArtistId = Album.ArtistID
+WHERE Album.AlbumID IS NULL;
+
+
+-- 2. which artists did not record any tracks of the Latin genre?
+
+
+
+
+-- 3. which video track has the longest length? (use media type table)
+-- 4. find the names of the customers who live in the same city as the
+--    boss employee (the one who reports to nobody)
+-- 5. how many audio tracks were bought by German customers, and what was
+--    the total price paid for them?
+-- 6. list the names and countries of the customers supported by an employee
+--    who was hired younger than 35.
+
+
+_____________________________________________________
+
+Data Manipulation Language (DML)
+SELECT, INSERT (INSERT INTO), UPDATE, DELETE - operate on rows
+
+Data Definition Language (DDL)
+CREATE, ALTER, DROP, TRUNCATE - operate on entire tables
+
+Transaction Control Language (TCL)
+BEGIN TRANSACTION, COMMIT, ROLLBACK, SAVE TRANSACTION
+
+Data Control Language (DCL)
+GRANT, REVOKE
+
+others:
+SET, EXECUTE
+
+
+
+
+-- 1. insert two new records into the employee table.
+
+SELECT * FROM Employee;
+DECLARE @maxid INT;
+SELECT @maxid = MAX(EmployeeId) FROM Employee;
+INSERT INTO Employee (EmployeeId, LastName, FirstName) VALUES
+    (@maxid + 1, 'Duck', 'Donald'),
+    (@maxid + 2, 'Mouse', 'Mickey');
+
+
+
+-- 2. insert two new records into the tracks table.
+
+
+-- 3. update customer Aaron Mitchell's name to Robert Walter
+
+UPDATE Customer
+SET FirstName = 'Robert', LastName = 'Walter'
+WHERE FirstName = 'Aaron' AND LastName = 'Mitchell';
+
+
+-- 4. delete one of the employees you inserted.
+
+
+-- 5. delete customer Robert Walter.
+
+SELECT *
+FROM Invoice INNER JOIN Customer ON Customer.CustomerId = Invoice.CustomerId
+
+
+________________________________________________________________
+
+
+INSERT INTO Genre (GenreId, Name) VALUES
+	(103, 'Misc 3'),
+	(104, 'Misc 4');
+
+
+without a WHERE clause, DELETE would delete every row one by one.
+
+
+TRUNCATE deletes all rows all at once.
+
+___________________________________________________________
+
+
+CHARINDEX, REPLACE, LOWER, UPPER
+
+
+__________________________________________________________________
+
+
+
+CREATE TABLE Employee (
+    EmployeeID INT NOT NULL,
+    FirstName  VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    SSN INT,
+    DeptID INT
+    PRIMARY KEY (EmployeeID)
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+   );
+
+CREATE TABLE Department (
+    DeptID INT NOT NULL,
+    Name  VARCHAR(50),
+    Location VARCHAR(50),
+    PRIMARY KEY (DeptID)
+   );
+
+
+CREATE TABLE EmpDetails (
+    EmpID INT NOT NULL,
+    EmployeeID  INT NOT NULL,
+    Salary INT,
+    Address1 VARCHAR(100),
+    Address2 VARCHAR(100),
+    City VARCHAR(50),
+    State CHAR,
+    Country VARCHAR(50),
+    PRIMARY KEY (EmpID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+   );
+
+
+____________________________________________________________________
+
+
+
+ALTER TABLE Type ADD
+	First Letter AS (SUBSTRING(Name, 1, 1)) PERSISTED;
+
+
+DECLARE @a FLOAT = (SELECT AVG(CAST(CustomerId AS FLOAT)) FROM Customer;
+SELECT @a
+
+
+
+
+DECLARE @i INT = 0;
+WHILE (@i < 5) BEGIN
+	SET @i = @i + 1;
+	SELECT @i
+END
+
+
+____________________________________________________________________
+
+PROCEDURE
+RAISERROR
+
+
+triggers - code that you run after insert, update, or delete
+
+
+ON DELETE CASCADE
+ON DELETE SET NULL
+
+
+indexes
+-- data structures that we can have sql server maintain during writes
+-- so that reads can be faster.
+
+-- in SQL Server:
+   -- clustered index
+        -- tells sql server what order to 'physically' arrange the table in.
+		-- can only be one
+		-- by default, PRIMARY KEY sets CLUSTERED INDEX.
+   -- nonclustered index
+		-- maintains a separate data structure analogous to an index at the end of
+		-- and enyclopedia
+		-- we can have many of these.
+		-- UNIQUE sets nonclustered index by default
+
+-- you want indexes on the columns/sets of columns that you usually reference
+-- in the JOIN or WHERE conditions. (foreign keys are a good candidate)
+
+
+
+_________________________________________________________________
+
+
+System.Data.Common
+
+ADO.NET has some common abstractions across many possible data sources
+
+
+______________________________________________________________________
+
+
+connected architecture - involves processing the result set while the connection is open as you receive it row by row.  open connections to the database are a performance bottleneck
+
+disconnected architecture - involves using a DataAdapter to put the results in a DataSet, then closing the connection, then processing the data in the DataSet

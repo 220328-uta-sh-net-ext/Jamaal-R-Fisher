@@ -1,0 +1,548 @@
+Solution is a group of related projects
+
+Presentation Layers:
+UI - User Interface (visible to users)
+BL - Programming Logic / Business Logic
+DL - Data Logic / Data Storage
+
+Significant object-oriented languages include:
+Java, C++, C#, Python, R, PHP, Visual Basic.NET, TypeScript, Ruby, Perl, SIMSCRIPT, Object Pascal, Objective-C, Dart, Swift, Scala, Kotlin, Common Lisp, MATLAB, and Smalltalk.
+
+.sln - solution file
+
+variable -> state of the object
+methods -> behavior
+members -> variables, constants, methods, events, constructors
+
+
+building blocks of OOP:
+classes, objects, methods, attributes
+
+
+
+single level - A>B
+multi-level - A>B>C
+hierarchal - more than one class is inherited from a single parent or base class
+multiple inheritance - when an object or class inherits features from more than one parent object or parent class.  it's not allowed in C#.
+hybrid inheritance - mix of two or more types of inheritances.  in C#, it's not allowed for classes.  it's only achieved through inheritances. 
+
+
+
+___________________________________________________________
+
+solution nameApp
+project nameUI
+add new project
+library, class library
+
+Solution PokemonApp
+PokemonBL - 
+PokemonDL - 
+PokemonModels - create properties -   new project,  class type library
+PokemonUI - add new interface - project
+
+
+https://aka.ms/new-console-template
+
+_____________________________________________________________________
+
+generics
+
+
+Generics introduces the concept of type parameters to .NET,
+which make it possible to design classes and methods that defer the specification of one or more types until the class or method is declared and instantiated by client code.
+For example, by using a generic type parameter T, you can write a single class that other client code can use without incurring the cost or risk of runtime casts or boxing operations, as shown here:
+
+
+
+
+// Declare the generic class.
+public class GenericList<T>
+{
+    public void Add(T input) { }
+}
+class TestGenericList
+{
+    private class ExampleClass { }
+    static void Main()
+    {
+        // Declare a list of type int.
+        GenericList<int> list1 = new GenericList<int>();
+        list1.Add(1);
+
+        // Declare a list of type string.
+        GenericList<string> list2 = new GenericList<string>();
+        list2.Add("");
+
+        // Declare a list of type ExampleClass.
+        GenericList<ExampleClass> list3 = new GenericList<ExampleClass>();
+        list3.Add(new ExampleClass());
+    }
+}
+
+
+class TestGenericList
+{
+    static void Main()
+    {
+        // int is the type argument
+        GenericList<int> list = new GenericList<int>();
+
+        for (int x = 0; x < 10; x++)
+        {
+            list.AddHead(x);
+        }
+
+        foreach (int i in list)
+        {
+            System.Console.Write(i + " ");
+        }
+        System.Console.WriteLine("\nDone");
+    }
+}
+
+
+Generic classes and methods combine reusability, type safety, and efficiency in a way that their non-generic counterparts cannot.
+Generics are most frequently used with collections and the methods that operate on them. The System.Collections.Generic namespace contains several generic-based collection classes.
+The non-generic collections, such as ArrayList are not recommended and are maintained for compatibility purposes.
+
+You can also create custom generic types and methods to provide your own generalized solutions and design patterns that are type-safe and efficient.
+The following code example shows a simple generic linked-list class for demonstration purposes. (In most cases, you should use the List<T> class provided by .NET instead of creating your own.)
+The type parameter T is used in several locations where a concrete type would ordinarily be used to indicate the type of the item stored in the list. It is used in the following ways:
+
+-- As the type of a method parameter in the AddHead method.
+-- As the return type of the Data property in the nested Node class.
+-- As the type of the private member data in the nested class.
+T is available to the nested Node class. When GenericList<T> is instantiated with a concrete type, for example as a GenericList<int>, each occurrence of T will be replaced with int.
+
+
+
+
+// type parameter T in angle brackets
+public class GenericList<T>
+{
+    // The nested class is also generic on T.
+    private class Node
+    {
+        // T used in non-generic constructor.
+        public Node(T t)
+        {
+            next = null;
+            data = t;
+        }
+
+        private Node? next;
+        public Node? Next
+        {
+            get { return next; }
+            set { next = value; }
+        }
+
+        // T as private member data type.
+        private T data;
+
+        // T as return type of property.
+        public T Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
+    }
+
+    private Node? head;
+
+    // constructor
+    public GenericList()
+    {
+        head = null;
+    }
+
+    // T as method parameter type:
+    public void AddHead(T t)
+    {
+        Node n = new Node(t);
+        n.Next = head;
+        head = n;
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        Node? current = head;
+
+        while (current != null)
+        {
+            yield return current.Data;
+            current = current.Next;
+        }
+    }
+}
+
+
+
+Generics overview:
+--Use generic types to maximize code reuse, type safety, and performance.
+--The most common use of generics is to create collection classes.
+--The .NET class library contains several generic collection classes in the System.Collections.Generic namespace.
+The generic collections should be used whenever possible instead of classes such as ArrayList in the System.Collections namespace.
+
+--You can create your own generic interfaces, classes, methods, events, and delegates.
+--Generic classes may be constrained to enable access to methods on particular data types.
+--Information on the types that are used in a generic data type may be obtained at run-time by using reflection.
+
+
+
+_____________________________________________________________________________________
+
+serialization
+
+
+Uses for serialization:
+Serialization allows the developer to save the state of an object and re-create it as needed, providing storage of objects as well as data exchange.
+
+Through serialization, a developer can perform actions such as:
+--Sending the object to a remote application by using a web service
+--Passing an object from one domain to another
+--Passing an object through a firewall as a JSON or XML string
+--Maintaining security or user-specific information across applications
+
+
+
+Making an object serializable
+
+For binary or XML serialization, you need:
+
+-- The object to be serialized
+-- A stream to contain the serialized object
+-- A System.Runtime.Serialization.Formatter instance
+
+Apply the SerializableAttribute attribute to a type to indicate that instances of the type can be serialized.
+An exception is thrown if you attempt to serialize but the type doesn't have the SerializableAttribute attribute.
+To prevent a field from being serialized, apply the NonSerializedAttribute attribute.
+
+If a field of a serializable type contains a pointer, a handle, or some other data structure that is specific to a particular environment,
+and the field cannot be meaningfully reconstituted in a different environment, then you may want to make it nonserializable.
+
+If a serialized class contains references to objects of other classes that are marked SerializableAttribute, those objects will also be serialized.
+
+
+Basic serialization uses .NET to automatically serialize the object. The only requirement is that the class has the SerializableAttribute attribute applied.
+The NonSerializedAttribute can be used to keep specific fields from being serialized.
+
+When you use basic serialization, the versioning of objects may create problems. You would use custom serialization when versioning issues are important.
+Basic serialization is the easiest way to perform serialization, but it does not provide much control over the process.
+
+In custom serialization, you can specify exactly which objects will be serialized and how it will be done. The class must be marked SerializableAttribute and implement the ISerializable interface.
+If you want your object to be deserialized in a custom manner as well, use a custom constructor.
+
+Designer serialization is a special form of serialization that involves the kind of object persistence associated with development tools.
+Designer serialization is the process of converting an object graph into a source file that can later be used to recover the object graph. A source file can contain code, markup, or even SQL table information.
+
+
+string json = @"{ name: "Sif", age: 12 }";
+
+Dog doggoObject = JsonConvert.DeserializeObject<Dog>( json );
+string doggoJSON = JsonConvert.SerializeObject( doggoObject );
+
+Dog[] doggosArray = JsonConvert.DeserializeObject<Dog[]>( json );
+string doggoJSON = JsonConvert.SerializeObject( doggosArray );
+
+
+Create a new project -->  Console Application
+Tools ---> NuGet Package Manager  -->  Manage NuGet Packages for Solution...
+in the search bar, pull up Newtonsoft.Json --->  check all boxes on right ---> install  --->  press OK
+
+
+async / await keyword
+
+convert Json to C# Classes Online
+json2csharp.com
+
+simplify/trim/organize Json code
+codebeautify.org
+
+
+
+API - Application Programming Interface - a standard messaging, formatting translator for different programming languages.
+
+Messaging Standards:
+1.)  Binary (0's and 1's) fastest way, but it can have a security issue or be compromised by malware
+2.)  XML (human readable form)
+<Person>
+	<name>"Joey"</name>
+	<ssn>"123456789"</ssn>
+</Person>
+
+3.)  JSON (JavaScript Object Notation)
+
+
+
+
+
+______________________________________________________________________________________________________________________________________
+
+other types:
+struct
+enum
+interface
+delegate
+
+
+inheritance:
+generalization (broadening up)
+specification (narrowing down)
+
+
+access modifiers:
+public - same or different assembly
+private - only within the same class
+internal can inherit non-derived class (same assembly)
+protected can inherit derived class (different assembly)
+
+protected internal allows access anywhere within same assembly, and different assembly only with derived class
+private protected allows access for derived child within same assembly
+
+
+default modifier
+types:  class -->  internal
+types:  nested class, members --->  private
+
+_______________________________________________________________________________________________
+
+structure comprises the building blocks of OOP
+
+pillars of OOP:
+encapsulation - data hiding, wrapping data, access modifiers to provide various levels of access
+abstraction - showing only essential features of the program instead of un-necessary details, abstract classes, interfaces, template
+inheritance - extend a type so that its properties and behaviors can be branched further
+polymorphism - ability to implement inherited properties and methods in different ways across multiple abstractions.  static (compile time - method overloading) or dynamic (runtime - method overriding)
+
+"A PIE"
+
+method overloading - same name in same class, but different data type/parameters
+method overriding   - re-defining the method of a base class in a child class
+
+
+Method overloading can be done by changing:  
+1.) changing the number of parameters in two methods.
+2.) changing the data types of the parameters of methods.
+3.) changing the order of the parameters of methods.
+
+In C# we can use 3 types of keywords for Method Overriding:
+1.) virtual keyword: This modifier or keyword use within base class method. It is used to modify a method in base class for overridden that particular method in the derived class.
+2.) override: This modifier or keyword use with derived class method. It is used to modify a virtual or abstract method into derived class which presents in base class.
+3.) base Keyword: This is used to access members of the base class from derived class. It basically used to access constructors and methods or functions of the base class.
+The base keyword cannot use within a static method. Base keyword specifies which constructor of the base class should be invoked while creating the instances of the derived class.
+
+
+
+the base keyword is used to inherit parent values.
+the override modifier is required to extend or modify the abstract or virtual implementation of an inherited method, property, indexer, or event.
+
+
+The virtual keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class.
+For example, this method can be overridden by any class that inherits it:
+
+public virtual double Area()
+{
+    return x * y;
+}
+
+The implementation of a virtual member can be changed by an overriding member in a derived class.
+
+When a virtual method is invoked, the run-time type of the object is checked for an overriding member.
+The overriding member in the most derived class is called, which might be the original member, if no derived class has overridden the member.
+By default, methods are non-virtual. You cannot override a non-virtual method.
+You cannot use the virtual modifier with the static, abstract, private, or override modifiers. 
+
+
+
+
+abstract enables you to create incomplete implementation of whatever you applied it to and it must be implemented in a derived class.
+
+abstract method with only method declaration and no implementation.
+abstract class allows you to have all types of members.
+abstract class (and concrete class) can implement one or more interfaces by which multiple inheritance is achieved, but class can only inherit from one class.
+
+interface defines a contract.  Any class or struct that implements that contract must provide an implementation of the member defined in the interface.
+interface can only have methods, properties, events, indexers.  they cannot have variables or methods with implementation (except C# 8.0 or later allow you to have static methods with implementation)
+
+abstract class and interface cannot be instantiated but is meant to be implemented/inherited.
+- implicitly used by interfaces
+- explicitly used by abstract classes
+
+
+public abstract class EmployeeOperations
+{
+	public abstract void Add(DL.Employee employee);
+}
+
+
+_______________________________________________________________
+
+
+Abstract classes have the following features:
+
+An abstract class cannot be instantiated.
+An abstract class may contain abstract methods and accessors.
+It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings.
+The sealed modifier prevents a class from being inherited and the abstract modifier requires a class to be inherited.
+A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
+Use the abstract modifier in a method or property declaration to indicate that the method or property does not contain implementation.
+
+
+
+
+Abstract methods have the following features:
+
+An abstract method is implicitly a virtual method.
+Abstract method declarations are only permitted in abstract classes.
+Because an abstract method declaration provides no actual implementation, there is no method body; the method declaration simply ends with a semicolon and there are no curly braces ({ }) following the signature.
+
+
+
+
+
+
+_________________________________________________________________
+
+
+non-access modifiers:
+virtual
+static
+abstract
+read-only
+override
+
+
+Boxing is the process of converting a value type to the type object or to any interface type implemented by this value type.
+When the common language runtime (CLR) boxes a value type, it wraps the value inside a System.Object instance and stores it on the managed heap.
+Unboxing extracts the value type from the object.
+
+Boxing is implicit; unboxing is explicit.
+The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.
+
+
+.AreEqual()
+
+_______________________________________________________________________________________________________________________________
+
+properties:
+get - reading the value
+set - enable writing
+
+
+Properties are first class citizens in C#. The language defines syntax that enables developers to write code that accurately expresses their design intent.
+Properties behave like fields when they are accessed. However, unlike fields, properties are implemented with accessors that define the statements executed when a property is accessed or assigned.
+Properties are a form of smart fields in a class or object, and can be implemented using the full palette of C# functionality.
+
+
+public string FirstName
+{
+	get { return firstName; }
+	set { firstName = value; }
+}
+
+public string FirstName
+{
+	get
+	{ 
+		if (string.IsNullOrEmpty(firstname))
+		{
+			throw new ArgumentNullException("first name is blank or empty.  please input a valid first name.");
+		}
+		else
+		{
+			return firstName; 
+		}
+	}
+	set { firstName = value; }
+}
+
+
+public string Password { get; set; }   // auto-property - there is no private variable declared, but this would create it behind the scene
+
+____________________________________________________________________________________
+
+
+Indexers are similar to properties. In many ways indexers build on the same language features as properties.
+Indexers enable indexed properties: properties referenced using one or more arguments. Those arguments provide an index into some collection of values.
+
+
+
+Indexers can have any valid access modifiers (public, protected internal, protected, internal, private or private protected).
+They may be sealed, virtual, or abstract. As with properties, you can specify different access modifiers for the get and set accessors in an indexer.
+You may also specify read-only indexers (by omitting the set accessor), or write-only indexers (by omitting the get accessor).
+You can apply almost everything you learn from working with properties to indexers. The only exception to that rule is auto implemented properties.
+The compiler cannot always generate the correct storage for an indexer.
+The presence of arguments to reference an item in a set of items distinguishes indexers from properties.
+You may define multiple indexers on a type, as long as the argument lists for each indexer is unique.
+
+You should create indexers anytime you have a property-like element in your class where that property represents not a single value,
+but rather a collection of values where each individual item is identified by a set of arguments.
+
+Those arguments can uniquely identify which item in the collection should be referenced.
+Indexers extend the concept of properties, where a member is treated like a data item from outside the class, but like a method on the inside.
+Indexers allow arguments to find a single item in a property that represents a set of items.
+
+
+
+
+Indexers are used for collections, properties are used for varibles.
+
+
+
+public int this[string key]
+{
+    get { return storage.Find(key); }
+    set { storage.SetAt(key, value); }
+}
+
+
+
+_______________________________________________________________________________
+
+
+
+The using keyword has two major uses:
+
+- The using statement defines a scope at the end of which an object will be disposed.
+- The using directive creates an alias for a namespace or imports types defined in other namespaces.
+
+
+
+
+__________________________________________________________________________
+
+
+ASSIGNMENT
+
+
+
+anagram (can't use sort)
+
+input examples:
+garden, danger
+said, aids
+
+1.  if (input1.Length == input2.Length)
+2.  convert 1st string to char array
+3.  convert 2nd string to char array
+4.  foreach contains method to see if each char of 1st string is in 2nd string
+5.  else, it's false
+
+
+
+palindrome (can't use reverse)
+
+input examples:
+madam
+tenet
+hannah
+
+
+1.  determine the length of the string (if it's even, check each letter from start to finish.  if it's odd, the middle letter is irrelevant)
+2.  first letter must equal last letter
+3.  for loop, if 1st = last, if 2nd = 2nd to last
+4.  else, it's false
+
+

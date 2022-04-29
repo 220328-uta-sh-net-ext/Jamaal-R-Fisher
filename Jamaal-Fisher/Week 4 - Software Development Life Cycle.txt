@@ -1,0 +1,448 @@
+smoke testing - check response
+load testing - heavy traffic
+penetration testing - how safe
+____________________________________________
+
+SDLC  ->  Software development life cycle
+
+Phases:
+1. requirement analysis
+2. design
+3. development
+4. testing
+5. deployment
+6. maintenance
+
+Models:
+Waterfalls
+Extreme Programming
+Agile
+TDD - Test Driven Development
+
+TDD Cycle:
+Fail, Pass, Refactor
+
+Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed,
+and tracking all software development by repeatedly testing the software against all test cases.
+
+
+TDD Sequence
+1. Add a test
+2. Run test should fail
+3. write simplest code to pass the test
+4. All tests should now pass
+5. Refactor as needed
+6. Repeat
+
+
+Unit testing - testing the smallest functionality of the program
+
+Phase of Unit testing
+- Arrange
+- Act
+- Assert
+
+The Arrange section of a unit test method initializes objects and sets the value of the data that is passed to the method under test.
+The Act section invokes the method under test with the arranged parameters.
+The Assert section verifies that the action of the method under test behaves as expected. For .NET, methods in the Assert class are often used for verification.
+
+________________________________________________________________________
+
+
+Code coverage is a software testing metric that determines the number of lines of code that is successfully validated under a test procedure,
+which in turn, helps in analyzing how comprehensively a software is verified.
+
+
+A high percentage of code coverage can be counter-productive in complex programs.
+
+
+
+Commands for code coverage:
+1. make sure you have coverlet as a package "dotnet add package coverlet.msbuild"
+2 . run "dotnet test /p:CollectCoverage=true"
+3. for corbertura xml test results run: "dotnet test --collect:"XPlat Code Coverage""
+
+
+
+
+https://code-maze.com/dotnet-code-coverage/
+
+github.com/coverlet-coverage/coverlet
+
+____________________________________________________________________________
+
+Serilog
+
+logging
+
+https://github.com/serilog/serilog/wiki/Getting-Started
+
+
+
+_______________________________________________________________________________
+
+
+LINQ (Language Integrated Query) is uniform query syntax in C# and VB.NET to retrieve data from different sources and formats.
+It is integrated in C# or VB, thereby eliminating the mismatch between programming languages and databases, as well as providing a single querying interface for different types of data sources.
+
+For example, SQL is a Structured Query Language used to save and retrieve data from a database.
+
+In the same way, LINQ is a structured query syntax built in C# and VB.NET to retrieve data from different types of data sources
+such as collections, ADO.Net DataSet, XML Docs, web service and MS SQL Server and other databases.
+
+data source examples:
+API
+SQL Database
+Excel Database
+JSON Data
+XML Data
+Objects in C# (Arrays, Collections)
+
+https://www.tutorialsteacher.com/linq/what-is-linq
+
+
+3 parts of LINQ query:
+1.) obtain a data source
+2.) create a query
+3.) execute the query
+
+// data source
+int[] num = new int[] { 45, 56, 67, 87, 99, 98, 100 };
+
+
+// create query
+var query = from n in num
+		where (n%2)==0
+		select n;
+
+
+//  another create query example (select is the required keyword, like return)
+var query = from n in num
+		where (n%2)==0 || (n%3==0)
+		orderby n describing
+		select n;
+
+// execute the query (or return)
+foreach var q in query
+{
+	Console.WriteLine(q);
+}
+
+
+
+//  full query example
+var pokemons=repo.GetAllPokemons();
+
+var filteredPokemons = pokemon.Where(p => p.Name.Contains(name)).ToList();
+
+return filteredPokemons;
+
+
+______________________________________________________________________________
+
+anonymous method - methods with no name, used for 1 time execution (delegate keyword, not delegate type)
+they can be thrown out of the memory once the work is done.
+
+
+var method = delegate(int n)
+	{
+	return (n%2==0);
+	};
+
+
+
+var IsOddanonymous = delegate(int n)
+	{
+	return (n%2==0);
+	};
+
+
+
+
+//  lambda expression are shorthand notations to anonymous methods
+
+var IsOddLambda = (int n) => n%2==0
+
+var filteredPokemons = pokemon.Where(p => p.Name.Contains(name)).ToList();
+
+
+
+https://www.tutorialsteacher.com/linq/linq-lambda-expression
+
+________________________________________________________________________________
+
+SOLID principles
+
+
+The SOLID ideas are
+
+The single-responsibility principle: "There should never be more than one reason for a class to change."
+In other words, every class should have only one responsibility.  If has more than one, segregate it into another class.
+
+The open–closed principle: "Software entities ... should be open for extension, but closed for modification."
+It just means you can add functionality with changing existing code.  A great way to do this is using interface.
+
+The Liskov substitution principle: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."
+It just means derived class should not behave in such a way that it will not cause problems when used instead of a base class.
+See also design by contract.  Derived classes must implement all the methods and fields of their parent.
+
+The interface segregation principle: "Many client-specific interfaces are better than one general-purpose interface."
+You should not be forced to implement methods that you don't need an interface.  Just segregate the interface into multiple interfaces.
+
+The dependency inversion principle: "Depend upon abstractions, [not] concretions."
+High and low level modules should depend on abstractions, but not each other.
+Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
+
+
+Robert C. Martin "Uncle Bob"
+
+Design Patterns
+________________________
+
+
+Class A
+
+|
+V
+
+Interface B		<------ Class B
+				  |
+ ---------------------------------
+|
+V
+Interface C		<------ Class C
+
+
+
+
+
+Creational
+Creational patterns are ones that create objects, rather than having to instantiate objects directly. This gives the program more flexibility in deciding which objects need to be created for a given case.
+
+Abstract factory groups object factories that have a common theme.
+Builder constructs complex objects by separating construction and representation.
+Factory method creates objects without specifying the exact class to create.
+Prototype creates objects by cloning an existing object.
+Singleton restricts object creation for a class to only one instance.
+
+
+
+Structural
+These concern class and object composition. They use inheritance to compose interfaces and define ways to compose objects to obtain new functionality.
+
+Adapter allows classes with incompatible interfaces to work together by wrapping its own interface around that of an already existing class.
+Bridge decouples an abstraction from its implementation so that the two can vary independently.
+Composite composes zero-or-more similar objects so that they can be manipulated as one object.
+Decorator dynamically adds/overrides behaviour in an existing method of an object.
+Facade provides a simplified interface to a large body of code.
+Flyweight reduces the cost of creating and manipulating a large number of similar objects.
+Proxy provides a placeholder for another object to control access, reduce cost, and reduce complexity.
+
+
+
+Behavioral
+Most of these design patterns are specifically concerned with communication between objects.
+
+Chain of responsibility delegates commands to a chain of processing objects.
+Command creates objects that encapsulate actions and parameters.
+Interpreter implements a specialized language.
+Iterator accesses the elements of an object sequentially without exposing its underlying representation.
+Mediator allows loose coupling between classes by being the only class that has detailed knowledge of their methods.
+Memento provides the ability to restore an object to its previous state (undo).
+Observer is a publish/subscribe pattern, which allows a number of observer objects to see an event.
+State allows an object to alter its behavior when its internal state changes.
+Strategy allows one of a family of algorithms to be selected on-the-fly at runtime.
+Template method defines the skeleton of an algorithm as an abstract class, allowing its subclasses to provide concrete behavior.
+Visitor separates an algorithm from an object structure by moving the hierarchy of methods into one object.
+
+
+
+
+____________________________________________________________
+
+portal.azure.com
+
+create resource group, name it (220328-uta-.net-ext)
+
+create SQL database, name it (has to be a unique name)
+
+create SQL database server, name it
+
+https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15
+https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~vscom~devessentials-swimlane~689&campaign=o~msft~vscom~devessentials-swimlane~689
+
+
+
+bathwatermelody.database.windows.net
+
+
+User ID bathwatermelody@gmail.com@bathwatermelody
+
+_______________________________________________________________________________________
+
+
+
+database is an organized collection of data stored in some format.
+they allow us to input, manage, organize, and retrieve data quickly.
+
+
+RDBMS stands for Relational Database Management System.
+RDBMS is the basis for SQL, and for all modern database systems like MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
+
+A Relational database management system (RDBMS) is a database management system (DBMS) that is based on the relational model as introduced by E. F. Codd.
+
+The data in an RDBMS is stored in database objects which are called as tables.
+This table is basically a collection of related data entries and it consists of numerous columns and rows.
+Instead of just storing data, it gives "relationships" between data.
+
+
+Every table is broken up into smaller entities called fields.
+
+A field is a column in a table that is designed to maintain specific information about every record in the table.
+A record is also called as a row of data is each individual entry that exists in a table. 
+A column is a vertical entity in a table that contains all information associated with a specific field in a table.
+
+
+The following categories of data integrity exist with each RDBMS:
+1. Entity Integrity − There are no duplicate rows in a table.
+2. Domain Integrity − Enforces valid entries for a given column by restricting the type, the format, or the range of values.
+3. Referential integrity − Rows cannot be deleted, which are used by other records.
+4. User-Defined Integrity − Enforces some specific business rules that do not fall into entity, domain or referential integrity.
+
+
+Database normalization is the process of efficiently organizing data in a database. There are two reasons of this normalization process:
+- Eliminating redundant data, for example, storing the same data in more than one table.
+- Ensuring data dependencies make sense.
+
+Normalization guidelines are divided into normal forms; think of a form as the format or the way a database structure is laid out.
+The aim of normal forms is to organize the database structure, so that it complies with the rules of first normal form, then second normal form and finally the third normal form.
+- First Normal Form (1NF) - no table column can have tables as values (or no repeating groups)
+- Second Normal Form (2NF) -  a relation is in 2NF if it is in 1NF and every non-prime attribute of the relation is dependent on the whole of every candidate key.
+				A non-prime attribute of a relation is an attribute that is not a part of any candidate key of the relation.
+- Third Normal Form (3NF) - is in 2NF and all the attributes (e.g. database columns) are functionally dependent on solely the primary key.
+				Requiring existence of "the key" ensures that the table is in 1NF; requiring that non-key attributes be dependent on "the whole key" ensures 2NF;
+				further requiring that non-key attributes be dependent on "nothing but the key" ensures 3NF
+
+________________________________________________________________________________________________
+
+
+update anomaly - you modify all the copies of some data, but miss one
+deletion anomaly - delete one piece of data, but it effectively deletes additional data
+insertion anomaly - if we don't have rows for certain data, we cannot represent other data at all.  unable to store certain pieces of data without also having others.
+
+
+
+
+
+__________________________________________________________________________________________________________
+
+functional dependency - a relationship between two pieces of data or attributes
+
+x ---> y  (y is dependent on x)
+
+x - phone number
+y - area code
+
+x - city, state
+y - zip code
+
+
+
+candidate key (for a particular table or entity)
+a minimal set of columns/attributes that every other column is dependent on
+
+
+primary key
+foreign key
+
+
+____________________________________________________________________________________________________________________
+
+
+
+SQL - Structured Query Language
+a language made to be really good at storing and querying (grabbing data) information from a database.
+
+
+MySQL is an open source SQL database, which is developed by a Swedish company – MySQL AB.
+
+MySQL is pronounced as "my ess-que-ell," in contrast with SQL, pronounced "sequel."
+MySQL is supporting many different platforms including Microsoft Windows, the major Linux distributions, UNIX, and Mac OS X.
+MySQL has free and paid versions, depending on its usage (non-commercial/commercial) and features.
+MySQL comes with a very fast, multi-threaded, multi-user and robust SQL database server.
+
+_____________________________________________________________________________________________________________________________________
+
+
+DDL  Data Definition Language  - In the context of SQL, data definition or data description language is a syntax for creating and modifying database objects such as tables, indices, and users.
+
+create
+alter
+truncate
+drop
+
+
+DML - Data Manipulation Language  - A data manipulation language is a computer programming language used for adding, deleting, and modifying data in a database.
+					A DML is often a sublanguage of a broader database language such as SQL, with the DML comprising some of the operators in the language.
+
+insert
+select
+update
+delete
+
+
+Constraints
+
+Constraints inform the compiler about the capabilities a type argument must have. Without any constraints, the type argument could be any type.
+The compiler can only assume the members of System.Object, which is the ultimate base class for any .NET type.
+If client code uses a type that doesn't satisfy a constraint, the compiler issues an error. Constraints are specified by using the where contextual keyword.
+
+The where clause in a generic definition specifies constraints on the types that are used as arguments for type parameters in a generic type, method, delegate, or local function.
+Constraints can specify interfaces, base classes, or require a generic type to be a reference, value, or unmanaged type. They declare capabilities that the type argument must have.
+
+
+Constraints are the rules that we can apply on the type of data in a table. That is, we can specify the limit on the type of data that can be stored in a particular column in a table using constraints. 
+
+The available constraints in SQL are: 
+
+DEFAULT: This constraint specifies a default value for the column when no value is specified by the user.
+UNIQUE: This constraint when specified with a column, tells that all the values in the column must be unique. That is, the values in any row of a column must not be repeated.
+NOT NULL: This constraint tells that we cannot store a null value in a column. That is, if a column is specified as NOT NULL then we will not be able to store null in this particular column any more.
+CHECK: This constraint helps to validate the values of a column to meet a particular condition. That is, it helps to ensure that the value stored in a column meets a specific condition.
+PRIMARY KEY: A primary key is a field which can uniquely identify each row in a table. And this constraint is used to specify a field in a table as primary key.
+FOREIGN KEY: A Foreign key is a field which can uniquely identify each row in a another table. And this constraint is used to specify a field as Foreign key.
+
+
+type - restricts what datatype you can store in a column.
+unique
+not null
+check
+primary key
+foreign key
+
+
+
+Multiplicity
+a way to describe the relationships between 2 tables.
+use the primary and foreign keys to establish these relationships.
+
+
+one to one
+one to many
+many to many
+
+____________________________________________________________________________________________
+
+
+    public class DummyForTest
+    {
+        public double Add(params double[] nums) // params keyword allows to pass any number of inputs as parameters
+        {
+            double result = 0;
+            foreach (var x in nums)
+            {
+                result += x;
+            }
+            return result;
+        }
+    }

@@ -1,0 +1,1293 @@
+dotNET standards:  languages, libraries, runtime/CLR (frameworks)
+
+dotNET is a open source developer platform created by Microsoft.
+
+2 main components
+Common Language Runtime (CLR)
+Class Library
+
+
+architecture
+
+.Net compliant languages
+language specific compilers
+
+Common Intermediate Language (CIL) - .exe (executable file, has entry point to execute and can be run) or .dll (Dynamic Link Library, has the logic but cannot be executed, we consume dll's through exe's)
+Common Language Runtime (CLR) - main engine of .Net, used to convert IL to machine code.
+Machine Code  - 10101110
+
+
+Virtual Execution System - Run-time system of CLI that provides all the tools it needs to be able to execute your application
+
+Environment (C# date and time class)
+
+
+System.Object
+System.Exception
+
+
+different types of apps in .Net
+CUI - Character User Interface
+GUI - Graphical User Interface
+Smart Apps
+API
+IoT
+ML
+
+formatting:
+ctrl+K
+ctrl+F
+
+
+dotnet build (terminal compile program)
+dotnet run (terminal execute program)
+dotnet publish --configuration Release
+
+__________________________________________________________________________
+
+docs.microsoft.com/en-us/dotnet/core/tools
+
+ Call methods from the .NET Class Library using C# 
+System.Math.Pow() method ---> exponents
+
+In math, PEMDAS is an acronym that helps students remember the order in which multiple operations are performed. The order is:
+
+Parentheses (whatever is inside the parenthesis is performed first)
+Exponents
+Multiplication and Division (from left to right)
+Addition and Subtraction (from left to right)
+
+C# follows the same order as PEMDAS except for exponents. While there's no exponent operator in C#, you can use the System.Math.Pow() method, which is available from the .NET Class Library.
+The module "Call methods from the .NET Class Library using C#" will feature this method and others.
+
+
+The for statement iterates through a code block a specific number of times.  (initializer, condition, iterator)
+The foreach statement iterates through a block of code once for each item in a sequence of data like an array or collection.  foreach is good for reading item, not updating items like a for loop.
+The while statement iterates through a block of code until a condition is met.  it runs continuously while true until the condition is false.
+
+The if statement: selects a statement to execute based on the value of a Boolean expression.
+The switch statement: selects a statement list to execute based on a pattern match with an expression.
+_______________________________________________________________
+
+
+Objects are real-world entities and instance of a class.
+Classes are blueprints for objects.  They are the building blocks of our code
+
+
+________________________________________________________________________________
+
+
+
+single-dimensional
+multi-dimensional - 2d
+
+
+A jagged array is an array whose elements are arrays, possibly of different sizes. A jagged array is sometimes called an "array of arrays."
+
+
+int[,] array = new int[4, 2];
+int[,,] array1 = new int[4, 2, 3];
+int[][] jaggedArray = new int[3][];
+
+____________________________________________________________
+
+
+Implicit conversions: No special syntax is required because the conversion always succeeds and no data will be lost.
+Examples include conversions from smaller to larger integral types, and conversions from derived classes to base classes.
+
+Explicit conversions (casts): Explicit conversions require a cast expression.
+Casting is required when information might be lost in the conversion, or when the conversion might not succeed for other reasons.
+Typical examples include numeric conversion to a type that has less precision or a smaller range, and conversion of a base-class instance to a derived class.
+
+User-defined conversions: performed by special methods that you can define to enable explicit and implicit conversions between custom types that do not have a base class–derived class relationship.
+
+Conversions with helper classes: you can use the System.BitConverter class, the System.Convert class, and the Parse methods of the built-in numeric types, such as Int32.Parse.
+
+
+____________________________________________________________________________________
+
+
+EXE - a common filename extension denoting an executable file
+DLL - Dynamic Link Library, file containing executable code
+
+The following list describes some of the advantages that are provided when a program uses a DLL:
+
+-Uses fewer resources
+When multiple programs use the same library of functions, a DLL can reduce the duplication of code that is loaded on the disk and in physical memory.
+It can greatly influence the performance of not just the program that is running in the foreground, but also other programs that are running on the Windows operating system.
+
+-Promotes modular architecture
+A DLL helps promote developing modular programs. It helps you develop large programs that require multiple language versions or a program that requires modular architecture.
+An example of a modular program is an accounting program that has many modules that can be dynamically loaded at run time.
+
+-Eases deployment and installation
+When a function within a DLL needs an update or a fix, the deployment and installation of the DLL does not require the program to be relinked with the DLL.
+Additionally, if multiple programs use the same DLL, the multiple programs will all benefit from the update or the fix.
+This issue may more frequently occur when you use a third-party DLL that is regularly updated or fixed.
+
+
+____________________________________________________________________________________
+
+
+FOR STATEMENTS
+
+
+for (int i = 0; i < 6; i++)
+{
+    Console.WriteLine(i);
+}
+
+
+0
+1
+2
+3
+4
+5
+
+
+string[] names = { "Alex", "Eddie", "David", "Michael" };
+for (int i = 0; i < names.Length; i++)
+    Console.WriteLine(names[i]);
+
+Alex
+Eddie
+David
+Michael
+
+
+string[] names = { "Alex", "Eddie", "David", "Michael" };
+for (int i = names.Length - 1; i >= 0; i--)
+{
+    Console.WriteLine(names[i]);
+}
+
+Michael
+David
+Eddie
+Alex
+
+
+
+FOR STATEMENTS WITH String.Length, String.Join, String.Split, ToCharArray(), Array.Reverse()
+
+
+string pangram = "The quick brown fox jumps over the lazy dog";
+
+string[] message = pangram.Split(' ');
+string[] newMessage = new string[message.Length];
+
+for (int i = 0; i < message.Length; i++)
+{
+    char[] letters = message[i].ToCharArray();
+    Array.Reverse(letters);
+    newMessage[i] = new string(letters);
+}
+
+string result = String.Join(" ", newMessage);
+Console.WriteLine(result);
+
+
+
+
+OUTPUT
+
+ehT kciuq nworb xof spmuj revo eht yzal god
+
+
+
+
+__________________________________________________________________
+
+IF STATEMENTS (random.Next)
+
+Random dice = new Random();
+
+int roll1 = dice.Next(1, 7);
+int roll2 = dice.Next(1, 7);
+int roll3 = dice.Next(1, 7);
+
+int total = roll1 + roll2 + roll3;
+
+Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+
+if (total >= 12)
+{
+
+    Console.WriteLine("You win!");
+}
+
+if (total <= 11)
+{
+    Console.WriteLine("Sorry, you lose.");
+}
+
+
+__________________________________________________________________________________
+
+DECLARE ARRAY (8 values)
+
+string[] arrayName = new string[8];
+
+EXAMPLE ARRAY
+
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+REASSIGN ARRAY VALUE
+
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+// fraudulentOrderIDs[3] = "D000";
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+fraudulentOrderIDs[0] = "F000";
+
+Console.WriteLine($"Reassign First: {fraudulentOrderIDs[0]}");
+
+
+INITIALIZE ARRAY
+
+string[] fraudulentOrderIDs = { "A123", "B456", "C789" };
+
+GETTING THE SIZE OF ARRAY
+
+Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent orders to process.");
+
+
+FOREACH ARRAY
+
+string[] names = { "Bob", "Conrad", "Grant" };
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+
+
+string[] totalOrders = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
+
+Console.WriteLine("fraudulent orders:");
+foreach (string orders in totalOrders)
+{
+    bool fraudList = orders.StartsWith("B");   
+    if (fraudList)
+    {
+        
+        Console.WriteLine($"{orders}");
+    }
+}
+
+Console.WriteLine("\nnormal orders:");
+foreach (string orders in totalOrders)
+{
+    bool fraudList = orders.StartsWith("B");   
+    if (!fraudList)
+    {
+        
+        Console.WriteLine($"{orders}");
+    }
+}
+
+
+2D AND 3D ARRAYS
+
+int[,] twoDArray = new int[2,3];
+int[,,] threeDArray = new int [2,3,4];
+int[][] jaggedArray = new int [2][3];
+
+twoDArray[0,1] = 50
+twoDArray[0,2] = 60
+twoDArray[1,1] = 40
+twoDArray[1,2] = 50
+
+jaggedArray[0][1] =
+jaggedArray[0][2] =
+jaggedArray[1][1] =
+jaggedArray[1][2] =
+jaggedArray[1][3] =
+
+
+Console.WriteLine($"Size = {twoDArray.Length}");
+Console.WriteLine($"Size = {twoDArray.Rank}");
+
+
+
+CLEARING VALUES IN ARRAYS
+
+
+string[] pallets = { "B14", "A11", "B12", "A13" };
+Console.WriteLine("");
+
+Array.Clear(pallets, 0, 2);
+Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+
+OUTPUT  ( the 0 is the initial value, the 2 is the number of values following)
+
+Clearing 2 ... count: 4
+-- 
+-- 
+-- B12
+-- A13
+
+
+RESIZE ARRAYS
+
+string[] pallets = { "B14", "A11", "B12", "A13" };
+
+Array.Clear(pallets, 0, 2);
+Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Array.Resize(ref pallets, 6);
+Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
+
+pallets[4] = "C01";
+pallets[5] = "C02";
+
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Array.Resize(ref pallets, 3);
+Console.WriteLine($"Resizing 3 ... count: {pallets.Length}");
+
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+
+OUTPUT
+
+Clearing 2 ... count: 4
+-- 
+-- 
+-- B12
+-- A13
+
+Resizing 6 ... count: 6
+-- 
+-- 
+-- B12
+-- A13
+-- C01
+-- C02
+
+Resizing 3 ... count: 3
+-- 
+-- 
+-- B12
+
+
+Can we remove null elements from an array?
+If the Array.Resize() method doesn't remove empty elements from an array, is there another helper method that will do this automatically? No.
+The best way to accomplish this would be to count the number of non-null elements by iterating through each item and increment a variable (a counter).
+Next, you would create a second array that is the size of the counter variable.
+Finally, you would loop through each element in the original array and copy non-null values into the new array.
+
+
+ToCharArray(), Reverse(), Split(), Join() FROM STRING TO AN ARRAY
+
+
+string value = "abc123";
+char[] valueArray = value.ToCharArray();
+Array.Reverse(valueArray);
+
+
+string result = String.Join(",", valueArray);
+Console.WriteLine(result);
+
+string[] items = result.Split(',');
+foreach (string item in items)
+{
+    Console.WriteLine(item);
+}
+
+
+
+OUTPUT
+
+3,2,1,c,b,a
+3
+2
+1
+c
+b
+a
+
+
+
+
+________________________________________________________________________________
+
+MASSAGING CHARACTERS
+
+string value1 = " a";
+string value2 = "A ";
+Console.WriteLine(value1.Trim().ToLower() == value2.Trim().ToLower());
+
+true
+
+
+______________________________________________________________
+
+
+Here's a brief list of categories of these built-in methods so you can get an idea of what's possible.
+
+Methods that either add blank spaces for formatting purposes (PadLeft(), PadRight())
+
+Methods that either compare two strings or facilitate comparison (Trim(), TrimStart(), TrimEnd(), GetHashcode(), the Length property)
+
+Methods that help you determine what's inside of a string, or even retrieve just a part of the string (Contains(), StartsWith(), EndsWith(), Substring())
+
+Methods that change the content of the string by replacing, inserting, or removing parts (Replace(), Insert(), Remove())
+
+Methods that turn a string into an array of strings or characters (Split(), ToCharArray())
+
+
+
+_____________________________________________________________
+
+COMPOSITE FORMATTING
+
+
+string first = "Hello";
+string second = "World";
+string third = "Cool";
+Console.WriteLine("{1} {0}!", first, second, third);
+Console.WriteLine("{2} {1} {2}!", first, second, third);
+
+
+OUTPUT
+
+World Hello!
+Cool World Cool!
+
+
+
+CURRENCY FORMATTING
+
+decimal price = 123.45m;
+int discount = 50;
+Console.WriteLine($"Price: {price:C} (Save {discount:C})");
+
+
+OUTPUT
+
+Price: ¤123.45 (Save ¤50.00)
+
+
+NUMBER FORMATTING (the N normally output 2 digits after the decimal)
+
+decimal measurement = 123456.78912m;
+Console.WriteLine($"Measurement: {measurement:N} units");
+
+Measurement: 123,456.79 units
+
+
+
+decimal measurement = 123456.78912m;
+Console.WriteLine($"Measurement: {measurement:N4} units");
+
+Measurement: 123,456.7891 units
+
+
+PERCENTAGE FORMATTING
+
+
+decimal tax = .36785m;
+Console.WriteLine($"Tax rate: {tax:P1}");
+
+
+Tax rate: 36.8 %
+
+
+
+
+
+
+int invoiceNumber = 1201;
+decimal productMeasurement = 25.4568m;
+decimal subtotal = 2750.00m;
+decimal taxPercentage = .15825m;
+decimal total = 3185.19m;
+
+Console.WriteLine($"Invoice Number: {invoiceNumber}");
+Console.WriteLine($"   Measurement: {productMeasurement:N3} mg");
+Console.WriteLine($"     Sub Total: {subtotal:C}");
+Console.WriteLine($"           Tax: {taxPercentage:P2}");
+Console.WriteLine($"     Total Due: {total:C}");
+
+
+OUTPUT
+Invoice Number: 1201
+   Measurement: 25.457 mg
+     Sub Total: ¤2,750.00
+           Tax: 15.83 %
+     Total Due: ¤3,185.19
+
+
+
+PAD LEFT/PAD RIGHT   (use left to right-align, use right to left-align)
+
+string input = "Pad this";
+Console.WriteLine(input.PadLeft(12));
+
+
+    Pad this
+
+
+OVERLOADED
+
+string input = "Pad this";
+Console.WriteLine(input.PadLeft(12, '-'));
+Console.WriteLine(input.PadRight(12, '-'));
+
+
+----Pad this
+Pad this----
+
+
+
+COLUMN
+
+
+string paymentId = "769";
+string payeeName = "Mr. Stephen Ortega";
+string paymentAmount = "$5,000.00";
+
+var formattedLine = paymentId.PadRight(6);
+formattedLine += payeeName.PadRight(24);
+formattedLine += paymentAmount.PadLeft(10);
+
+Console.WriteLine("1234567890123456789012345678901234567890");
+Console.WriteLine(formattedLine);
+
+
+
+
+1234567890123456789012345678901234567890
+769   Mr. Stephen Ortega       $5,000.00
+
+
+
+
+
+FORMAT ALPHANUMERIC DATA WITH String.Format
+
+decimal currentProfit = 55000000.0m;
+
+string newProduct = "Glorious Future";
+decimal newReturn = 0.13125m;
+decimal newProfit = 63000000.0m;
+
+Console.WriteLine($"Dear {customerName},");
+Console.WriteLine($"As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.\n");
+Console.WriteLine($"Currently, you own {currentShares:N} shares at a return of {currentReturn:P}.\n");
+Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P}.  Given your current volume, your potential profit would be {newProfit:C}.\n");
+
+Console.WriteLine("Here's a quick comparison:\n");
+
+string comparisonMessage = "";
+
+comparisonMessage = currentProduct.PadRight(20);
+comparisonMessage += String.Format("{0:P}", currentReturn).PadRight(10);
+comparisonMessage += String.Format("{0:C}", currentProfit).PadRight(20);
+
+comparisonMessage += "\n";
+comparisonMessage += newProduct.PadRight(20);
+comparisonMessage += String.Format("{0:P}", newReturn).PadRight(10);
+comparisonMessage += String.Format("{0:C}", newProfit).PadRight(20);
+
+Console.WriteLine(comparisonMessage);
+
+
+OUTPUT
+
+
+Dear Mr. Jones,
+As a customer of our Magic Yield offering we are excited to tell you about a new financial product that would dramatically increase your return.
+
+Currently, you own 2,975,000.00 shares at a return of 12.75 %.
+
+Our new product, Glorious Future offers a return of 13.13 %.  Given your current volume, your potential profit would be ¤63,000,000.00.
+
+Here's a quick comparison:
+
+Magic Yield         12.75 %   ¤55,000,000.00      
+Glorious Future     13.13 %   ¤63,000,000.00  
+
+
+
+_________________________________________________________________________
+
+
+SUBSTRING AND INDEX OF
+
+string message = "Find what is (inside the parentheses)";
+
+int openingPosition = message.IndexOf('(');
+int closingPosition = message.IndexOf(')');
+
+openingPosition += 1;
+
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+
+
+OUTPUT
+
+inside the parentheses
+
+
+CONSTANT KEYWORD
+
+string message = "What is the value <span>between the tags</span>?";
+
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+
+int openingPosition = message.IndexOf(openSpan);
+int closingPosition = message.IndexOf(closeSpan);
+
+openingPosition += openSpan.Length;
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+
+
+OUTPUT
+
+between the tags
+
+
+MULTIPLE SUBSTRING SETS WITH THE WHILE LOOP
+
+
+string message = "(What if) there are (more than) one (set of parentheses)?";
+while (true)
+{
+    int openingPosition = message.IndexOf('(');
+    if (openingPosition == -1) break;
+
+    openingPosition += 1;
+    int closingPosition = message.IndexOf(')');
+    int length = closingPosition - openingPosition;
+    Console.WriteLine(message.Substring(openingPosition, length));
+
+    // Note how we use the overload of Substring to return only the remaining 
+    // unprocessed message:
+    message = message.Substring(closingPosition + 1);
+}
+
+OUTPUT
+
+
+What if
+more than
+set of parentheses
+
+
+
+SUBSTRING SETS WITH VARIOUS BRACKETS, IndexOfAny(), WHILE LOOP, SWITCH STATEMENT
+
+
+string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
+
+// The IndexOfAny() helper method requires a char array of characters. 
+// We want to look for:
+
+char[] openSymbols = { '[', '{', '(' };
+
+// We'll use a slightly different technique for iterating through the 
+// characters in the string. This time, we'll use the closing position
+// of the previous iteration as the starting index for the next open
+// symbol. So, we need to initialize the closingPosition variable
+// to zero:
+
+int closingPosition = 0;
+
+while (true)
+{
+    int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+
+    if (openingPosition == -1) break;
+
+    string currentSymbol = message.Substring(openingPosition, 1);
+
+    // Now we must find the matching closing symbol
+    char matchingSymbol = ' ';
+
+    switch (currentSymbol)
+    {
+        case "[":
+            matchingSymbol = ']';
+            break;
+        case "{":
+            matchingSymbol = '}';
+            break;
+        case "(":
+            matchingSymbol = ')';
+            break;
+    }
+
+    // To find the closingPosition, we use an overload of the IndexOf method to specify 
+    // that our search for the matchingSymbol should start at the openingPosition in the string. 
+
+    openingPosition += 1;
+    closingPosition = message.IndexOf(matchingSymbol, openingPosition);
+
+    // Finally, use the techniques we've already learned to display the sub-string:
+
+    int length = closingPosition - openingPosition;
+    Console.WriteLine(message.Substring(openingPosition, length));
+}
+
+
+_________________________________________________________________
+
+REMOVE
+
+string data = "12345John Smith          5000  3  ";
+string updatedData = data.Remove(5, 20);
+Console.WriteLine(updatedData);
+
+OUTPUT
+
+123455000  3  
+
+
+REPLACE
+
+string message = "This--is--ex-amp-le--da-ta";
+message = message.Replace("--", " ");
+message = message.Replace("-", "");
+Console.WriteLine(message);
+
+OUTPUT
+
+This is example data
+
+____________________________________________________________________
+
+
+CONDITIONAL OPERATOR / TERNARY CONDITIONAL OPERATOR  ?:
+
+<evaluate this condition> ? <if condition is true, return this value> : <if condition is false, return this value>
+
+boolean statement ? true return : false return
+
+int saleAmount = 1001;
+
+int discount = saleAmount > 1000 ? 100 : 50;
+
+Console.WriteLine($"Discount: {discount}");
+
+OR
+
+int saleAmount = 1001;
+
+Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
+
+
+________________________________________________________________________________
+
+
+SWITCH STATEMENTS
+
+int employeeLevel = 200;
+string employeeName = "John Smith";
+
+string title = "";
+
+switch (employeeLevel)
+{
+    case 100:
+        title = "Junior Associate";
+        break;
+    case 200:
+        title = "Senior Associate";
+        break;
+    case 300:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
+}
+
+Console.WriteLine($"{employeeName}, {title}");
+
+LARGER SWITCH/CASE STATEMENT
+
+// SKU = Stock Keeping Unit
+string sku = "01-MN-L";
+
+string[] product = sku.Split('-');
+
+string type = "";
+string color = "";
+string size = "";
+
+switch (product[0])
+{
+    case "01":
+        type = "Sweat shirt";
+        break;
+    case "02":
+        type = "T-Shirt";
+        break;
+    case "03":
+        type = "Sweat pants";
+        break;
+    default:
+        type = "Other";
+        break;
+}
+
+switch (product[1])
+{
+    case "BL":
+        color = "Black";
+        break;
+    case "MN":
+        color = "Maroon";
+        break;
+    default:
+        color = "White";
+        break;
+}
+
+switch (product[2])
+{
+    case "S":
+        size = "Small";
+        break;
+    case "M":
+        size = "Medium";
+        break;
+    case "L":
+        size = "Large";
+        break;
+    default:
+        size = "One Size Fits All";
+        break;
+}
+
+Console.WriteLine($"Product: {size} {color} {type}");
+
+
+_______________________________________________________
+
+
+DO WHILE LOOP STATEMENTS
+
+Random random = new Random();
+int current = 0;
+
+do
+{
+    current = random.Next(1, 11);
+    Console.WriteLine(current);
+} while (current != 7);
+
+
+_________________________________________________
+
+CONTINUE KEYWORD
+
+// C# program to illustrate the use
+// of continue statement in for loop
+using System;
+  
+class GFG{
+    
+static public void Main ()
+{
+      
+    // Here, in this for loop start from 2 to 12, 
+    // due to the continue statement, when x = 8
+    // it skip the further execution of the statements
+    // and transfer the controls back to the 
+    // next iteration of the for loop
+    for(int x = 2; x <= 12; x++)
+    {
+        if (x == 8)
+        {
+            continue;
+        }
+        Console.WriteLine(x);
+    }
+}
+}
+
+
+2
+3
+4
+5
+6
+7
+9
+10
+11
+12
+
+________________________________________________________________
+
+RPG DO WHILE STATEMENT/ NESTED IF STATEMENT / CONDITIONAL OPERATOR
+
+
+int hero = 10;
+int monster = 10;
+
+Random dice = new Random();
+
+do
+{
+    int roll = dice.Next(1, 11);
+    monster -= roll;
+    Console.WriteLine($"Monster was damaged and lost {roll} health and now has {monster} health.");
+
+    if (monster <= 0) continue;
+
+    roll = dice.Next(1, 11);
+    hero -= roll;
+    Console.WriteLine($"Hero was damaged and lost {roll} health and now has {hero} health.");
+
+} while (hero > 0 && monster > 0);
+
+Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
+
+
+OUTPUT
+
+Monster was damaged and lost 1 health and now has 9 health.
+Hero was damaged and lost 5 health and now has 5 health.
+Monster was damaged and lost 10 health and now has -1 health.
+Hero wins!
+
+
+_________________________________________________________________________
+
+SIGNED vs.  UNSIGNED INTEGRAL TYPES
+
+Signed integral types:
+sbyte  : -128 to 127
+short  : -32768 to 32767
+int    : -2147483648 to 2147483647
+long   : -9223372036854775808 to 9223372036854775807
+
+Unsigned integral types:
+byte   : 0 to 255
+ushort : 0 to 65535
+uint   : 0 to 4294967295
+ulong  : 0 to 18446744073709551615
+
+
+Floating point types:
+float  : -3.402823E+38 to 3.402823E+38 (with ~6-9 digits of precision)
+double : -1.79769313486232E+308 to 1.79769313486232E+308 (with ~15-17 digits of precision)
+decimal: -79228162514264337593543950335 to 79228162514264337593543950335 (with 28-29 digits of precision)
+
+
+___________________________________________________________
+
+CHOOSING DATA TYPES
+
+When in doubt, stick with the basics. While we have looked at several considerations, which often lead you to consider many different data types, as you're getting started, for simplicity's sake you should prefer a subset of basic data types, including:
+
+int for most whole numbers
+decimal for numbers representing money
+bool for true or false values
+string for alphanumeric value
+
+Choose specialty complex types for special situations. Don't reinvent data types if ones already exist for a given purpose.
+
+byte for working with encoded data that comes from other computer systems or using different character sets.
+double for working with geometric or scientific purposes. double is used frequently when building games involving motion.
+System.StringBuilder to build a single string from lots of literals or other variables. We'll cover this in more detail in the module "Modify content of strings using built-in string data type methods in C#".
+System.DateTime for a specific date and time value. We'll cover this in more detail in the module "Manipulate date and time data using the DateTime and TimeSpan classes in C#".
+System.TimeSpan for a span of years / months / days / hours / minutes / seconds / milliseconds. We'll cover this in more detail in the module "Manipulate date and time data using the DateTime and TimeSpan classes in C#".
+
+
+
+Use the Parse() method to safely convert a string into a numeric data type.
+
+string first = "5";
+string second = "7";
+int sum = int.Parse(first) + int.Parse(second);
+Console.WriteLine(sum);
+
+What if either of the variables first or second are set to values that can't be converted to an int? An exception will be thrown at runtime. This is exactly what the C# compiler and runtime expects us to plan for ahead of time. Fortunately, we can mitigate this in several ways.
+
+The easiest way to mitigate this situation is through the use of TryParse(), which is a better version of the Parse() method.
+
+
+The TryParse() method does several things simultaneously:
+
+It attempts to parse a string into the given numeric data type.
+If successful, it will store the converted value in an out parameter.
+It returns a bool to indicate whether the action succeeded or failed.
+We can use the bool to take action on the value (like performing some calculation), or display a message if the parse operation was unsuccessful.
+
+
+
+string value = "102";
+int result = 0;
+if (int.TryParse(value, out result))
+{
+    Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+    Console.WriteLine("Unable to report the measurement.");
+}
+
+// Since it is defined outside of the if statement, 
+// it can be accessed later in your code.
+Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
+
+
+
+
+Use ToString() to convert a number to a string
+
+int first = 5;
+int second = 7;
+string message = first.ToString() + second.ToString();
+Console.WriteLine(message);
+
+
+The term narrowing conversion means that you're attempting to convert a value from a data type that can hold more information to a data type that can hold less information. In this case, you may lose information such as precision (that is, the number of values after the decimal point). An example of this would be converting value stored in a variable of type decimal and now convert that value into a variable of type int. If you were to print out the two values, you would possibly notice the loss of information.
+
+When you know you'll be performing a narrowing conversion, you'll need to perform a cast. Casting is an instruction to the C# compiler that you know precision may be lost, but you're willing to accept it.
+
+decimal myDecimal = 3.14m;
+Console.WriteLine($"decimal: {myDecimal}");
+
+int myInt = (int)myDecimal;
+Console.WriteLine($"int: {myInt}");
+
+OUTPUT
+decimal: 3.14
+int: 3
+
+
+CASTING vs. CONVERTING
+
+int value = (int)1.5m; // casting truncates
+Console.WriteLine(value);
+
+int value2 = Convert.ToInt32(1.5m); // converting rounds up
+Console.WriteLine(value2);
+
+OUTPUT
+1
+2
+
+________________________________________________________________________
+
+CASTING/CONVERTING WITH DIVISION
+
+
+int value1 = 12;
+decimal value2 = 6.2m;
+float value3 = 4.3f;
+
+int result1 = Convert.ToInt32(value1 / value2);
+Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+
+decimal result2 = Convert.ToDecimal(value2) / Convert.ToDecimal(value3);
+Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
+
+float result3 = (float)(value3 / value1);
+Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+
+
+
+OUTPUT
+
+Divide value1 by value2, display the result as an int: 2
+Divide value2 by value3, display the result as a decimal: 1.4418604651162790697674418605
+Divide value3 by value1, display the result as a float: 0.3583333
+
+
+
+
+
+
+_______________________________________________________________________
+
+
+PARSE STRING TO INT/DECIMAL, ADDITION, CONCATENATION, FOREACH ARRAY
+
+
+string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+
+decimal total = 0m;
+string message = "";
+
+foreach (var value in values)
+{
+    decimal number;
+    if (decimal.TryParse(value, out number))
+    {
+        total += number;
+    }
+    else
+    {
+        message += value;
+    }
+}
+
+Console.WriteLine($"Message: {message}");
+Console.WriteLine($"Total: {total}");
+
+
+
+OUTPUT
+
+Message: ABCDEF
+Total: 68.3
+
+
+
+________________________________________________________________
+
+
+NON-GENERICS
+
+using System.Collections;
+
+Non-generic Collection classes are ArrayList, BitArray, SortedList, and HashTable.
+
+Non-generic collections hold elements of different datatypes.
+
+ArrayList − It represents ordered collection of an object that can be indexed individually. ArrayList is an alternative to an array. However, unlike array you can add and remove items from a list at a specified position using an index and the array resizes itself automatically.
+
+BitArray −  It represents an array of the binary representation using the values 1 and 0. It is used when you need to store the bits but do not know the number of bits in advance.
+
+
+
+
+GENERICS
+
+using System.Collections.Generic;
+
+Generic collections hold elements of same datatypes.
+
+List<int> scores = new List<int>(){2,3,4,5,6};
+List<object> something = new List<object>(){3,4,5,"6",7,"Fred",9,10};  // this is exactly like an array list
+List<string> employees = new List<string>();
+
+For example −
+
+List
+Dictionary
+Hashset
+Stack
+Queue
+
+
+Dictionary − Dictionary is a collection of keys and values in C#. Dictionary <TKey, TValue> is included in the System.Collection.Generics namespace.
+
+Hashset − HashSet in C# eliminates duplicate strings or elements in an array. In C#, it is an optimized set collection.
+
+
+Stack (LIFO):
+Push - add
+Pop - remove
+Peek - retrieve from top
+
+Queue (FIFO):
+Enqueue - add
+Dequeue - remove
+Peek - retrieve from top
+
+
+Singly LinkedList
+value & pointer
+
+Doubly LinkedList
+has a previous pointer  (head, value, next)
+
+LinkedList<int> list = new LinkedList<int>();
+
+_____________________________________________________________________________________________________
+
+
+
+EXCEPTIONS
+
+System.Object
+System.Exception
+
+SystemException - usually thrown by CLR
+ApplicationException - anticipated by dev
+
+
+handling of exceptions: (try, catch, finally, throw)
+
+
+n1:
+try{
+
+}
+catch(Exception ex){
+	Console.WriteLine(ex.Message);
+	goto n1;
+}
+
+
+you can have multiple catch blocks.  try statements should have at least one catch or finally.
+
+
+finally{
+	Console.WriteLine();
+}
+
+
+
+public static void CheckTemperature(float temp){
+	if(temp<30){
+		throw new TemperatureException("")
+	}
+	else
+		Console.WriteLine("");
+}
+
+
+public class TemperatureException : ApplicationException{
+	public TemperatureException(string message):base(message){
+	}
+}
+
+
