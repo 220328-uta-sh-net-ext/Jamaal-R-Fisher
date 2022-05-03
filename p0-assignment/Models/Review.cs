@@ -2,10 +2,14 @@ using CustomExceptions;
 
 namespace Models;
 
-public class Review {
+public class Review
+{
 
     //empty constructor
-    public Review() { }
+    public Review()
+    {
+    
+    }
 
     //Example of constructor overloading
     public Review(int rating)
@@ -24,6 +28,8 @@ public class Review {
     public int RestaurantId { get; set; }
 
     private int _rating;
+    public double ReviewAvg;
+
     public int Rating
     {
         get => _rating;
@@ -44,6 +50,6 @@ public class Review {
 
     public override string ToString()
     {
-        return $"Rating: {this.Rating} \t Note: {this.Note}";
+        return $"Rating: {this.Rating}\tNote: {this.Note}";
     }
 }

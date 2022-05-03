@@ -1,11 +1,14 @@
+using Models;
+using System.Collections.Generic;
+
 namespace DL;
 
 
 public interface IRepo
 {
-    List<Restaurant> GetAllRestaurants();
+    Restaurant AddRestaurant(Restaurant restaurantToAdd);
 
-    void AddRestaurant(Restaurant restaurantToAdd);
+    List<Restaurant> GetAllRestaurants();
 
     void AddReview(int restaurantId, Review reviewToAdd);
 

@@ -1,19 +1,18 @@
-namespace UI;
+﻿using UI;
 
-public class ReviewMenu : IMenu
+internal class UserLoginMenu : IMenu
 {
-    private readonly IBL _bl;
-    public ReviewMenu(IBL bl)
+    public UserLoginMenu(IBL logic)
     {
-        _bl = bl;
+        Logic = logic;
     }
+
+    public IBL Logic { get; }
 
     public void Display()
     {
         throw new NotImplementedException();
     }
-
-    public void Start() {}
 
     public string UserChoice()
     {
