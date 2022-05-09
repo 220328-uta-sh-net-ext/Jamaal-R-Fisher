@@ -1,19 +1,92 @@
-An anonymous method is a method without a name. Anonymous methods in C# can be defined using the delegate keyword and can be assigned to a variable of delegate type.
-
-Anonymous methods can access variables defined in an outer function.
-
-Anonymous methods can also be passed to a method that accepts the delegate as a parameter.
-
-Anonymous methods can be used as event handlers
+------------- An anonymous method is a method without a name. Anonymous methods in C# can be defined using the delegate keyword and can be assigned to a variable of delegate type.
 
 
-Benefits of Anonymous Methods
+public delegate void Print(int value);
+
+static void Main(string[] args)
+{
+    Print print = delegate(int val)
+	{ 
+        Console.WriteLine("Inside Anonymous method. Value: {0}", val); 
+    	};
+
+    print(100);
+}
+
+
+//  Output
+//  Inside Anonymous method. Value: 100
+
+
+----------- Anonymous methods can access variables defined in an outer function.
+
+
+public delegate void Print(int value);
+
+static void Main(string[] args)
+{
+    int i = 10;
+    
+    Print prnt = delegate(int val)
+	{
+        val += i;
+        Console.WriteLine("Anonymous method: {0}", val); 
+    	};
+
+    prnt(100);
+}
+
+
+//  Output
+//  Anonymous method: 110
+
+
+---------- Anonymous methods can also be passed to a method that accepts the delegate as a parameter.
+
+
+public delegate void Print(int value);
+
+class Program
+{
+    public static void PrintHelperMethod(Print printDel,int val)
+    { 
+        val += 10;
+        printDel(val);
+    }
+
+    static void Main(string[] args)
+    {
+        PrintHelperMethod(delegate(int val) { Console.WriteLine("Anonymous method: {0}", val); }, 100);
+    }
+}
+
+
+//  Output
+//  Anonymous method: 110
+
+
+---------- Anonymous methods can be used as event handlers.
+
+
+saveButton.Click += delegate(Object o, EventArgs e)
+{ 
+    System.Windows.Forms.MessageBox.Show("Save Successfully!"); 
+};
+
+
+
+---------- The delegate operator creates an anonymous method that can be converted to a delegate type.
+
+
+
+Benefits of Anonymous Methods:
 Anonymous methods are used to define delegates and to write inline functions.
 The benefit of anonymous methods is, improve development experience over using delegates. The main benefits of anonymous methods is to implement delegates with less code.
 
 
-Limitations
-It cannot contain jump statement like goto, break or continue.
-It cannot access ref or out parameter of an outer method.
-It cannot have or access unsafe code.
-It cannot be used on the left side of the is operator.
+Limitations:
+- It cannot contain jump statement like goto, break or continue.
+- It cannot access ref or out parameter of an outer method.
+- It cannot have or access unsafe code.
+- It cannot be used on the left side of the is operator.
+- A static anonymous method can't capture local variables or instance state from enclosing scopes.
