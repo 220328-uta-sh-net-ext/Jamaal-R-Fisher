@@ -5,6 +5,7 @@ public class MainMenu : IMenu
 
     public MainMenu()
     {
+
     }
 
     public MainMenu(IBL bl)

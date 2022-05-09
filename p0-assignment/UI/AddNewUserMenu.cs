@@ -73,7 +73,6 @@ namespace UI
                 default:
                     Console.WriteLine("Please input a valid response");
                     Console.WriteLine("Please press Enter to continue");
-                    Console.ReadLine();
                     return "AddNewUser";
             }
         }

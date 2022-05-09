@@ -14,7 +14,9 @@ public class Restaurant
     //public is the most visible, private is the least visible
     //By default, class member has private access modifier
     //Class, by default, are internal unless you explicitly say otherwise
-
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Zipcode { get; set; }
     public Restaurant()
     {
         this.Reviews = new List<Review>();
@@ -24,12 +26,12 @@ public class Restaurant
         this.Reviews = new List<Review>();
         this._name = name;
     }
-    /*
+    
     /// <summary>
     /// Converting Restaurant table's data row into Restaurant Object
     /// </summary>
     /// <param name="row">a data row from Restaurant object, must have id, name, city, state columns</param>
-    */
+    
 
     public Restaurant(DataRow row)
     {
@@ -38,9 +40,16 @@ public class Restaurant
         this.Zipcode = row["Zip Code"].ToString() ?? "";
     }
 
-    public int Id { get; set; }
+    /*
+            Id = 0,
+            Name = "Kabuto Japanese Steakhouse & Sushi Bar",
+            Zipcode = "27407",
+
+    */
 
     private string _name;
+
+    /*
     public string Name
     {
         get => _name;
@@ -56,6 +65,7 @@ public class Restaurant
             //we can still check for the name's validity by using RegEx (Regular Expression)
             //Regular Expression is a way to pattern match a string for a certain condition
             //it has a confusing syntax, so I recommend looking up language specific RegEx reference page to build one
+            
             else if(!pattern.IsMatch(value))
             {
                 throw new InputInvalidException("Restaurant name can only have alphanumeric characters, white space, !, ?, and '.");
@@ -67,7 +77,7 @@ public class Restaurant
         } 
     }
 
-    public string Zipcode { get; set; }
+        */
 
 
     // //our own custom getter and setter for the private backing field
@@ -92,13 +102,13 @@ public class Restaurant
     {
         return $"Id: {this.Id} \nName: {this.Name} \nZip Code: {this.Zipcode}";
     }
-    /*
+    
     /// <summary>
     /// Takes in Restaurant Table's DataRow and fills the columns with the Restaurant Instance's info
     /// </summary>
     /// <param name="row">Restaurant Table's DataRow pass by ref</param>
     /// 
-    */
+    
     public void ToDataRow(ref DataRow row)
     {
         row["Name"] = this.Name;

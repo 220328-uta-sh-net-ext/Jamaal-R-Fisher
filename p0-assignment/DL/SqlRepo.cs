@@ -123,8 +123,8 @@ namespace DL
 
         public Restaurant AddRestaurant(Restaurant restaurantToAdd)
         {
-            string commandString = "INSERT INTO Restaurant (Id, Name, Zip Code, Reviews) " +
-                "VALUES (@id, @name, @zipcode, @reviews);";
+            string commandString = "INSERT INTO Restaurant (Id, Name, Zip Code, Reviews, Rating) " +
+                "VALUES (@id, @name, @zipcode, @reviews, @rating);";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
@@ -132,6 +132,7 @@ namespace DL
             command.Parameters.AddWithValue("@name", restaurantToAdd.Name);
             command.Parameters.AddWithValue("@zipcode", restaurantToAdd.Zipcode);
             command.Parameters.AddWithValue("@reviews", restaurantToAdd.Reviews);
+            command.Parameters.AddWithValue("@rating", restaurantToAdd.Rating);
             connection.Open();
             command.ExecuteNonQuery();
 
@@ -149,6 +150,11 @@ namespace DL
         }
 
         public bool IsDuplicate(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Review> GetAllReviews()
         {
             throw new NotImplementedException();
         }

@@ -34,7 +34,7 @@ class RestaurantOperations
             Reviews = new List<Review>() {
                 new Review()
                 {
-                    ReviewAvg = 4.5,
+                    ReviewAvg = 5.5,
                     Note = "Fresh tuna, great atmosphere, but sometimes long wait times.",
                 }
             }

@@ -1,0 +1,19 @@
+An anonymous method is a method without a name. Anonymous methods in C# can be defined using the delegate keyword and can be assigned to a variable of delegate type.
+
+Anonymous methods can access variables defined in an outer function.
+
+Anonymous methods can also be passed to a method that accepts the delegate as a parameter.
+
+Anonymous methods can be used as event handlers
+
+
+Benefits of Anonymous Methods
+Anonymous methods are used to define delegates and to write inline functions.
+The benefit of anonymous methods is, improve development experience over using delegates. The main benefits of anonymous methods is to implement delegates with less code.
+
+
+Limitations
+It cannot contain jump statement like goto, break or continue.
+It cannot access ref or out parameter of an outer method.
+It cannot have or access unsafe code.
+It cannot be used on the left side of the is operator.

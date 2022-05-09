@@ -2,13 +2,27 @@
 using DL;
 using UI;
 
-MenuFactory.GetMenu("main").Display();
+bool repeat = true;
+IMenu menu = new MainMenu();
 
 //create and configure our logger
 
+string connectionStringFilePath = "../../../TextFile2.txt";
+string connectionString = File.ReadAllText(connectionStringFilePath);
+IRepo repository = new SqlRepo(connectionString);
+IBL logic = new RRBL(repository);
+RestaurantOperations operations = new(repository);
+// IRepo User Repo
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.File("C:/Revature/Jamaal-R-Fisher/p0-assignment/UI/LogFile.txt")
+    .CreateLogger();
+
+MenuFactory.GetMenu("main").Display();
+/*
 Log.Logger = new LoggerConfiguration()
     // .WriteTo.Console().MinimumLevel.Debug()
-    // .WriteTo.File("../UI/user.txt").MinimumLevel.Debug().MinimumLevel.Information()     // we want to save the logs in this file
+    .WriteTo.File("C:/Revature/Jamaal-R-Fisher/p0-assignment/UI/LogFile.txt").MinimumLevel.Debug().MinimumLevel.Information()     // we want to save the logs in this file
     .CreateLogger();
 
 // other approaches to this besides "gitignored file"...
@@ -16,13 +30,7 @@ Log.Logger = new LoggerConfiguration()
 //  - environment variab
 string connectionStringFilePath = "../../../../DL/connection-string.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
-
-IRepo repository = new SqlRepo(connectionString);
-IBL logic = new RRBL(repository);
-RestaurantOperations operations = new(repository);
-
-bool repeat = true;
-IMenu menu = new MainMenu();
+*/
 
 while (repeat)
 {

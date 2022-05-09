@@ -40,17 +40,7 @@ EF Core
 Serilog or Nlog (or any other logging frameworks)
 
 
-Model Setup 										4/14/2022  1:42 pm recording @2:02:00
-Repository Interface and Database Folder						4/18/2022
-Testing											4/19/2022
-Code Coverage and Logging								4/20/2022  (averaging reviews is business logic, ....  is data logic)
-LINQ / SOLID										4/21/2022
-Azure/SQL Server set up									4/22/2022
-Liskov substitution/dependency inversion principles/SQL Query/Nuget			4/25/2022
-Creating Tables										4/26/2022
-Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
-DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
-Normalization (and Pokemon dependency inversion)					4/29/2022
+
 _____________________________________________________________________________________________________
 
 
@@ -114,12 +104,25 @@ ________________________________________________________________________________
 
 minimum functionality, quality, performance in that specific order of priorities
 
+__________________________________________________________________________________
+
+
+
+Class A
+
+|
+V
+
+Interface B		<------ Class B
+				  |
+ ---------------------------------
+|
+V
+Interface C		<------ Class C
+
 
 
 _______________________________________________________________________________________
-
-
-UI  --->  logic  ----->  data access
 
 
 
@@ -131,6 +134,8 @@ V		V
 
 logic  <-----  data access
 
+
+________________________________________________________________________________________
 
 
 Tests
@@ -146,30 +151,31 @@ Tests
 models ----------------------------------
 
 
-The presentation logic manages the interaction with the user, the data logic handles data persistence while business logic handles the “stuff” that happens between the two.
-It can be difficult to precisely define what this “stuff” really means.
+The presentation logic manages the interaction with the user,
+the data logic handles data persistence while business logic handles the “stuff” that happens between the two.
 
+json file, then sql database
 ____________________________________________________________________________________
 
 
 
-Reviews  (Abilities)
-- Cleanliness/Sanitation Standards
-- Customer Service/Hospitality Awareness/Perks & Incentives/Carryout & Delivery Options
-- Atmosphere/Interior Design/Music Variety/Sports Hosting/Dining Moods/Seating & Parking Availability
-- Cuisine Styles/Portioning vs. Pricing/Drinks & Sides/Range of Menu Selections
-- "Plate Palate Pleasantness"/How Does Your Taste Buds And Stomach Feel About The Food?
+Review Pillars  (Abilities)
+--- Cleanliness/Sanitation Standards
+--- Customer Service/Hospitality Awareness/Perks & Incentives/Carryout & Delivery Options
+--- Atmosphere/Interior Design/Music Variety/Sports Hosting/Dining Moods/Seating & Parking Availability
+--- Cuisine Styles/Portioning vs. Pricing/Drinks & Sides/Range of Menu Selections
+--- "Plate Palate Pleasantness"/How Does Your Taste Buds And Stomach Feel About The Food?
 
 Rating System
-50	 	- Superb, Amazing and Highly Recommended
-40		- Very Impressive
-30		- Fairly Adequate
-20		- Questionable
-10		- Needs Significant Work
+6	 	- Superb, Amazing and Highly Recommended
+5		- Very Impressive
+4		- Fairly Adequate
+3		- Questionable
+2		- Needs Significant Work
 1		- Absolutely Revolting
 
 
-max of 250, min of 5, divide by 5 for each pillar = total review rating
+max of 30, min of 5, divide by 5 for each pillar = total review rating
 total rating is averaged after each user.  each user can leave an optional paragraph comment
 each user's review will show their vote on each pillar, total review rating, and comment.
 total rating average posted as a double, if/else statement to range the rating title
@@ -383,6 +389,13 @@ while (repeat)
 
 
 
+DateTime localDate = DateTime.Now;
+                    nRest.ID = localDate.Year.ToString() + localDate.Day + localDate.Month + nRest.Name.Length + localDate.Minute + localDate.Second + nRest.Name.ToUpper().First();
+
+
+
+
+
 
 add a new user  
 ability to search user as admin
@@ -392,3 +405,28 @@ view details of restaurants as a user
 view reviews of restaurants as a user
 calculate reviews’ average rating for each restaurant
 search restaurant (by name, rating, zip code, etc.)
+
+
+
+
+
+Model Setup 										4/14/2022  1:42 pm recording @2:02:00
+Repository Interface and Database Folder						4/18/2022
+Testing											4/19/2022
+Code Coverage and Logging								4/20/2022  (averaging reviews is business logic, ....  is data logic)
+LINQ / SOLID										4/21/2022
+Azure/SQL Server set up									4/22/2022
+Liskov substitution/dependency inversion principles/SQL Query/Nuget			4/25/2022
+Creating Tables										4/26/2022
+Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
+DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
+Normalization (and Pokemon dependency inversion)					4/29/2022
+P0 Presentations									5/3/2022  (Kevin, Harsh, Vladimir, Sean, Briceson, Marcos, Leo, Gabriel, Jermaine)
+
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+P1 intro										5/4/2022
+Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI)
+Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5/6/2022    (System.Runtime.Caching, Microsoft.AspNet.WebApi.Client)

@@ -1,23 +1,29 @@
 using CustomExceptions;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Models;
 
 public class Review
 {
-
     //empty constructor
-    public Review()
+    public double UserReview()
     {
-    
+        List<double> rating? = new List<double>();
+        rating.AddRange();
+        double avg = Queryable.Average(rating.AsQueryable());
+        return avg;
+
     }
+    
 
     //Example of constructor overloading
-    public Review(int rating)
+    public Review(double rating)
     {
         this.Rating = rating;
     }
 
-    public Review(int rating, string note)
+    public Review(double rating, string note)
     {
         this.Rating = rating;
         this.Note = note;
@@ -27,18 +33,18 @@ public class Review
 
     public int RestaurantId { get; set; }
 
-    private int _rating;
+    private double _rating;
     public double ReviewAvg;
 
-    public int Rating
+    public double Rating
     {
         get => _rating;
-        //For the setter, we are checking that the rating is between 1 and 5
+        //For the setter, we are checking that the rating is between 1 and 6
         set
         {
-            if(value <= 0 || value > 5)
+            if(value <= 0 || value > 6)
             {
-                throw new InputInvalidException("Rating must be between 1 and 5");
+                throw new InputInvalidException("Rating must be between 1 and 6");
             }
             this._rating = value;
         }

@@ -44,6 +44,9 @@ public class Admin : User
     public override string ToString()
     {
         string result = $"Admin Name: {Adminname}\nPassword: \n";
+        {
+            return result;
+        }
 
         /*
         if (Reviews is not null && Reviews.Count > 0)
@@ -51,6 +54,5 @@ public class Admin : User
             result += "\nReview: " + string.Join(", ", Reviews.Select(a => a.Username));
         }
         */
-        return result;
     }
 }
