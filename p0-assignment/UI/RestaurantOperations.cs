@@ -21,6 +21,7 @@ class RestaurantOperations
             Console.WriteLine("=======================");
         }
     }
+
     /// <summary>
     /// only for testing purpose to check if restaurant was added
     /// </summary>
@@ -45,6 +46,6 @@ class RestaurantOperations
 
         // repository.AddRestaurant(restaurant);
     }
+    */
 }
 
-    */

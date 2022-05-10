@@ -11,6 +11,11 @@ namespace DL
     {
 
         readonly string connectionSQL;
+
+        public FileRepo()
+        {
+        }
+
         public FileRepo(string connectionSQL)
         {
             this.connectionSQL = connectionSQL;
@@ -27,6 +32,10 @@ namespace DL
             using SqlDataReader reader = command1.ExecuteReader();
         }
 
+        public void AddReview(int restaurantId, Review reviewToAdd)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<Restaurant> GetAllRestaurants()
         {
@@ -52,25 +61,6 @@ namespace DL
             }
             return Restaurants;
 
-            List<Restaurant> SearchRestaurants(string searchTerm)
-            {
-                throw new NotImplementedException();
-            }
-
-            bool IsDuplicate(Restaurant restaurant)
-            {
-                throw new NotImplementedException();
-            }
-
-            void AddReview(int restaurantId, Review reviewToAdd)
-            {
-                throw new NotImplementedException();
-            }
-
-            List<Review> GetAllReviews()
-            {
-                throw new NotImplementedException();
-            }
 
             /*
             private string filePath = "../DL/Database/";
@@ -177,6 +167,21 @@ namespace DL
                 throw new NotImplementedException();
             }
             */
+        }
+
+        public List<Review> GetAllReviews()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsDuplicate(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Restaurant> SearchRestaurants(string searchTerm)
+        {
+            throw new NotImplementedException();
         }
     }
 }

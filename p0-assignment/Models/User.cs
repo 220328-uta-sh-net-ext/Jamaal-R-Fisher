@@ -13,7 +13,7 @@ public class User
     public string Password { get; set; }
     public string Zipcode { get; set; }
 
-    List<Review> _reviews;
+    List<Review> _review;
     /*
     public List<Review> Reviews
     {
