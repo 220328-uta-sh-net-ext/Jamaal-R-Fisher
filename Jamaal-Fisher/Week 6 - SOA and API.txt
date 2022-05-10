@@ -270,3 +270,33 @@ Delegates - https://www.tutorialsteacher.com/csharp-delegates
 Blake, Daniel, Emeka, Jermaine, Jamaal
 
 Linq - https://www.tutorialsteacher.com/linq
+
+
+________________________________________________________________________________________
+
+
+delegates
+
+definition - type safe function pointers.
+can be used to pass methods as parameters.
+can be used to decouple the methods of same type as of delegate with classes, because class instance can be heavy at times.
+we can create anonymous methods with delegates and Lambda in shorthand notation for anonymous methods which means they also implicitly use delegates.
+
+types:
+single-cast delegates - where a delegate is tied to 1 method of same type as delegate
+multicast delegates - where a delegate is tied to more than one method of same type as delegate
+
+predefined delegates:
+Func <type, type>()	-- returns a value
+Action <type>()		-- type void
+Predicate <bool>()	-- returns a boolean
+
+we can use delegates for event driven-programming.
+
+events are any user defined action (mouse click, hover, pressing keys).
+they are triggered on user's action and needs to be handled as an after trigger behavior.
+
+
+___________________________________________________________________________________________________
+
+

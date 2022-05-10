@@ -24,6 +24,8 @@ class RestaurantOperations
     /// <summary>
     /// only for testing purpose to check if restaurant was added
     /// </summary>
+    /// 
+    /*
     public void AddSampleRestaurant()
     {
         var restaurant = new Restaurant()
@@ -31,15 +33,18 @@ class RestaurantOperations
             Id = 0,
             Name = "Kabuto Japanese Steakhouse & Sushi Bar",
             Zipcode = "27407",
-            Reviews = new List<Review>() {
+            Review = new List<Review>() {
                 new Review()
                 {
-                    ReviewAvg = 5.5,
-                    Note = "Fresh tuna, great atmosphere, but sometimes long wait times.",
+                    Rating = 5.5,
+                    Review = "Fresh tuna, great atmosphere, but sometimes long wait times.",
                 }
             }
-        };
+            TotalRatings = 1;
+        }
 
-        repository.AddRestaurant(restaurant);
+        // repository.AddRestaurant(restaurant);
     }
 }
+
+    */

@@ -18,40 +18,31 @@ namespace DL
 
         public Restaurant AddRestaurant(Restaurant reviewToAdd)
         {
-            string selectSQL = $"UPDATE x SET Review = Review + @rating,TotalRatings = TotalRatings + 1 WHERE Id = '{Id}'";
+            string selectSQL = $"UPDATE Restaurant SET Rating = Rating + @rating, TotalRatings = TotalRatings + 1";
             using SqlConnection localConnection = new(connectionSQL);
             using SqlCommand command1 = new(selectSQL, localConnection);
             command1.Parameters.AddWithValue("@rating", reviewToAdd);
             localConnection.Open();
             command1.ExecuteNonQuery();
             using SqlDataReader reader = command1.ExecuteReader();
-            /*
-            string selectSQL = $"UPDATE x SET Review = Review + @rating,TotalRatings = TotalRatings + 1 WHERE Id = '{Id}'";
-            using SqlConnection localConnection2 = new(connectionSQL);
-            using SqlCommand command2 = new(selectSQL, localConnection2);
-            command2.Parameters.AddWithValue("@rate", reviewToAdd);
-            localConnection.Open();
-            command2.ExecuteNonQuery();
-            using SqlDataReader reader = command2.ExecuteReader();
-            */
         }
 
 
-        public List<x> GetAllRestaurants()
+        public List<Restaurant> GetAllRestaurants()
         {
-            string selectCommandString = "SELECT * FROM x";
+            string selectCommandString = "SELECT * FROM Restaurant";
 
             using SqlConnection connection = new(connectionSQL);
             using SqlCommand command = new(selectCommandString, connection);
             connection.Open();
             using SqlDataReader reader = command.ExecuteReader();
 
-            var Restaurants = new List<x>();
+            var Restaurants = new List<Restaurant>();
             while (reader.Read())
             {
-                Restaurants.Add(new x
+                Restaurants.Add(new Restaurant
                 {
-                    Id = reader.GetString(0),
+                    Id = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     Zipcode = reader.GetString(2),
                     Rating = reader.GetDouble(3),

@@ -9,11 +9,10 @@ public class Review
     //empty constructor
     public double UserReview()
     {
-        List<double> rating? = new List<double>();
-        rating.AddRange();
+        List<double> rating = new List<double>();
+        object p = rating.AddReview();
         double avg = Queryable.Average(rating.AsQueryable());
         return avg;
-
     }
     
 
@@ -26,15 +25,15 @@ public class Review
     public Review(double rating, string note)
     {
         this.Rating = rating;
-        this.Note = note;
+    }
+
+    public Review()
+    {
     }
 
     public int Id { get; set; }
 
-    public int RestaurantId { get; set; }
-
     private double _rating;
-    public double ReviewAvg;
 
     public double Rating
     {
@@ -49,13 +48,14 @@ public class Review
             this._rating = value;
         }
     }
-    public string Note { get; set; }
+    public string _review { get; set; }
+    public string Review { get; set; }
 
     //override Review's ToString Method for me here
     //That outputs $"Rating: {review.Rating} \t Note: {review.Note}"
 
     public override string ToString()
     {
-        return $"Rating: {this.Rating}\tNote: {this.Note}";
+        return $"Rating: {this.Rating}\tNote: {this._review}";
     }
 }

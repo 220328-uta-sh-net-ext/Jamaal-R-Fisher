@@ -31,8 +31,8 @@ public class Admin : User
     //Default constructor to add default values to the properties
     public Admin()
     {
-        Adminname = "";
-        Adminpassword = "";
+        Adminname = "Jamaal";
+        Adminpassword = "adminJamaal";
 
         /*
         _reviews = new List<Review>()

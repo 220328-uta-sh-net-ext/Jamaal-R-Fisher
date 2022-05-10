@@ -17,6 +17,10 @@ public class Restaurant
     public int Id { get; set; }
     public string Name { get; set; }
     public string Zipcode { get; set; }
+    public double Rating { get; set; }
+    public string Review { get; set; }
+    public int TotalRatings { get; set; }
+
     public Restaurant()
     {
         this.Reviews = new List<Review>();
@@ -38,12 +42,18 @@ public class Restaurant
         this.Id = (int) row["Id"];
         this.Name = row["Name"].ToString() ?? "";
         this.Zipcode = row["Zip Code"].ToString() ?? "";
+        this.Rating = (double)row["Rating"];
+        this.Review = row["Review"].ToString() ?? "";
+        this.TotalRatings = (int)row["Total Ratings"];
     }
 
     /*
             Id = 0,
             Name = "Kabuto Japanese Steakhouse & Sushi Bar",
-            Zipcode = "27407",
+            Zipcode = "27407"
+            Rating = 5.5
+            Review = "Fresh tuna, great atmosphere, but sometimes long wait times."
+            Total Ratings = 1,
 
     */
 
@@ -100,7 +110,7 @@ public class Restaurant
 
     public override string ToString()
     {
-        return $"Id: {this.Id} \nName: {this.Name} \nZip Code: {this.Zipcode}";
+        return $"Id: {this.Id} \nName: {this.Name} \nZip Code: {this.Zipcode} \nRating: {this.Rating} \nReview: {this.Review} \nTotal Ratings: {this.TotalRatings}";
     }
     
     /// <summary>
@@ -111,7 +121,16 @@ public class Restaurant
     
     public void ToDataRow(ref DataRow row)
     {
+        row["Id"] = this.Id;
         row["Name"] = this.Name;
         row["Zipcode"] = this.Zipcode;
+        row["Rating"] = this.Rating;
+        row["Review"] = this.Review;
+        row["TotalRatings"] = this.TotalRatings;
+    }
+
+    public static implicit operator Restaurant(Restaurant v)
+    {
+        throw new NotImplementedException();
     }
 }
