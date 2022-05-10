@@ -21,12 +21,12 @@ namespace DL
             this.connectionSQL = connectionSQL;
         }
 
-        public Restaurant AddRestaurant(Restaurant reviewToAdd)
+        public Restaurant AddRestaurant(Restaurant restaurantToAdd)
         {
             string selectSQL = $"UPDATE Restaurant SET Rating = Rating + @rating, TotalRatings = TotalRatings + 1";
             using SqlConnection localConnection = new(connectionSQL);
             using SqlCommand command1 = new(selectSQL, localConnection);
-            command1.Parameters.AddWithValue("@rating", reviewToAdd);
+            command1.Parameters.AddWithValue("@rating", restaurantToAdd);
             localConnection.Open();
             command1.ExecuteNonQuery();
             using SqlDataReader reader = command1.ExecuteReader();

@@ -17,6 +17,20 @@ Models:
 Waterfalls
 Extreme Programming
 Agile
+
+Big Bang - where most developers begin (the explosive methodology)
+Waterfall - the classic methodology (clear, well defined steps.  makes changes difficult as it moves forward)
+Agile - the modern methodology (design, develop, deploy in several iteration cycles) (allows team to quickly respond to change.  increased flexibility can lead to bad behaviors, requires more knowledge to use properly)
+
+
+product backlog
+sprint planning
+sprint backlog
+backlog refinement (daily standup, sprint)
+review
+retrospective
+
+
 TDD - Test Driven Development
 
 TDD Cycle:

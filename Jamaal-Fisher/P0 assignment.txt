@@ -421,7 +421,7 @@ Creating Tables										4/26/2022
 Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
 DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
 Normalization (and Pokemon dependency inversion)					4/29/2022
-P0 Presentations									5/3/2022  (Kevin, Harsh, Vladimir, Sean, Briceson, Marcos, Leo, Gabriel, Jermaine)
+P0 Presentations									5/3/2022   (Kevin, Harsh, Vladimir, Sean, Briceson, Marcos, Leo, Gabriel, Jermaine)
 
 
 ___________________________________________________________________________________________________________________________________________________________
@@ -430,3 +430,6 @@ ________________________________________________________________________________
 P1 intro										5/4/2022
 Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI)
 Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5/6/2022    (System.Runtime.Caching, Microsoft.AspNet.WebApi.Client)
+Delegates and LINQ									5/9/2022
+Team Development									5/10/2022
+

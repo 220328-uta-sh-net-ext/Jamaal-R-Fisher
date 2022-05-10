@@ -72,6 +72,52 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 restfulapi.net
 
 
+* UI becomes the API in P0
+__________________________________________________________________________________________
+
+
+SOAP (formerly a backronym for Simple Object Access Protocol) is a messaging protocol specification for exchanging structured information in the implementation of web services in computer networks.
+It uses XML Information Set for its message format, and relies on application layer protocols,
+most often Hypertext Transfer Protocol (HTTP), although some legacy systems communicate over Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.
+
+SOAP allows developers to invoke processes running on disparate operating systems (such as Windows, macOS, and Linux) to authenticate, authorize, and communicate using Extensible Markup Language (XML).
+Since Web protocols like HTTP are installed and running on all operating systems, SOAP allows clients to invoke web services and receive responses independent of language and platforms.
+
+______________________________________________________________________________________________
+
+Guiding principles of SOA
+
+
+Standardized Service Contract
+Services adhere to a service-description. A service needs to have some information that defines what the service is about.
+
+Loose Coupling
+Services minimize dependencies on each other. So if the service functionality breaks at several points in time, this should not crush the client application or stop it from running.
+
+Service Abstraction
+Services wrap the logic they encapsulate from the unknown external world. The service shouldn't show how it performs its functionality.
+
+Service Reusability
+Logic is divided into services to maximize re-use.
+
+Service Autonomy
+Services must control the logic they encapsulate.
+
+Service Statelessness
+Services should stay stateless. This determines that services should not keep data from one state to the other. This would be required to be done from each client application.
+
+Service Discoverability
+Services can be discovered (usually in a service registry). We have previously viewed this in the theory of the UDDI, which performs a registry which can contain information about the web service.
+
+Service Composability
+It breaks large problems into tiny problems.
+
+Service Interoperability
+Services should use standards that provide different supporters to use the service. This is examined so obviously these days that it is frequently dropped as a principle.
+
+
+
+
 _______________________________________________________________________________________________
 
 
@@ -299,4 +345,13 @@ they are triggered on user's action and needs to be handled as an after trigger 
 
 ___________________________________________________________________________________________________
 
+LINQ
+a query is a first-class language construct, just like classes, methods, events. You write queries against strongly typed collections of objects by using language keywords and familiar operators.
+The LINQ family of technologies provides a consistent query experience for objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).
 
+For a developer who writes queries, the most visible "language-integrated" part of LINQ is the query expression. Query expressions are written in a declarative query syntax.
+By using query syntax, you can perform filtering, ordering, and grouping operations on data sources with a minimum of code.
+You use the same basic query expression patterns to query and transform data in SQL databases, ADO.NET Datasets, XML documents and streams, and .NET collections.
+
+You can write LINQ queries in C# for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports IEnumerable or the generic IEnumerable<T> interface.
+LINQ support is also provided by third parties for many Web services and other database implementations.

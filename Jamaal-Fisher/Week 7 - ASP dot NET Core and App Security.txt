@@ -65,3 +65,55 @@ builder.Services.AddAuthentication(options => {
         ValidateAudience = true
     };
 });
+
+
+
+__________________________________________________________________
+
+
+SDLC  ->  Software development life cycle
+
+Phases:
+1. requirement analysis
+2. design
+3. development
+4. testing
+5. deployment
+6. maintenance
+
+Models:
+Waterfalls
+Extreme Programming
+Agile
+
+Big Bang - where most developers begin (the explosive methodology)
+Waterfall - the classic methodology (clear, well defined steps.  makes changes difficult as it moves forward)
+Agile - the modern methodology (design, develop, deploy in several iteration cycles) (allows team to quickly respond to change.  increased flexibility can lead to bad behaviors, requires more knowledge to use properly)
+
+
+product backlog
+sprint planning
+sprint backlog
+backlog refinement (daily standup, sprint)
+review
+retrospective
+
+
+
+scrum (makes it easier to find and rectify mistakes.  constant feedback)  (lacks firm final deadlines which can result in feature creep.  lacks a firm time limit and cost valuations.)
+kanban (event-driven instead of timeboxed.  allows for specialists.)  (easy to become overcomplicated)
+scrumban
+
+
+user epics - identify unique sets of user stories, and combine them into epics.
+
+paired programming is the process of two developers working on a specific piece of code or feature together.  pilot and navigator.
+
+story points are used to help give us an estimate.
+
+velocity is the number of story points completed in a sprint.
+
+___________________________________________________________________________________
+
+
+DevOps Definition, CI and CD
