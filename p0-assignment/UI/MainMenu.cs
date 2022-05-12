@@ -3,10 +3,12 @@ public class MainMenu : IMenu
 {
     public IBL _bl;
 
+    /*
     public MainMenu()
     {
 
     }
+    */
 
     public MainMenu(IBL bl)
     {

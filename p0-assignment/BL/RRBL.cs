@@ -47,11 +47,11 @@ public class RRBL : IBL
         throw new NotImplementedException();
     }
 
-    public List<Restaurant> SearchRestaurants(string searchTerm)
+    public List<Restaurant> SearchRestaurants(string searchString)
     {
         List<Restaurant>? restaurants = _dl.GetAllRestaurants();                                    //Query Syntax
 
-        var filteredRestaurants = restaurants.Where(p => p.Name.Contains(searchTerm)).ToList();     // Method Syntax
+        var filteredRestaurants = restaurants.Where(x => x.Name.Contains(searchString)).ToList();     // Method Syntax
 
         return filteredRestaurants;
     }

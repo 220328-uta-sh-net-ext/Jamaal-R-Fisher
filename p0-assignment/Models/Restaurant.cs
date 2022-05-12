@@ -18,9 +18,10 @@ public class Restaurant
     public string Name { get; set; }
     public string Zipcode { get; set; }
     public double Rating { get; set; }
-    public string Review { get; set; }
+    public string UserReview { get; set; }
     public int TotalRatings { get; set; }
 
+    /*
     public Restaurant()
     {
         this.Reviews = new List<Review>();
@@ -35,9 +36,11 @@ public class Restaurant
     /// Converting Restaurant table's data row into Restaurant Object
     /// </summary>
     /// <param name="row">a data row from Restaurant object, must have id, name, city, state columns</param>
-    
+    */
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public Restaurant(DataRow row)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     {
         this.Id = (int) row["Id"];
         this.Name = row["Name"].ToString() ?? "";
@@ -47,15 +50,6 @@ public class Restaurant
         this.TotalRatings = (int)row["Total Ratings"];
     }
 
-    /*
-            Id = 0,
-            Name = "Kabuto Japanese Steakhouse & Sushi Bar",
-            Zipcode = "27407"
-            Rating = 5.5
-            Review = "Fresh tuna, great atmosphere, but sometimes long wait times."
-            Total Ratings = 1,
-
-    */
 
     private string _name;
 
@@ -87,7 +81,7 @@ public class Restaurant
         } 
     }
 
-        */
+    
 
 
     // //our own custom getter and setter for the private backing field
@@ -108,11 +102,13 @@ public class Restaurant
 
     public List<Review> Reviews { get; set; }
 
+    */
+
     public override string ToString()
     {
         return $"Id: {this.Id} \nName: {this.Name} \nZip Code: {this.Zipcode} \nRating: {this.Rating} \nReview: {this.Review} \nTotal Ratings: {this.TotalRatings}";
     }
-    
+    /*
     /// <summary>
     /// Takes in Restaurant Table's DataRow and fills the columns with the Restaurant Instance's info
     /// </summary>
@@ -129,8 +125,11 @@ public class Restaurant
         row["TotalRatings"] = this.TotalRatings;
     }
 
-    public static implicit operator Restaurant(Restaurant v)
+    /*
+    
+    public static implicit operator Restaurant(Restaurant x)
     {
         throw new NotImplementedException();
     }
+    */
 }
