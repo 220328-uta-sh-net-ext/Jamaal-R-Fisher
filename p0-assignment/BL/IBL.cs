@@ -5,9 +5,6 @@ namespace BL;
 public interface IBL
 {
     Restaurant AddRestaurant(Restaurant restaurantToAdd);
-
-    List<Restaurant> SearchRestaurants(string searchString);
-
     List<Restaurant> GetAllRestaurants();
     List<Restaurant> GetName(string Name);
     List<Restaurant> GetZipcode(string Zipcode);
@@ -21,5 +18,7 @@ public interface IBL
 
 interface IRestaurantSearch
 {
-    List<Restaurant> SearchAll();
+    List<Restaurant> SearchRestaurants(string searchString);
+
+    // List<Restaurant> SearchAll();
 }

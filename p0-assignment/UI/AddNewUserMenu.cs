@@ -13,7 +13,7 @@ namespace UI
     class AddNewUserMenu : IMenu
     {
         //static non-access modifier is needed to keep this variable consistent to all objects we create out of our AddNewUser
-        static readonly User newUser = new();
+        static readonly User newlyAddedUser = new();
 
         readonly IBL logic;
 
@@ -25,9 +25,9 @@ namespace UI
         public void Display()
         {
             Console.WriteLine("Enter User Name, Password, and Zip Code");
-            Console.WriteLine("<4> User Name - " + newUser.Username);
-            Console.WriteLine("<3> Password - " + newUser.Password);
-            Console.WriteLine("<2> Zip Code - " + newUser.Zipcode);
+            Console.WriteLine("<4> User Name - " + newlyAddedUser.Username);
+            Console.WriteLine("<3> Password - " + newlyAddedUser.Password);
+            Console.WriteLine("<2> Zip Code - " + newlyAddedUser.Zipcode);
             Console.WriteLine("<1> Save");
             Console.WriteLine("<0> Go Back");
         }
@@ -44,8 +44,8 @@ namespace UI
                 case "1":
                     try
                     {
-                        Log.Information("Adding user - " + newUser.Username);
-                        logic.AddNewUser(newUser);
+                        Log.Information("Adding user - " + newlyAddedUser.Username);
+                        logic.AddNewUser(newlyAddedUser);
                         Log.Information("User added successfully");
                     }
                     catch (Exception ex)
