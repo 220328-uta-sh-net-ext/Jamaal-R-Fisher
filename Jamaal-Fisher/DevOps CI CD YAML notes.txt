@@ -1,0 +1,66 @@
+## Definition of DevOps
+DevOps is a collaborative culture with a set of practices, ideas, tools, technologies, and processes that streamline the product development process.
+This huge cultural shift lays emphasis on effective communication, integration, and better collaboration among teams for delivering quality products.
+Basically, DevOps is a methodology that helps organizations build software - and their production teams - in a way that enables continuous rapid deployment.
+
+In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of people who think it’s time for a change in the IT Industry -
+time to stop wasting money, time to start delivering great software, and building systems that scale and last”.
+
+
+## Key Disadvantages of DevOps
+- Organizational: Focusing more on delivering working software than on documentation is preferred by both DevOps and its foundational Agile roots,
+but it may become more difficult for developers and operators to keep track of their advances as well.
+
+- Processes: It will take time for users to adjust to a change in velocity.  Procedurally, the organization will need to be more fault-tolerant at least in the early going.
+Mistakes must be made and observed to stimulate rapid learning and resolution. This will be uncomfortable to some.
+
+- Technology: While automation can be a good thing to ensure that the pace of operations can keep up with the DevOps continuous feedback cycle,
+it can have unintended consequences if the automation is not set up properly and monitored.
+
+- Speed and Security: Speed and security don’t necessarily get along with each other very well.
+Rapid development can lead to severe security shortfalls if there is not a separate plan of action to ensure that speed is not outpacing the security systems designed to protect the products.
+
+
+## Key Groups of DevOps Culture:
+- Development
+Development gives Operations continuous feedback, while Operations gives Development automated provisioning.
+
+- Operations
+Operations gives QA continuous feedback, while QA gives Operations automated testing.
+
+- Quality Assurance (QA)
+QA gives Development continuous feedback, while Development gives QA automated build and deploy.
+
+
+## Key Phases of DevOps Culture:
+- Planning phase: development decides on plans, keeping in mind the application objectives to deliver to the customer
+- Coding phase: teams works on the same code, then stores the original code and different versions of the code in a repository, and merge when required in a process called version control.
+- Build phase: the code is made executable.
+- Test phase: the code is tested for any bugs or errors through automation.
+- Deploy phase: ready for deployment, sent to operations.
+- Operate phase: deploys for the working environment.
+- Monitor phase: the product is continuously monitored.  the feedback received is sent back to the planning phase.
+- Integration phase: the core of the DevOps life cycle.  if the code adjustments pass the test, it is sent back through the phases in a process called continuous integration (CI).
+
+
+DevOps references:
+https://www.itproportal.com/features/stop-messing-up-with-cicd-vs-devops-and-learn-the-difference-finally/
+https://www.youtube.com/watch?v=Xrgk023l4lI
+https://www.3pillarglobal.com/insights/disadvantages-of-using-devops/
+
+
+
+https://cdn.mos.cms.futurecdn.net/8jcis7FAV29qaanUV7E7Wj-970-80.jpg.webp
+https://i.imgur.com/u6RqFJp.png
+
+
+
+Continuous integration (CI)
+Continuous Delivery (CD)
+Continuous Deployment (CD)
+
+tagline slogan ideas (all from Full Metal Alchemist):
+"It's a cruel and random world, but the chaos is all so beautiful."
+"A lesson without pain is meaningless."
+"You can't gain something, without giving something in return."
+"The one who does not sacrifice anything cannot achieve anything."

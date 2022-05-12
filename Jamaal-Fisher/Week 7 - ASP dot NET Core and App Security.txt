@@ -117,3 +117,120 @@ ________________________________________________________________________________
 
 
 DevOps Definition, CI and CD
+
+
+____________________________________________________________________________________
+
+
+
+Cloud Computing offers different services.  tools and application such as data storage, servers, databases, networking & software
+
+Saas - Software as a Service
+PasS - Platform as a Service
+IasS - Infrastructure as a Service
+
+
+IaaS (Infrastructure as a Service), as the name suggests, provides you the computing infrastructure, physical or (quite often) virtual machines and other resources
+like virtual-machine disk image library, block and file-based storage, firewalls, load balancers, IP addresses, virtual local area networks etc.
+Examples: Amazon EC2, Windows Azure, Rackspace, Google Compute Engine.
+
+PaaS (Platform as a Service), as the name suggests, provides you computing platforms which typically includes operating system, programming language execution environment, database, web server etc.
+Examples: AWS Elastic Beanstalk, Windows Azure, Heroku, Force.com, Google App Engine, Apache Stratos.
+
+While in SaaS (Software as a Service) model you are provided with access to application software often referred to as "on-demand software".
+You don't have to worry about the installation, setup and running of the application. Service provider will do that for you. You just have to pay and use it through some client.
+Examples: Google Apps, Microsoft Office 365.
+
+
+
+deployment models:
+Public Cloud
+Private Cloud
+Hybrid Cloud
+Community Cloud
+
+Pros:
+data control, centralizes data for large projects
+data backup and recovery
+cost efficient
+minimal management
+reliable
+huge cloud storage
+
+
+Cons:
+good internet connection is required for uploading and downloading
+downtime possible outages
+because the user doesn't own the infrastructure limited control and access to cloud infrastructure
+the cost can become an ongoing monthly expense compared to traditional methods like the initial one-time investment
+another drawback is security
+
+
+________________________________________________________________________________
+
+
+Containerization
+a form on virtualization where applications run in isolated user spaces called containers, while using the same shared operating system (OS).
+
+Virtualization
+a technique of how to separate a service from the underlying physical delivery of that service. It is the process of creating a virtual version of something like computer hardware.
+
+Docker
+package software into standardized units for development, shipment and deployment.  a container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another
+
+
+standard
+lightweight
+secure
+
+Docker Engine sparked the Containerization Movement
+
+
+
+
+Pros
+Responsive deployment and scaling - can run on most things (physical or virtual machine, data center, cloud providers, etc.) - can scale up or tear down application as business dictates (based on demand).
+Run more workloads on the same hardware - since containers is very lightweight unlike virtual machines, you can do other stuff while docker is running.
+
+Docker Images
+Docker Container
+Docker Registry
+Docker Ignore
+Docker Configuration
+
+
+__________________________________________________________________________________________
+
+
+wsl --install
+wsl --list to see the default wsl installed
+
+
+This command will enable the required optional components, download the latest Linux kernel, set WSL 2 as your default, and install a Linux distribution for you (Ubuntu by default, see below to change this).
+
+The first time you launch a newly installed Linux distribution, a console window will open and you'll be asked to wait for files to de-compress and be stored on your machine.
+All future launches should take less than a second.
+
+ Note
+
+The above command only works if WSL is not installed at all, if you run wsl --install and see the WSL help text, please try running wsl --list --online to see a list of available distros
+and run wsl --install -d <DistroName> to install a distro. To uninstall WSL, see Uninstall legacy version of WSL or unregister or uninstall a Linux distribution.
+
+Change the default Linux distribution installed
+By default, the installed Linux distribution will be Ubuntu. This can be changed using the -d flag.
+
+To change the distribution installed, enter: wsl --install -d <Distribution Name>. Replace <Distribution Name> with the name of the distribution you would like to install.
+To see a list of available Linux distributions available for download through the online store, enter: wsl --list --online or wsl -l -o.
+To install additional Linux distributions after the initial install, you may also use the command: wsl --install -d <Distribution Name>.
+ Tip
+
+If you want to install additional distributions from inside a Linux/Bash command line (rather than from PowerShell or Command Prompt),
+you must use .exe in the command: wsl.exe --install -d <Distribution Name> or to list available distributions: wsl.exe -l -o.
+
+If you run into an issue during the install process, check the installation section of the troubleshooting guide.
+
+To install a Linux distribution that is not listed as available, you can import any Linux distribution using a TAR file.
+Or in some cases, as with Arch Linux, you can install using an .appx file. You can also create your own custom Linux distribution to use with WSL.
+
+
+__________________________________________________________________________________________________
