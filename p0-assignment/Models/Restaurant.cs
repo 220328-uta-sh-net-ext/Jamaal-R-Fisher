@@ -2,7 +2,7 @@ using CustomExceptions;
 using System.Text.RegularExpressions;
 using System.Data;
 
-namespace Models;
+namespace CevicheModels;
 
 public class Restaurant
 {

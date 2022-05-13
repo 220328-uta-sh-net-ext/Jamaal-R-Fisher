@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UI;
+using CevicheUI;
 
-namespace UI;
+namespace CevicheUI;
 public class MainMenu : IMenu
 {
     /*

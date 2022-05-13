@@ -1,2 +1,2 @@
-global using DL;
-global using Models;
+global using CevicheDL;
+global using CevicheModels;

@@ -1,5 +1,5 @@
 using Xunit;
-using Models;
+using CevicheModels;
 
 namespace Tests;
 

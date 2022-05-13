@@ -1,20 +1,23 @@
 using Microsoft.Data.SqlClient;
-using Models;
+using CevicheModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace DL
+namespace CevicheDL
 {
     public class FileRepo : IRepo
     {
 
         readonly string connectionSQL;
 
+        /*
         public FileRepo()
         {
+
         }
+        */
 
         public FileRepo(string connectionSQL)
         {

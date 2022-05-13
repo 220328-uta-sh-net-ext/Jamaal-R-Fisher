@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
-using Models;
+using CevicheModels;
 using System.Data;
 
-namespace DL
+namespace CevicheDL
 {
     /*
      * in .net, "ADO.NET" is the branding for the Microsoft-provided data access technologies.

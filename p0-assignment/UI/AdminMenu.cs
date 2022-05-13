@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BL;
-using Models;
+using CevicheBL;
+using CevicheModels;
 using Serilog;
-using UI;
+using CevicheUI;
 
-namespace UI;
+namespace CevicheUI;
 public class AdminMenu : IAdminMenu
 {
-    public IBL _bl;
+    public IBL? _bl;
 
     /*
     public AdminMenu(object? logic)

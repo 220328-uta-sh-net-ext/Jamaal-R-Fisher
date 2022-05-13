@@ -1,6 +1,6 @@
-using Models;
+using CevicheModels;
 
-namespace BL;
+namespace CevicheBL;
 
 public interface IBL
 {

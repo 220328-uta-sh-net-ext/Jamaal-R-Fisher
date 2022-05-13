@@ -1,7 +1,7 @@
-using Models;
+using CevicheModels;
 using System.Collections.Generic;
 
-namespace DL;
+namespace CevicheDL;
 
 
 public interface IRepo

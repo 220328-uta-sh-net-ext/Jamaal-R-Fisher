@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BL;
-using DL;
-using Models;
-using UI;
+using CevicheBL;
+using CevicheDL;
+using CevicheModels;
+using CevicheUI;
 
 bool repeat = true;
 IMenu menu = new MainMenu();

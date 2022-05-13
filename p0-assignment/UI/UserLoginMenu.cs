@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BL;
-using Models;
+using CevicheBL;
+using CevicheModels;
 using Serilog;
-using UI;
+using CevicheUI;
 
 internal class UserLoginMenu : IMenu
 {

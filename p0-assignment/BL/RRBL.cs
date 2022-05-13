@@ -1,7 +1,7 @@
-﻿using Models;
-using DL;
+﻿using CevicheModels;
+using CevicheDL;
 
-namespace BL;
+namespace CevicheBL;
 public class RRBL : IBL
 {
     readonly IRepo _dl;
