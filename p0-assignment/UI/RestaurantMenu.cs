@@ -18,13 +18,17 @@ public class RestaurantMenu : IMenu
     {
         _bl = bl;
     }
-
-    public void Continue()
+    public void Display()
+    {
+        throw new NotImplementedException();
+    }
+    public string UserChoice()
     {
         throw new NotImplementedException();
     }
 
-    public void Display()
+    /*
+    public void Continue()
     {
         throw new NotImplementedException();
     }
@@ -38,9 +42,5 @@ public class RestaurantMenu : IMenu
     {
         throw new NotImplementedException();
     }
-
-    public string UserChoice()
-    {
-        throw new NotImplementedException();
-    }
+    */
 }

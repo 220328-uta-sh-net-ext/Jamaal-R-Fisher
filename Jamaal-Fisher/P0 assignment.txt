@@ -394,6 +394,31 @@ DateTime localDate = DateTime.Now;
 
 
 
+_____________________________________________________________________________________________________________________
+
+
+
+
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using BL;
+global using Models;
+global using Serilog;
+global using UI;
+
+
+Model--->UI (work the actual menu in UI then add methods to Program.cs STEP 2 carry Methods into IRepository
+then SETP 3 connect sql to IRepo step 4 code the DataLogic STEP 5 work in ya business logic to  BUSINESSLOGIC
+the Interfacelogic needs to resemble the Irepo method for applicable interface need to go into bl
+STEP 6 CODE LOGIC IN BUSINES LOGIC
+
+
+
+_________________________________________________________________________________________________________________
+
 
 
 
