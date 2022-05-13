@@ -8,7 +8,7 @@ namespace Models;
 
 public class User
 {
-    public string UserId { get; set; }
+    public int UserId { get; set; }
     public string Username { get; set; }
     public string Password { get; set; }
     public string Zipcode { get; set; }
@@ -37,7 +37,7 @@ public class User
     public User()
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     {
-        UserId = "";
+        UserId = 0;
         Username = "";
         Password = "";
         Zipcode = "";
@@ -52,7 +52,7 @@ public class User
     public override string ToString()
     {
 
-        string result = $"User Name: {Username}\nPassword: \nZip Code: {Zipcode}";
+        string result = $"UserId: {UserId}\nUserName: {Username}\nPassword: \nZipCode: {Zipcode}";
         {
             return result;
         }

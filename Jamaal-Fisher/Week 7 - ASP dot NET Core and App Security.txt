@@ -234,3 +234,59 @@ Or in some cases, as with Arch Linux, you can install using an .appx file. You c
 
 
 __________________________________________________________________________________________________
+
+
+docker build 
+docker pull
+docker run
+
+
+docker build ubuntu
+
+
+Docker - client and server talks using an api
+Docker is built in Go programming
+
+
+Client <-------------->  Server <-------->  Volume
+
+docker CLI		docker daemon
+
+
+
+
+Registry
+
+
+Containers
+(process)
+OS
+
+Windows, Linux
+container
+Windows OS
+
+Linux
+container
+Linux OS
+
+Linux VM
+Linux container
+macOS
+
+
+Dockerfile - instructions for image creation.
+
+it must run through a container.
+
+Registry --->  DockerHub ----->  cloud app for images
+
+Dev environment							Test/production
+
+
+
+
+Linux
+bin (libraries)
+boot (boot any app)
+dev (devices)

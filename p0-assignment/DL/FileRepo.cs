@@ -23,13 +23,22 @@ namespace DL
 
         public Restaurant AddRestaurant(Restaurant restaurantToAdd)
         {
-            string selectSQL = $"UPDATE Restaurant SET Rating = Rating + @rating, TotalRatings = TotalRatings + 1";
+            string selectSQL = $"INSERT INTO Restaurant (Id, Name, Zipcode, Rating, UserReview, TotalRatings) VALUES" + 
+                "(@id, @name, @zipcode, @rating, @userreview, @totalratings)";
             using SqlConnection localConnection = new(connectionSQL);
             using SqlCommand command1 = new(selectSQL, localConnection);
-            command1.Parameters.AddWithValue("@rating", restaurantToAdd);
+            command1.Parameters.AddWithValue("@id", restaurantToAdd.Id);
+            command1.Parameters.AddWithValue("@name", restaurantToAdd.Name);
+            command1.Parameters.AddWithValue("@zipcode", restaurantToAdd.Zipcode);
+            command1.Parameters.AddWithValue("@rating", restaurantToAdd.Rating);
+            command1.Parameters.AddWithValue("@userreview", restaurantToAdd.UserReview);
+            command1.Parameters.AddWithValue("@totalratings", restaurantToAdd.TotalRatings);
+
             localConnection.Open();
             command1.ExecuteNonQuery();
-            using SqlDataReader reader = command1.ExecuteReader();
+            // using SqlDataReader reader = command1.ExecuteReader();
+            
+            return restaurantToAdd;
         }
 
         public void AddReview(int restaurantId, Review reviewToAdd)
@@ -55,7 +64,7 @@ namespace DL
                     Name = reader.GetString(1),
                     Zipcode = reader.GetString(2),
                     Rating = reader.GetDouble(3),
-                    Review = reader.GetString(4),
+                    UserReview = reader.GetString(4),
                     TotalRatings = reader.GetInt32(5)
                 });
             }

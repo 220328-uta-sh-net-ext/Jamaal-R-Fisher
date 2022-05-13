@@ -1,4 +1,7 @@
-﻿namespace BL;
+﻿using Models;
+using DL;
+
+namespace BL;
 public class RRBL : IBL
 {
     readonly IRepo _dl;

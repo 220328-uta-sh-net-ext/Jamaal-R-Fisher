@@ -14,7 +14,7 @@ public interface IMenu
 {
 
     //Interface members are implicitely public and abstract
-    void Start();
+    // void Start();
 
     /// <summary>
     /// Will display the menu and user choices in the terminal
@@ -28,15 +28,15 @@ public interface IMenu
     /// </summary>
     /// <returns>Return the menu that will change your screen</returns>
     string UserChoice();
-    void Exit();
-    void Continue();
+    // void Exit();
+    // void Continue();
 
 }
-interface IMoreMenu
+interface IAdminMenu
 {
 
     //Interface members are implicitely public and abstract
-    void Start();
+    // void Start();
 
     /// <summary>
     /// Will display the menu and user choices in the terminal
@@ -50,6 +50,6 @@ interface IMoreMenu
     /// </summary>
     /// <returns>Return the menu that will change your screen</returns>
     string UserChoice();
-    void Exit();
-    void Continue();
+    // void Exit();
+    // void Continue();
 }

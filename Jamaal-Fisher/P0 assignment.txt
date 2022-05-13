@@ -433,3 +433,4 @@ Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5
 Delegates and LINQ									5/9/2022
 Team Development									5/10/2022
 Cloud Computing / Docker Engine and setup						5/11/2022
+Docker Container commands and instructions						5/12/2022

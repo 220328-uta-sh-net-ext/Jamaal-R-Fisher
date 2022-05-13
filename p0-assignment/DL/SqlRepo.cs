@@ -17,11 +17,15 @@ namespace DL
  
     public class SqlRepo : IRepo
     {
+        public const string connectionStringFilePath = "C:/Revature/Jamaal-R-Fisher/p0-assignment/DL/TextFile1.txt";
+
         readonly string connectionString;
 
      
         public SqlRepo(string connectionString)
         {
+            //connection string file path, reading the text.
+            connectionString = File.ReadAllText(connectionStringFilePath);
             this.connectionString = connectionString;
         }
 
@@ -123,15 +127,15 @@ namespace DL
 
         public Restaurant AddRestaurant(Restaurant restaurantToAdd)
         {
-            string commandString = "INSERT INTO Restaurant (Id, Name, Zip Code, Reviews, Rating) " +
-                "VALUES (@id, @name, @zipcode, @reviews, @rating);";
+            string commandString = "INSERT INTO Restaurant (Id, Name, ZipCode, UserReview, Rating) " +
+                "VALUES (@id, @name, @zipcode, @userreview, @rating);";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
             command.Parameters.AddWithValue("@id", restaurantToAdd.Id);
             command.Parameters.AddWithValue("@name", restaurantToAdd.Name);
             command.Parameters.AddWithValue("@zipcode", restaurantToAdd.Zipcode);
-            command.Parameters.AddWithValue("@reviews", restaurantToAdd.Reviews);
+            command.Parameters.AddWithValue("@userreview", restaurantToAdd.UserReview);
             command.Parameters.AddWithValue("@rating", restaurantToAdd.Rating);
             connection.Open();
             command.ExecuteNonQuery();

@@ -3,27 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BL;
-using Models;
-using Serilog;
 using UI;
 
 namespace UI;
 public class MainMenu : IMenu
 {
-    public IBL _bl;
-
     /*
-    public MainMenu()
+    public interface IMenu
     {
-
+        void MainMenu();
     }
     */
-
-    public MainMenu(IBL bl)
-    {
-        _bl = bl;
-    }
 
     public void Display()
     {
@@ -33,13 +23,6 @@ public class MainMenu : IMenu
         Console.WriteLine("Press <1> Add new user");
         Console.WriteLine("Press <0> Exit");
     }
-
-    /*
-    public void Start()
-    {
-        Console.WriteLine("Welcome to Restaurant Reviews!");
-    }
-    */
 
     public string UserChoice()
     {
@@ -61,4 +44,50 @@ public class MainMenu : IMenu
                 return "MainMenu";
         }
     }
+
+
+    /*
+    public IBL _bl;
+    private object? logic;
+
+    
+    public MainMenu()
+    {
+
+    }
+
+
+    public MainMenu(IBL bl)
+    {
+        _bl = bl;
+    }
+
+    public MainMenu(object? logic)
+    {
+        this.logic = logic;
+    }
+
+    public void Continue()
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+    public void Exit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Start()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Start()
+    {
+        Console.WriteLine("Welcome to Restaurant Reviews!");
+    }
+    */
+
 }

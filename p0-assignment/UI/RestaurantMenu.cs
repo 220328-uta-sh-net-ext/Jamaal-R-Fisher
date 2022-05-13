@@ -19,7 +19,17 @@ public class RestaurantMenu : IMenu
         _bl = bl;
     }
 
+    public void Continue()
+    {
+        throw new NotImplementedException();
+    }
+
     public void Display()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Exit()
     {
         throw new NotImplementedException();
     }

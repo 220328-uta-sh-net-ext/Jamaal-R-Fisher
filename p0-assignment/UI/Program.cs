@@ -1,22 +1,25 @@
-﻿using System;
+﻿global using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BL;
+using DL;
 using Models;
-using Serilog;
 using UI;
 
 bool repeat = true;
 IMenu menu = new MainMenu();
 
 //create and configure our logger
-string connectionStringFilePath = "../../../TextFile2.txt";
+string connectionStringFilePath = "C:/Revature/Jamaal-R-Fisher/p0-assignment/DL/TextFile1.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
 IRepo repository = new SqlRepo(connectionString);
 IBL logic = new RRBL(repository);
-RestaurantOperations operations = new(repository);
+
+
+// RestaurantOperations operations = new(repository);
 
 // IRepo User Repo
 Log.Logger = new LoggerConfiguration()
@@ -24,7 +27,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("C:/Revature/Jamaal-R-Fisher/p0-assignment/UI/LogFile.txt")
     .CreateLogger();
 
-MenuFactory.GetMenu("main").Display();
+// MenuFactory.GetMenu("main").Display();
 
 /*
 Log.Logger = new LoggerConfiguration()
@@ -61,7 +64,7 @@ while (repeat)
             break;
         case "MainMenu":
             Log.Debug("Displaying Main menu to the user");
-            menu = new MainMenu(logic);
+            menu = new MainMenu();
             break;
         default:
             Console.WriteLine("View does not exist");

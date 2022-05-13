@@ -57,17 +57,17 @@ namespace UI
                     return "MainMenu";
                 case "2":
                     Console.Write("Please enter your zip code. ");
-                    newUser.Zipcode = Console.ReadLine() is string input3 ? input3 :
+                    newlyAddedUser.Zipcode = Console.ReadLine() is string input3 ? input3 :
                         throw new InvalidDataException("end of input");
                     return "AddNewUser";
                 case "3":
                     Console.Write("Please enter your password. ");
-                    newUser.Password = Console.ReadLine() is string input2 ? input2 :
+                    newlyAddedUser.Password = Console.ReadLine() is string input2 ? input2 :
                         throw new InvalidDataException("end of input");
                     return "AddNewUser";
                 case "4":
                     Console.Write("Please enter your user name. ");
-                    newUser.Username = Console.ReadLine() is string input ? input :
+                    newlyAddedUser.Username = Console.ReadLine() is string input ? input :
                         throw new InvalidDataException("end of input");
                     return "AddNewUser";
                 default:
