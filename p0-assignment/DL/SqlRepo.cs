@@ -162,5 +162,15 @@ namespace CevicheDL
         {
             throw new NotImplementedException();
         }
+
+        public List<User>? GetAllUsers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public User AddNewUser(User newlyaddedUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -24,6 +24,11 @@ namespace CevicheDL
             this.connectionSQL = connectionSQL;
         }
 
+        public User AddNewUser(User newlyaddedUser)
+        {
+            throw new NotImplementedException();
+        }
+
         public Restaurant AddRestaurant(Restaurant restaurantToAdd)
         {
             string selectSQL = $"INSERT INTO Restaurant (Id, Name, Zipcode, Rating, UserReview, TotalRatings) VALUES" + 
@@ -182,6 +187,11 @@ namespace CevicheDL
         }
 
         public List<Review> GetAllReviews()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<User>? GetAllUsers()
         {
             throw new NotImplementedException();
         }

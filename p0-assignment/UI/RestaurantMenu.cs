@@ -70,7 +70,7 @@ namespace CevicheUI
                     return "AddNewRestaurant";
                 case "3":
                     Console.Write("Please enter your rating of this restaurant. ");
-                    newlyAddedRestaurant.Rating = Console.ReadLine() is double input3 ? input3 :
+                    newlyAddedRestaurant.Rating = Convert.ToDouble(Console.ReadLine()) is double input3 ? input3 :
                         throw new InvalidDataException("end of input");
                     return "AddNewRestaurant";
                 case "4":

@@ -50,13 +50,28 @@ public class RRBL : IBL
         throw new NotImplementedException();
     }
 
-    public List<Restaurant> SearchRestaurants(string searchString)
+    public List<Restaurant> SearchRestaurants(string searchColumn)
     {
-        List<Restaurant>? restaurants = _dl.GetAllRestaurants();                                    //Query Syntax
+        //Query Syntax
+        List<Restaurant>? restaurant = _dl.GetAllRestaurants();
 
-        var filteredRestaurants = restaurants.Where(x => x.Name.Contains(searchString)).ToList();     // Method Syntax
+        // Method Syntax
+        var filteredRestaurant = restaurant.Where(search => search.Name.Contains(searchColumn) || search.Zipcode.Contains(searchColumn)).ToList();
 
-        return filteredRestaurants;
+        return filteredRestaurant;
+    }
+
+    public List<User> SearchUsers(string searchColumn)
+    {
+        //Query Syntax
+        List<User>? user = _dl.GetAllUsers();
+
+        // Method Syntax
+#pragma warning disable CS8604 // Possible null reference argument.
+        var filteredUsers = user.Where(search => search.Username.Contains(searchColumn) || search.Zipcode.Contains(searchColumn)).ToList();
+#pragma warning restore CS8604 // Possible null reference argument.
+
+        return filteredUsers;
     }
 
     Restaurant IBL.AddNewRestaurant(Restaurant newlyaddedRestaurant)
