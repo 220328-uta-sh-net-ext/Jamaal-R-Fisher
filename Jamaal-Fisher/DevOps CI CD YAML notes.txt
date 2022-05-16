@@ -1,4 +1,4 @@
-## Definition of DevOps
+l## Definition of DevOps
 DevOps is a collaborative culture with a set of practices, ideas, tools, technologies, and processes that streamline the product development process.
 This huge cultural shift lays emphasis on effective communication, integration, and better collaboration among teams for delivering quality products.
 Basically, DevOps is a methodology that helps organizations build software - and their production teams - in a way that enables continuous rapid deployment.
@@ -24,6 +24,8 @@ Rapid development can lead to severe security shortfalls if there is not a separ
 ## Key Groups of DevOps Culture:
 - Development
 Development gives Operations continuous feedback, while Operations gives Development automated provisioning.
+(provisioning involves the process of preparing and equipping a network to allow it to provide new services to its users.
+ servers may be provisioned via a web user interface or an application programming interface (API))
 
 - Operations
 Operations gives QA continuous feedback, while QA gives Operations automated testing.

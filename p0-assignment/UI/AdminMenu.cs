@@ -13,41 +13,6 @@ public class AdminMenu : IAdminMenu
 {
     public IBL? _bl;
 
-    /*
-    public AdminMenu(object? logic)
-    {
-    }
-    
-
-    internal class AdminMenu : IAdminMenu
-    {
-        private object? logic;
-
-        public AdminMenu(object? logic)
-        {
-            this.logic = logic;
-        }
-    }
-    
-    public MainMenu()
-    {
-
-    }
-    
-
-    public MainMenu(IBL bl)
-    {
-        _bl = bl;
-    }
-
-    
-
-    public void Continue()
-    {
-        throw new NotImplementedException();
-    }
-    */
-
     public void Display()
     {
         Console.WriteLine("Welcome admin!");
@@ -56,24 +21,6 @@ public class AdminMenu : IAdminMenu
         Console.WriteLine("Press <1> Search Users");
         Console.WriteLine("Press <0> Exit");
     }
-
-    /*
-    public void Exit()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Start()
-    {
-        throw new NotImplementedException();
-    }
-
-    /*
-    public void Start()
-    {
-        Console.WriteLine("Welcome to Restaurant Reviews!");
-    }
-    */
 
     public string UserChoice()
     {
@@ -95,4 +42,52 @@ public class AdminMenu : IAdminMenu
                 return "MainMenu";
         }
     }
+
+    /*
+    public AdminMenu(object? logic)
+    {
+
+    }
+    
+
+    internal class AdminMenu : IAdminMenu
+    {
+        private object? logic;
+
+        public AdminMenu(object? logic)
+        {
+            this.logic = logic;
+        }
+    }
+    
+    public MainMenu()
+    {
+
+    }
+
+    public MainMenu(IBL bl)
+    {
+        _bl = bl;
+    }
+
+    public void Continue()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Exit()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Start()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Start()
+    {
+        Console.WriteLine("Welcome to Restaurant Reviews!");
+    }
+    */
 }

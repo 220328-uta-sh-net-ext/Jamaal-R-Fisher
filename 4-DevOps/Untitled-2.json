@@ -1,0 +1,17 @@
+{
+    "name": "Jamaal-R-Fisher",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "VARIANT": "3",
+            "NODE_VERSION": "none"
+        }
+    },
+    "remoteUser": "bathwatermelody",
+    "mounts": [
+        "source=${localEnv:HOME}/c/Revature/Jamaal-R-Fisher/,target=/bathwatermelody/jamaal-r-fisher-dockerhub,type=bind,consistency=cached"
+    ]
+
+
+}

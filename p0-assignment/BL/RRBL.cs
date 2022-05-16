@@ -31,7 +31,7 @@ public class RRBL : IBL
     /// 
     */
 
-    public void AddRestaurant(Restaurant restaurantToAdd)
+    public void AddNewRestaurant(Restaurant newlyaddedRestaurant)
     {
         throw new NotImplementedException();
     }
@@ -59,12 +59,12 @@ public class RRBL : IBL
         return filteredRestaurants;
     }
 
-    Restaurant IBL.AddRestaurant(Restaurant restaurantToAdd)
+    Restaurant IBL.AddNewRestaurant(Restaurant newlyaddedRestaurant)
     {
         throw new NotImplementedException();
     }
 
-    public void AddNewUser(User newUser)
+    public User AddNewUser(User newUser)
     {
         throw new NotImplementedException();
     }

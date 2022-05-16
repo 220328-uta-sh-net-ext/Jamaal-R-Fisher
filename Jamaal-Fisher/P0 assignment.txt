@@ -387,6 +387,24 @@ while (repeat)
 
 
 
+SELECT
+AVG(Rating) AS CurrentRating
+FROM Restaurant
+
+
+
+
+docker run --name repo alpine/git clone \ https://github.com/docker/getting-started.git
+docker cp repo:/git/getting-started/ .
+
+cd getting-started
+docker build -t docker101tutorial .
+
+docker run -d -p 80:80 \ --name docker-tutorial docker101tutorial
+
+docker tag docker101tutorial bathwatermelody/docker101tutorial
+docker push bathwatermelody/docker101tutorial
+
 
 
 DateTime localDate = DateTime.Now;
@@ -453,9 +471,10 @@ ________________________________________________________________________________
 
 
 P1 intro										5/4/2022
-Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI)
+Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI  ???)
 Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5/6/2022    (System.Runtime.Caching, Microsoft.AspNet.WebApi.Client)
 Delegates and LINQ									5/9/2022
 Team Development									5/10/2022
 Cloud Computing / Docker Engine and setup						5/11/2022
 Docker Container commands and instructions						5/12/2022
+Web API service setup									5/13/2022

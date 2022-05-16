@@ -4,7 +4,7 @@ namespace CevicheBL;
 
 public interface IBL
 {
-    Restaurant AddRestaurant(Restaurant restaurantToAdd);
+    // Restaurant AddRestaurant(Restaurant restaurantToAdd);
     List<Restaurant> GetAllRestaurants();
 
     /*
@@ -16,7 +16,8 @@ public interface IBL
     */
 
     void AddReview(int restaurantId, Review reviewToAdd);
-    void AddNewUser(User newUser);
+    User AddNewUser(User newUser);
+    Restaurant AddNewRestaurant(Restaurant newlyAddedRestaurant);
     // List<User> GetAllUsers();
 }
 
