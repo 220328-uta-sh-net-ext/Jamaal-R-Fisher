@@ -165,6 +165,7 @@ namespace CevicheDL
 
         public List<User>? GetAllUsers()
         {
+            // SQL Query
             throw new NotImplementedException();
         }
 
