@@ -176,5 +176,11 @@ Methods vs. functions.
 methods belong to the behaviour of an object, which means it will reside within the class
 functions depict the behaviour of a program and doesn't necessarily have to be in the class
 
-
+functions:
+Named
+Anonymous
+Arrow
+Prototype
+IIFE (Immediately Invoked Function Expression)
+Callback
 

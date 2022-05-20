@@ -72,6 +72,7 @@ HTML, CSS, JavaScript
 _______________________________________________________________________________
 
 P2 intro/exploring Docker workflows with YAML file in GitHub, SonarCloud				5/18/2022
+HTML and CSS intro											5/19/2022
 
 
 
@@ -233,36 +234,60 @@ step 3: functionality BL()
 
 __________________________________________________________________________________________________________
 
-# functionality 
+# Parlez Entree - website
+## Amplifire
+- Harsh Tamakuwala
+- Marcos Fonseca
+- Gabriel Garcia
+- Jamaal Fisher
 
-    * get user zone, display plants that can grow in the given zone
-    * get user plant choice, display a plant's data 
-    * get user soil quality, display soil compare 'user quality soil' with plant's 'needed quality soil', display soil fix if user is in need of it
-    * get user potting size, display the plants potting size
-    * get user pet, display a lists of plant that keep pest away, display a lists of pest kill plant, display a lists of pet(bugs/bard..) that help the plants or support the pet
-    * get user sun time, display a plants sun needs
-    * get user plant choice water needs,display a plants water needs 
-    * make calender 
-        1. get the user's plant's (n)number of plants
-        2. get the user choice of watering (daily, every two days, or weekly)
-        3. water plant schedule, clean plant that need cleaning, estimate harvesting for the plant
+## Project Synopsis
+- Overview
+    -  Our food ontology and semantic recipe search engine makes it possible to search for recipes using natural language queries, such as “gluten free brownies without sugar” or “low fat vegan cupcakes.” You can automatically calculate the nutritional information for any recipe, analyze recipe costs, visualize ingredient lists, find recipes for what’s in your fridge, find recipes based on special diets, nutritional requirements, or favorite ingredients, classify recipes into types and cuisines, convert ingredient amounts, or even compute an entire meal plan. With our powerful API, you can create many kinds of food and especially nutrition apps.
+
+    - Special diets/dietary requirements currently available include: vegan, vegetarian, pescetarian, gluten free, grain free, dairy free, high protein, low sodium, low carb, Paleo, Primal, ketogenic, FODMAP, and Whole 30. We will soon be adding Weight Watcher points, too.
+
+## Tech Stack 
+- Backend
+    - C#
+    - Sql
+    - .Net 6
+    - Asp.Net core web api
+    - ADO.Net/Entity Framework Core    
+- Infra
+    - Git
+    - Docker
+    - Azure Sql Databases
+    - Azure App Service
+    - Github Actions
+    - Github Secrets
+    - Sonar Cloud
+- Code Quality
+    - XUnit
+    - Sonar Cloud
+- FrontEnd
+    - HTML
+    - CSS
+    - JavaScript
+    - Angular
+    - TypeScript
+- external api
+    - spoonacular API
 
 
-____________________________________________________________________________________________________________
+## Functionality
+- create user/register
+- Get Random Recipes(Taste by ID)
+- Search Recipes by Nutrients(Get Recipe Information,Taste by ID)
+- Search Recipes by Ingredients(Get Recipe Information,Taste by ID)
+- Wine Pairing
+- Wine Recommendation
+- Search Food Videos
+- Random Food Joke , Random Food Trivia
+- save recipes
 
 
-# My Plant World
 
-## Requirements
+_________________________________________________________________________________________
 
-- Shows the list all plants with favourite button
-- click on the plant to see details
-- login/register 
-- Search plant
 
-### Menu
-- my profile - display and edit the personal details
-- My plant - add/remove plant to/from my plants (recently user have)
-- Favourite - can add/remove to/from favourite
-- soil type plants - will show the list of plant according to the soil type
-- log out
