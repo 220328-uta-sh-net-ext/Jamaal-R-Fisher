@@ -13,7 +13,7 @@ bool repeat = true;
 IMenu menu = new MainMenu();
 
 //create and configure our logger
-string connectionStringFilePath = "C:/Revature/Jamaal-R-Fisher/p0-assignment/DL/TextFile1.txt";
+string connectionStringFilePath = "C:/Revature/Jamaal-R-Fisher/p1-assignment/DL/TextFile1.txt";
 string connectionString = File.ReadAllText(connectionStringFilePath);
 IRepo repository = new SqlRepo(connectionString);
 IBL logic = new RRBL(repository);
@@ -24,7 +24,7 @@ IBL logic = new RRBL(repository);
 // IRepo User Repo
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
-    .WriteTo.File("C:/Revature/Jamaal-R-Fisher/p0-assignment/UI/LogFile.txt")
+    .WriteTo.File("C:/Revature/Jamaal-R-Fisher/p1-assignment/UI/LogFile.txt")
     .CreateLogger();
 
 // MenuFactory.GetMenu("main").Display();

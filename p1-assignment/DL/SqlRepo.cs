@@ -17,7 +17,7 @@ namespace CevicheDL
  
     public class SqlRepo : IRepo
     {
-        public const string connectionStringFilePath = "C:/Revature/Jamaal-R-Fisher/p0-assignment/DL/TextFile1.txt";
+        public const string connectionStringFilePath = "C:/Revature/Jamaal-R-Fisher/p1-assignment/DL/TextFile1.txt";
 
         readonly string connectionString;
 
