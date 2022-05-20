@@ -287,7 +287,15 @@ Registry --->  DockerHub ----->  cloud app for images
 
 Dev environment							Test/production
 
+docker build -t cevicheapi -f Dockerfile .
 
+docker build -t cevicheimage -f Dockerfile .
+
+docker create --name whatevername imagename
+
+docker ps -a
+
+docker start idport
 
 
 Linux

@@ -1,0 +1,268 @@
+Project 2 guidelines
+
+Doing the steps of SDLC to come up with a reasonable P2 project
+
+Plan
+Find a problem and come up with a solution to solve it using the tools given to you or any experience you want to utilize
+It doesn’t have to be a problem; you can also come up with creating an application that is P2 worthy
+Ex:
+P2 project utilizing websocket.io to create a live multiplayer session game(s) in their website
+P2 project that solves a specific problem:
+Healthcare profession needs to automate certain things in their daily lives by utilizing some website
+Education professions needs a website to easily explain some topic either through some simplified game to explain physics, algebra, biology, music (whatever topic)
+Etc.
+P2 project that emulates a social media type of application that have live chats, posts, to do list, etc.
+P2 project utilizing canvas api to create a drawing application that emulates Pictionary game
+Research any external api you might need to solve your problem or what your application might need
+Be risk takers, you’ll probably have requirements you can’t complete and that’s completely fine. It is more impressive to use a tech you never learned but only use it in the simplest form vs. someone who just copied and pasted a Restaurant app.
+You have more people, be sure to utilize everyone to accomplish big tasks
+Have certain people research specific things about the project and have them present during standup on what they found and make a group decision to either pursue it or not
+
+Project Requirements
+After researching all the cool things, you want to do with the application, it is time to put it on an actual real accomplishment.
+Don’t do this step until everyone agrees on an actual plan first.
+Now every comes up with realistic steps to get your idea working
+Ex:
+If you do a social media app
+User can create an account
+User can login as that account after verifying their email
+User can be able to post
+User can be able to find friend
+User can accept friend invites
+Etc.
+
+Product Architecture
+Think of the tech stack you’ll need and if you do research and found necessary tech stack, be sure to include it here as well.
+It should be under “Tech Stack” on the P2 proposal.
+
+Building/Developing the product
+The biggest time spent for your P2.
+You need to conduct standup everyday to see where everyone is and see if there are any blockers that needs to be addressed by everyone.
+Communicate is key.
+Kanban board to see if your project requirements are being met and how many more is needed to be done and see how much someone has contributed to the project. Ex: Trello, monday.com, azure boards etc...
+
+Testing the application
+SETUP A PIPELINE EARLY
+A pipeline will just tell you any early warnings if you can’t even deploy the application
+A lot of setups needed but trust me it is worth it
+You have two servers now and they both need to be deployed to work correctly
+Of course, have actual unit tests to make sure whatever you wrote in the BL works so that the frontend team doesn’t go “why isn’t this working everything looks fine?!” only to figure out after 2-3 days wasted that it was the backend teams’ fault, but a nice unit test would just help isolate who’s fault it really is.
+
+Deployment
+Taken care of by CI/CD just manually test it to see if it all works
+Give it to team/family members and see if they can mess it up by doing something you never ever expect them to do (and they will do something you will never expect)
+Don’t give it to strangers online… they have the tendency to make it a challenge to break it.
+
+Where does your trainer come in to all this?
+We don’t!
+This is your project and you’ll be doing things I won’t expect.
+Your team is the best resource you have since your problem is their problem and my one brain cannot outwit 4 brains.
+The only time I come in is as your manager and to do conflict resolution if someone isn’t pulling their own weight.
+I will do standups every Wednesday to see how each team is going with their project (remind me please I have a memory of a goldfish)
+You will have your own team but there are many scenarios when a team figures out a new tech stack and they share the knowledge and now everyone has that tech stack and that will all benefit you guys since coming P3 you all work together.
+
+Technologies used
+ASP.NET core, Entity Framework,
+Docker, Github Actions, Git,
+C#, Sql
+Angular, TypeScript, Node.js,
+Karma, Jasmine, Protractor,
+HTML, CSS, JavaScript
+
+_______________________________________________________________________________
+
+P2 intro/exploring Docker workflows with YAML file in GitHub, SonarCloud				5/18/2022
+
+
+
+
+
+
+__________________________________________________________________________________
+
+
+1. Git workflow
+- Product backlog
+- Sprints - 2 or 1
+- Tracking system - Trello, Monday.com, Azure Boards
+- Daily Stand Up (what has been worked, what are we going to work and impedements/blocker)
+
+2. CI Pipeline
+	- Git Workflow
+		- main/master  --->  CI pipeline
+			- feature-useraccount
+			- feature-integrate api
+			- feature-something
+(pull request to the master, test, if approved then merge)
+
+avoid multiple merges and merge conflicts.
+
+
+
+Companies' Work Flow
+
+dev -->  test  ---->  staging  ---->  main ----> hotfix
+
+
+
+
+
+____________________________________________________________________________________
+
+
+
+underground library.  collects your Top 5 favorite artists, based on their background, era, multi-genre sounds, collaborations, it'll give you a recommendation for the day.  can randomize playlist suggestions based on your favorite albums.
+
+
+a how-to troubleshooting app, depending on the task at home. lists tools needed, resources needed.
+
+
+finds the nearest support and resistance levels of a crypto chart, depending on the timeframe, and a basic-level recommendation and risks.
+
+
+Amplifire - P2 due May 31/June 1
+
+
+
+
+{
+  "timestamp": 1513173506,
+  "bids": [
+    [
+      17670.3,
+      0.00250037
+    ]
+  ],
+  "asks": [
+    [
+      17689.66,
+      0.01
+    ]
+  ],
+  "pair": "BTC:USD",
+  "id": 158217212,
+  "sell_total": "1299.73578729",
+  "buy_total": "10006393.37"
+}
+
+
+height
+
+
+health conditions/allergies
+
+
+database
+
+type of plant
+	-requirements: (soil type, water, etc.)
+
+user location
+-	-climate: (soil type, water, etc.)
+
+
+______________________________________________________________
+
+front end
+
+package - Live Server 5.1.1 (Ritwick Dey)
+
+create new folder --- >  new file called index.html  ---->  hit ! then tab
+
+
+
+
+
+______________________________________________________________
+
+
+gardening
+
+	
+	-make database for plants / spend more time research 
+
+		* plant [name] [plant id] [zone id] [sun light] [soil id] [grow time] [room to grow] [how tall] [water id] [ok, love or hate id]
+		* water id [water id] value {[water daily] or [water ever two day] or [water one a week] } [number of gallon of water]
+		* plant level [plant id] 
+		*love id [plant id] [plant id] [plant id] [plant id]
+		* hate id [plant id] [plant id] [plant id] [plant id]
+		* ok id [plant id] [plant id] [plant id] [plant id]
+		* soil id [type a ] [type b] [type c] [type d]
+
+	-make database for bugs / spend time if we should
+		* bug [name] [bad for plant id]
+
+
+step 1: make a database 
+step 2: connect to the database PlantModel() and PlantDL()
+step 3: functionality BL()
+	1. get user zone from the api GetUserZone()
+	2. use given zone to out put recommended plants RecommendedPlants(GetUserZone()) ---Just out put a list of all plants--
+		* [name]
+		* [id: all plants have a global id]
+		* [level: how hard or easy it is to grow]
+		* [how long it take to grow form seed]
+		* [how long it take to produces]
+	3. get user choice of plant api GetUserPlantOfChoice()
+	4. use (3) to output plant data PlantRequest(GetUserPlantOfChoice())  --- just out put the plants data ---
+		* [name]
+		* [id]
+		* [level]
+		* [Full Sun/ Low Sun / Half ]
+		* [seeding time]
+		* [produce time]
+		* Function WaterAWeek() 
+			+ output number of gallon needed in a week to do grate
+			+ output number of gallon needed in a week to do ok
+			+ output number of gallon needed in a week be near death but alive
+		* Function PlantDatingProfile ()
+			+ plant it love to be with
+			+ plant it ok to be with
+			+ plant it hate to be with or die becuase of it
+		* Function PlantPestOrPets()
+			+ insects that helps the plant 
+			+ insects that kill the plant
+		* Function PlantAreaSpace()
+			+ Pot size "if growing in a pot"
+			+ Space Between Other Plants
+	5. get user soil quality api GetUserSoilQuality()
+	6. use (5 and 3) to compare {soil quality} with {soil needed} PlantSoilCompare(GetUserPlantOfChoice(),GetUserSoilQuality())
+		* out if grate, good, ok, bad, or "how is anything even alive"
+		* how to fix tips
+	7. so on...
+
+__________________________________________________________________________________________________________
+
+# functionality 
+
+    * get user zone, display plants that can grow in the given zone
+    * get user plant choice, display a plant's data 
+    * get user soil quality, display soil compare 'user quality soil' with plant's 'needed quality soil', display soil fix if user is in need of it
+    * get user potting size, display the plants potting size
+    * get user pet, display a lists of plant that keep pest away, display a lists of pest kill plant, display a lists of pet(bugs/bard..) that help the plants or support the pet
+    * get user sun time, display a plants sun needs
+    * get user plant choice water needs,display a plants water needs 
+    * make calender 
+        1. get the user's plant's (n)number of plants
+        2. get the user choice of watering (daily, every two days, or weekly)
+        3. water plant schedule, clean plant that need cleaning, estimate harvesting for the plant
+
+
+____________________________________________________________________________________________________________
+
+
+# My Plant World
+
+## Requirements
+
+- Shows the list all plants with favourite button
+- click on the plant to see details
+- login/register 
+- Search plant
+
+### Menu
+- my profile - display and edit the personal details
+- My plant - add/remove plant to/from my plants (recently user have)
+- Favourite - can add/remove to/from favourite
+- soil type plants - will show the list of plant according to the soil type
+- log out

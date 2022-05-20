@@ -1,0 +1,180 @@
+Juniper (on Discord)
+
+Fred (fred@revature.com)
+
+CSS/HTML/Docker
+
+
+What is containerization and Docker?
+Manual deployment to Azure
+intro to CI/CD pipeline
+GitHub Actions configuration to build and deploy automatically
+static code analysis
+SonarCloud  (sonarcloud.io)  SonarQube, Sonar way
+________________________________________________________________________________
+
+cd folder
+
+ls
+
+cd PokemonApi
+
+docker build -t pokemonapp -f Dockerfile .
+
+cd ..
+
+docker build -t pokemonapp -f PokemonApi/Dockerfile .
+
+"." means current directory
+
+docker images
+
+docker create			// for a new container
+
+docker run -it -p 5000:80 pokemonapp
+
+localhost:5000/WeatherForecast
+
+docker image push registry -host 5000/myadmin/pokemonapp
+
+bathwatermelody/cevicheapi
+
+docker image tag myimage myname/myimage:latest
+
+docker image tag cevicheapi bathwatermelody/cevicheapi:latest
+
+
+deployment center  (in the Azure app service)
+
+registry settings
+container registry
+
+single container
+docker hub
+
+full image name and tag bathwatermelody/cevicheapi:latest
+
+
+
+
+log stream
+
+Azure server URL /WeatherForecast   (API name ?  "manual deployment")
+
+_____________________________________________________________________________________
+
+training-code/.github/workflows/dotnet.yml
+
+YAML file (triggers)
+
+name: .NET
+
+on:
+	push:
+		branches: [ main ]
+	pull_request:
+		branches: [ main ]
+	workflow_dispatch: # manually trigger the workflow
+
+
+(runners)
+
+
+env:
+	WORKING_DIRECTORY: foldername/filename
+	(working variable to use throughout the runner)
+
+S{{env.WORKING_DIRECTORY}}
+
+${{secrets.DOCKERHUB_USERNAME}}/pokemonapp:${{github.sha}}   "sha" is a hashing algorithm
+${{secrets.DOCKERHUB_PASS}}
+
+
+comment out -   Ctrl + /
+
+
+Secrets  --->  Actions
+
+New Access Token
+
+
+
+(deploy job)
+
+steps:
+	name:
+	uses:
+	with:
+
+	app-name:
+	publish-profile:
+	images:
+
+
+
+--logger trx --collect:
+
+--logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+
+_________________________________
+
+set up pipeline to test code as you write it.
+
+
+touch afileforpr.md
+
+git checkout
+
+_________________________________________________________________________________________________
+
+
+HTML - Content of your webpage
+	-multimedia
+	-html tables
+
+style HTML using CSS - beautify your page content with some makeup
+	-CSS first steps
+	-CSS building blocks
+	-CSS layout
+
+JavaScript - Dynamic client-side scripting, make beautiful page more interactive.
+	-building blocks
+	-JavaScript objects
+	-asynchronous
+	-client side APIs (DOM API)  document object model
+
+
+
+Backend
+
+- Microsoft (SQL, Azure SQL, Azure App Services)
+- Oracle/IBM/Postgres/MySQL
+- Google/AWS/IBM/Digital Ocean
+
+Server Side (manipulating files, storage, interact with network, manipulate DB)
+- .NET
+- C#, F#, VB.NET
+- Java, Python, Ruby
+
+Frontend
+- HTML - hypertext markup language (Content)
+- CSS - cascading style sheets (Beautify the Content)
+- JavaScript (for adding behavior) interactive, better user experience, user engagement, api integration, talking servers
+- Angular, React, MEAN, MERN, NERD, Node.js
+
+
+Home.css
+Home.html
+Home.js
+
+
+Alt + Ctrl + I ---->  to bring up control pad
+
+
+Methods vs. functions.
+
+methods belong to the behaviour of an object, which means it will reside within the class
+functions depict the behaviour of a program and doesn't necessarily have to be in the class
+
+
+
