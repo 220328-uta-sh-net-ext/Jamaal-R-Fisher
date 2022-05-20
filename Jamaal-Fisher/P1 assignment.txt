@@ -95,3 +95,15 @@ Asp.Net Core Web Api
 Azure App Service
 Azure Pipelines
 Serilog or Nlog (or any other logging frameworks)
+
+
+server-side validation
+exception handling
+persistent data hardcoded in C#
+logging of exceptions, ADO.Net SQL commands, and other events
+asynchronous network
+project layout given here is only a suggestion. the general idea of separation of concerns is a requirement.
+Use ADO.Net for middleware either with connected or disconnected approach
+use an Azure SQL DB in third normal form; include a database diagram
+don't use public fields
+define and use at least one interface

@@ -52,3 +52,13 @@ li.onclick = function()
 {
     console.log("calling anonymous method");
 }
+
+
+
+let pokemon = {};
+
+let pokeName = document.getElementById("pokemonName").value;
+
+let request = new XMLHttpRequest();
+
+// request.open();
