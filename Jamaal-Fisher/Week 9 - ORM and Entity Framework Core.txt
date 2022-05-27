@@ -1,0 +1,417 @@
+ORM and Entity Framework Core
+
+ORM - object-relational mapping
+
+Entity Framework is an Object Relational Mapping (ORM) framework. It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
+Enables .NET developers to work with a database using .NET objects.
+Eliminates the need for most of the data-access code that typically needs to be written.
+
+EF supports the following model development approaches:
+
+Generate a model from an existing database.
+Hand code a model to match the database.
+Once a model is created, use EF Migrations to create a database from the model. Migrations allow evolving the database as the model changes.
+
+________________________________________________________________________________________________________________________________
+
+C# Program		EF Core			Database
+
+			|
+			|
+
+objects			ADO.Net			tables, rows, columns, relationships, constraints
+
+
+
+Mapping 
+
+DB		C# program
+Table		class
+columns		properties
+Relationship	Decorators
+Rows		Collection (List) => query using LINQ
+Constraints	Data Annotation/Fluent API
+
+
+
+Approaches with setting EF Core Data Layer
+1. Code-First Approach (for new projects) - developer doesn't have to be SQL expert to create database objects.  You can create database using C#, create tables, relationships, add values, change DB schema.
+2. Database First Approach (for legacy projects with existing DB's)
+
+https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx
+
+____________________________________________________________________________________
+
+
+Boolean: true or false
+Number: integer, or decimal number
+String: text inclosed in single or double quotes
+Undefined: same as JS
+Null: same as JS
+Any: acts as normal JS variables
+Void: used for functions that do not return anything
+Arrays: dynamic size like JS, store a single datatype
+Tuples: an array that can store a fixed number of objects
+Enum: declare a set of named constants
+Never: represents a type of value that never occur. For instance, never is the return type for a function that always throws an exception.
+
+
+__________________________________________________________________________________________________________
+
+system.componentmodel.dataannotations
+system.componentmodel.dataannotations.schema
+system.identitymodel.tokens.??
+
+microsoft.entityframeworkcore.tools
+microsoft.entityframeworkcore.tools.sqlserver
+
+
+microsoft.entityframeworkcore.tools.design  (for the DB first approach)
+
+
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+dotnet ef migrations add "init" -c .\PokemonDbContext.cs --startup-project ..\PokemonApi\PokemonApi.csproj
+
+add new item --->  class library
+
+dotnet ef dbcontext scaffold -o Entities "connection string from Azure SQL database server ID db ID user ID password" microsoft.entityframeworkcore.tools.sqlserver --table Pokemon --table Ability
+
+
+_______________________________________________________________________
+
+
+CORS - Cross-Origin Resource Sharing, cross-origin requests.  Browser security prevents a web page from making requests to a different domain than the one that served the web page.
+This restriction is called the same-origin policy. The same-origin policy prevents a malicious site from reading sensitive data from another site.
+
+Node.js - open-source, cross-platform run-time environment built on Chrome's V8 JavaScript engine  (npm - node package manager)
+
+
+
+node -v
+
+npm -v
+
+cd NodeExample
+
+npm init
+
+package name
+version
+description
+entry point
+...
+...
+
+
+
+node filename
+
+node builds a module and runs all JavaScripts specified with the let keyword
+
+npm init creates package.json
+npm install   // install any associated packages listed in package.json
+npm install packagename  //  install specific package
+npm install -g packagename
+npm install -D packagename
+
+
+_____________________________________________________________________________________
+
+Typescript - open source, object oriented
+
+it's not directly readable by the browser, must transpile the typescript into javascript before running it in the browser on in node
+
+
+npm install -g typescript  //  install Typescript
+
+tsc
+
+tsc -v
+
+line 28  "rootDir": "./src".
+
+
+
+enum - declare a set of named constants
+never - type of value that can never occur
+
+
+access modifiers (public, private, protected)
+
+
+decorator - special kind of declaration attached to a class, method, accessor, property, or parameter.  they look like annotations from Java.  (enable support in tsconfig.json file to true)
+
+line 28  "rootDir": "./src",   in the tsconfig.json file
+
+tsc --init
+
+
+tsc (like build)
+node (like run)
+
+
+
+webpack - powerful static module bundler for JavaScript applications that packages all modules in our application into a bundle and serves it to the browser.
+builds a dependency graph with it processes the application.
+
+_______________________________________________________________________
+
+
+single page applications - SPA's - webapps that render on a single page in the browser
+
+use Angular to create our SPA's.
+
+
+Angular is a Typescript base, open source framework used to develop dynamic web applications
+
+
+AngularJS - javascript-based, doesn't support the features of a server-side programming language.
+Angular 4+ - complete rewrite of AngularJS.
+
+uses component based UI to build
+compatible with the most recent versions of TypeScript
+
+
+Angular CLI  - command line interface for Angul
+
+npm install -g @angular/cli
+
+ng new app-name
+
+ng serve --open
+
+________________________________________________________________________________
+
+
+Components - basic building blocks of our application
+Components are the most basic UI building block of an Angular app. An Angular app contains a tree of Angular components.
+
+
+
+constructor
+
+ngOnChanges
+ngOnInit
+ngDoCheck
+
+ngOnDestroy
+
+________________________________________________________
+
+.html  - string interpolation, data binding
+.css - formatting
+.ts  -  API ??
+
+module.ts - root file w/ metadata
+spec.ts - a way to test ??
+
+______________________
+
+import keyword - like using keyword for namespace and class
+
+________________________________________
+
+The Document Object Model (DOM) is a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
+
+data binding provides the communication between a component and the DOM
+
+1-way data binding
+
+use string interpolation to add values from variables in component
+simple property and event binding
+
+
+
+2-way data binding
+
+in 1-way changes in the template are not reflected in the component, this is solved by using 2-way data binding
+
+
+use @Output() and create a new event emitter
+create variables to hold user input
+
+use const keyword, set properties, then use this.sendName.emit(name) 
+the emit method
+
+catch the emitted event by creating a method.
+
+@Input()
+
+
+structural directives  - ngSwitchCase, ngSwitchDefault - used to refactor code - *ngFor
+
+attribute directives - ngClass, ngStyle, *ngIf
+
+
+______________________________________________________
+
+services are used to organize and share business logic, models, data, or functions with different components of an Angular application
+
+dependency injection allows a class to receive its dependencies from an outside source.
+
+
+@Component()
+@Injectable()
+_______________________________________________________________
+
+ng g c pokedex
+
+
+ng g s pokemon
+
+_________________________________________________________________
+
+create array of people 
+name
+background
+something interesting
+
+using angular components and directives, dynamically create components with the array above
+style points
+
+
+
+
+______________________________________________
+
+
+pipes - transform values in an Angular template, use the pipe symbol | to manipulate the data types.
+
+ng g pipe pipe-name
+
+name.pipe.ts file
+name.pipe.spec.ts file
+
+
+
+routing - how to navigate between pages in a single page application
+RouterModule, has all the necessary service providers and directives for navigating
+router guards, check whether the user should be granted or remove access to certain parts of navigation
+
+ng g guard secret
+
+
+
+
+change href to routerLink once you have routing module
+
+
+
+
+app-routing.module.ts
+
+
+_____________________________________________________
+
+
+Pub/Sub Design Pattern
+
+describes the flow of messages between applications
+
+
+HttpClient service is used for communication between front-end web apps and back-end services
+all HttpClient methods return an observable of something
+
+
+RxJS - Reactive Extension for JavaScript
+Observables - provide support for passing message between parts of your application, use for event handling, async programming, and handling multiple values.
+
+to consume values, use the .subscribe() method passing an observer
+
+callback methods:
+next() 
+error()
+complete()
+
+
+Subjects - allows values to be multicasted to many observers.
+
+Behavior
+Replay
+Async
+
+
+
+______________________________________________________
+
+
+ng g c login
+
+ng g s login
+
+________________________________________________
+
+
+
+Jasmine is an open-source behavior-driven development unit testing framework for Javascript
+
+file.spec.ts
+
+the it keyword, then describe a callback function to test
+
+expect().toBe()
+
+
+ng test
+
+
+
+_______________________________________________________________________
+
+.navbar{
+    background-color: #eb4034;
+    height : 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+}
+
+.nav-list{
+    list-style: none;
+    width: 100%;
+    margin: auto;
+}
+
+.nav-item{
+    float: left;
+    display: block;
+    height: 80px;
+    line-height: 80px;
+}
+
+.nav-link{
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+#logo{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 12%;
+}
+
+#add-button{
+    background-color: #bd1004;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+

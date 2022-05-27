@@ -107,3 +107,35 @@ Use ADO.Net for middleware either with connected or disconnected approach
 use an Azure SQL DB in third normal form; include a database diagram
 don't use public fields
 define and use at least one interface
+
+
+
+
+
+
+Model Setup 										4/14/2022  1:42 pm recording @2:02:00
+Repository Interface and Database Folder						4/18/2022
+Testing											4/19/2022
+Code Coverage and Logging								4/20/2022  (averaging reviews is business logic, ....  is data logic)
+LINQ / SOLID										4/21/2022
+Azure/SQL Server set up									4/22/2022
+Liskov substitution/dependency inversion principles/SQL Query/Nuget			4/25/2022
+Creating Tables										4/26/2022
+Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
+DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
+Normalization (and Pokemon dependency inversion)					4/29/2022
+P0 Presentations									5/3/2022   (Kevin, Harsh, Vladimir, Sean, Briceson, Marcos, Leo, Gabriel, Jermaine)
+
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+P1 intro										5/4/2022
+Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI  ???)
+Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5/6/2022    (System.Runtime.Caching, Microsoft.AspNet.WebApi.Client)
+Delegates and LINQ									5/9/2022
+Team Development									5/10/2022
+Cloud Computing / Docker Engine and setup						5/11/2022
+Docker Container commands and instructions						5/12/2022
+Web API service setup									5/13/2022
+P1 Presentations									5/17/2022

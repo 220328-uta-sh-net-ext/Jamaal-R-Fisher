@@ -35,8 +35,10 @@ _____________________________________________________________
 Security of Web API
 
 JWT (JSON Web Token)
+a compact URL-safe means of representing claims to be transferred between two parties.
 
 IDaaS (Identity as a Service)
+cloud-based authentication built and operated by a third-party provider.
 
 
 ___________________________________________________________
@@ -125,9 +127,9 @@ ________________________________________________________________________________
 
 Cloud Computing offers different services.  tools and application such as data storage, servers, databases, networking & software
 
-Saas - Software as a Service
-PasS - Platform as a Service
-IasS - Infrastructure as a Service
+SaaS - Software as a Service
+PaaS - Platform as a Service
+IaaS - Infrastructure as a Service
 
 
 IaaS (Infrastructure as a Service), as the name suggests, provides you the computing infrastructure, physical or (quite often) virtual machines and other resources
@@ -176,7 +178,8 @@ Virtualization
 a technique of how to separate a service from the underlying physical delivery of that service. It is the process of creating a virtual version of something like computer hardware.
 
 Docker
-package software into standardized units for development, shipment and deployment.  a container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another
+package software into standardized units for development, shipment and deployment. 
+a container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another
 
 
 standard

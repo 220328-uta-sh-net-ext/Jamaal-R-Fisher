@@ -69,13 +69,43 @@ Angular, TypeScript, Node.js,
 Karma, Jasmine, Protractor,
 HTML, CSS, JavaScript
 
+
+
+Model Setup 										4/14/2022  1:42 pm recording @2:02:00
+Repository Interface and Database Folder						4/18/2022
+Testing											4/19/2022
+Code Coverage and Logging								4/20/2022  (averaging reviews is business logic, ....  is data logic)
+LINQ / SOLID										4/21/2022
+Azure/SQL Server set up									4/22/2022
+Liskov substitution/dependency inversion principles/SQL Query/Nuget			4/25/2022
+Creating Tables										4/26/2022
+Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
+DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
+Normalization (and Pokemon dependency inversion)					4/29/2022
+P0 Presentations									5/3/2022   (Kevin, Harsh, Vladimir, Sean, Briceson, Marcos, Leo, Gabriel, Jermaine)
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+P1 intro										5/4/2022
+Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI  ???)
+Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5/6/2022    (System.Runtime.Caching, Microsoft.AspNet.WebApi.Client)
+Delegates and LINQ									5/9/2022
+Team Development									5/10/2022
+Cloud Computing / Docker Engine and setup						5/11/2022
+Docker Container commands and instructions						5/12/2022
+Web API service setup									5/13/2022
+P1 Presentations									5/17/2022
+
 _______________________________________________________________________________
 
-P2 intro/exploring Docker workflows with YAML file in GitHub, SonarCloud				5/18/2022
-HTML and CSS intro											5/19/2022
-
-
-
+P2 intro/exploring Docker workflows with YAML file in GitHub, SonarCloud		5/18/2022
+HTML and CSS intro									5/19/2022
+Javascript										5/20/2022
+intro to ORM and EF Core								5/23/2022
+Node.js, Typescript, Angular								5/24/2022
+Data Binding, Services, Dependency Injection						5/25/2022
+Pipes, Routing, Observables								5/26/2022
 
 
 
@@ -287,7 +317,158 @@ ________________________________________________________________________________
 - save recipes
 
 
+https://spoonacular.com/food-api/docs#Random-Food-Joke
+
+
+https://spoonacular.com/food-api/docs#Random-Food-Trivia
+
+
+https://azure.microsoft.com/en-us/free/
+
+
+parlezentreeapi
+harshrevature/parlezentree
+
+index.html
+
+
+
+image source
+docker hub
+image and tag ---->  copy from docker repo
+
+
+copy URL
+
+URL/swagger/index.html
+
+________________________________________________________________________
+
+
+#F6F0F0
+#60E3D5
+#0567A8
+
+
+
+
+after you fork you repo...
+
+Branch
+1) git checkout -b "new-branch" -＞simultaneously creates and checks out
+2) git add .
+3) git commit -m "note" -> Commit the files to local repo
+4) git push origin branch-name -> Upload to Github
+5) git checkout main
+6) git merge branch-name
+7) git push origin main -> Upload to Github
+
+
+
+
+
+<publishData><publishProfile profileName="parlezentreeapi - Web Deploy" publishMethod="MSDeploy" publishUrl="parlezentreeapi.scm.azurewebsites.net:443" msdeploySite="parlezentreeapi" userName="$parlezentreeapi" userPWD="7bcDmshoRajz3Hw8HLeMrRyoknxmQFNNrX8D1cA9R2jqBlq21tgr97duSBtl" destinationAppUrl="http://parlezentreeapi.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="parlezentreeapi - FTP" publishMethod="FTP" publishUrl="ftp://waws-prod-dm1-299.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="parlezentreeapi\$parlezentreeapi" userPWD="7bcDmshoRajz3Hw8HLeMrRyoknxmQFNNrX8D1cA9R2jqBlq21tgr97duSBtl" destinationAppUrl="http://parlezentreeapi.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile><publishProfile profileName="parlezentreeapi - Zip Deploy" publishMethod="ZipDeploy" publishUrl="parlezentreeapi.scm.azurewebsites.net:443" userName="$parlezentreeapi" userPWD="7bcDmshoRajz3Hw8HLeMrRyoknxmQFNNrX8D1cA9R2jqBlq21tgr97duSBtl" destinationAppUrl="http://parlezentreeapi.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites"><databases /></publishProfile></publishData>
+
+
+
+
+
+
 
 _________________________________________________________________________________________
 
+what's a shoe made out of a banana called?  (a slipper)
+
+why did the pancake get arrested? (it committed multiple un-waffle actions)
+
+do vegetable puns make you feel good?  (well, they make me feel good.  from my head, tomatoes)
+
+you want to hear a joke about pizza?  (eh, never mind.  it's too cheesy)
+
+what was the snowman doing outside in the garden?  (picking his nose)
+
+what did one plate say to the other plate?  (dinner's on me)
+
+what type of nut always seems to have a cold?  (a cashew)
+
+
+
+________________________________________________________________________________________
+
+
+
+What nutrient do you get from the meat, poultry, eggs, and fish?
+Protein
+
+What are cruciferous vegetables?  And can you name some examples?
+Vegetables in the cabbage family, such as cauliflower, cabbage, kale, garden cress, bok choy, broccoli, and Brussels sprouts.  They are high in vitamin C and soluble fiber and contain multiple nutrients and phytochemicals.
+
+What element, whose symbol is Ca, is needed to keep bones healthy and strong?
+Calcium
+
+What is the most important meal of the day?
+Breakfast
+
+How do you know if juice is made from real fruit?
+The label says 100 percent fruit juice
+
+How much of your plate should you fill with fruits and veggies?
+1/2
+
+What red food is actually a fruit and not a veggie?
+Tomato
+
+What is the only fruit to have seeds on the outside?
+Strawberry
+
+What is the grain-like food grown principally in the Andes Mountains that is high in protein and is a great source of B vitamins and fiber?
+Quinoa
+
+What bean that originated in East Asia is used for miso, oil, and tofu?
+Soybean
+
+What are lactobacillus, acidophilus, and bifidobacterium?
+Probiotics
+
+What is the abnormal enlargement of the thyroid gland due to deficiency of iodine called?
+Goiter
+
+What yellow seasoning may help with mood stabilization, wound healing, and balancing blood sugar?
+Turmeric
+
+What is the name for probiotic rich fermented milk?
+Kefir
+
+What spice, frequently used in Hungarian, Indian, and Moroccan food, provides vitamin A and can prevent spider veins and inhibit hair loss?
+Paprika
+
+What is the common name for Allium sativum, a food that's been used as both a food flavoring and a traditional medicine?
+Garlic
+
+Which fruit contains an enzyme that aids digestion and also helps tenderize meat?
+Papaya
+
+Deer meat is known by what name?
+Venison
+
+Are humans omnivore, herbivore, or carnivore?
+Omnivore
+
+What healthy fat containing food is used as the base of guacamole?
+Avocado
+
+Foods rich in starch such as pasta and bread are often known by what word starting with the letter C?
+Carbohydrates
+
+What should you have in your diet that may benefit your digestion and reduce your risk of chronic disease?
+Fiber
+
+What vitamin gives sweet potatoes and carrots their orange color?
+Vitamin A
+
+How often should one eat fish each week?
+Two times
+
+What does fruit have that makes it taste sweet?
+Fructose
 
