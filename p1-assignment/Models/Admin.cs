@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace CevicheModels;
 
-public class Admin : User
+public class Admin
 {
-    public string Adminname { get; set; }
-    public string Adminpassword { get; set; }
+    public int AdminId { get; set; }
+    public string AdminName { get; set; }
+    public string AdminPassword { get; set; }
+    public int TotalUsers { get; set; }
+    public int TotalRestaurants { get; set; }
 
     /*
     List<Review> _reviews;
@@ -31,8 +34,11 @@ public class Admin : User
     //Default constructor to add default values to the properties
     public Admin()
     {
-        Adminname = "Jamaal";
-        Adminpassword = "adminJamaal";
+        AdminId = 0;
+        AdminName = "Jamaal";
+        AdminPassword = "adminJamaal";
+        TotalUsers = 0;
+        TotalRestaurants = 0;
 
         /*
         _reviews = new List<Review>()
@@ -43,7 +49,7 @@ public class Admin : User
     }
     public override string ToString()
     {
-        string result = $"Admin Name: {Adminname}\nPassword: \n";
+        string result = $"Admin Name: {AdminName}\nPassword: \n";
         {
             return result;
         }

@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using CevicheModels;
 
 namespace CevicheAPI.Controllers
 {
@@ -8,36 +8,19 @@ namespace CevicheAPI.Controllers
     [ApiController]
     public class ReviewController : ControllerBase
     {
-        // GET: api/<ValuesController>
+        private static List<Review> _reviews = new List<Review>
+        {
+            new Review { Id=0, UserId=0, Name="", Rating=0, UserReview="" },
+            new Review { Id=0, UserId=0, Name="", Rating=0, UserReview="" },
+            new Review { Id=0, UserId=0, Name="", Rating=0, UserReview="" }
+        };
+        // Action Methods ways to access or manipulate the resources, HTTP verbs/methods (GET, PUT, POST, DELETE, PATCH, HEAD)
+        // Attribute explicitly defines the function.  can be seen in Postman.
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ValuesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return "Hello Review!";
+            // return _reviews;
         }
     }
 }

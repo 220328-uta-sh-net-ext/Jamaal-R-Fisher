@@ -304,9 +304,10 @@ RequestBody --->  Complex types
 
 
 Parameter Binding
+ When Web API calls a method on a controller, it must set values for the parameters, a process called binding.
 
-
-
+A parameter binding is a piece of information that is transmitted from the origin to the destination of a flow.
+A parameter binding has a name and a value, which is obtained at its origin component. A flow may have a multiple parameter binding, passing a set of values instead of a single one.
 
 __________________________________________________________________________________________________
 
@@ -343,6 +344,9 @@ events are any user defined action (mouse click, hover, pressing keys).
 they are triggered on user's action and needs to be handled as an after trigger behavior.
 
 
+An event trigger is an association between a predefined event and the script that is to be executed when that event occurs.
+trigger is a behavior in response to stimuli, and an event may trigger the change of state or as the result of that trigger execute the associated callback .
+handler is a reference to an object or class that is associated with a behavior.
 ___________________________________________________________________________________________________
 
 LINQ
@@ -355,3 +359,9 @@ You use the same basic query expression patterns to query and transform data in 
 
 You can write LINQ queries in C# for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports IEnumerable or the generic IEnumerable<T> interface.
 LINQ support is also provided by third parties for many Web services and other database implementations.
+
+
+______________________________________________________________
+
+
+The Decorator Design Pattern in C# allows us to dynamically add new functionalities to an existing object without altering or modifying its structure and this design pattern acts as a wrapper to the existing class.

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CevicheUI", "UI\CevicheUI.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{D6C8D013-031F-48F8-830D-2767B24D49E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CevicheAPI", "CevicheAPI\CevicheAPI.csproj", "{EEEBD1EF-B465-4C0E-A12C-7377D46C1E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CevicheAPI", "CevicheAPI\CevicheAPI.csproj", "{48FC3F1C-7ED3-4F2B-8A3F-6ABE57B55F39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{D6C8D013-031F-48F8-830D-2767B24D49E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6C8D013-031F-48F8-830D-2767B24D49E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6C8D013-031F-48F8-830D-2767B24D49E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEEBD1EF-B465-4C0E-A12C-7377D46C1E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEEBD1EF-B465-4C0E-A12C-7377D46C1E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEEBD1EF-B465-4C0E-A12C-7377D46C1E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEEBD1EF-B465-4C0E-A12C-7377D46C1E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FC3F1C-7ED3-4F2B-8A3F-6ABE57B55F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FC3F1C-7ED3-4F2B-8A3F-6ABE57B55F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FC3F1C-7ED3-4F2B-8A3F-6ABE57B55F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FC3F1C-7ED3-4F2B-8A3F-6ABE57B55F39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

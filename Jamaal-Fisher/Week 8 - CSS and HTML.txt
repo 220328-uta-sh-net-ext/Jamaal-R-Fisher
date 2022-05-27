@@ -9,8 +9,13 @@ What is containerization and Docker?
 Manual deployment to Azure
 intro to CI/CD pipeline
 GitHub Actions configuration to build and deploy automatically
-static code analysis
+
+static code analysis -
+Static code analysis is a method of debugging by examining source code before a program is run. It’s done by analyzing a set of code against a set (or multiple sets) of coding rules.
+
+
 SonarCloud  (sonarcloud.io)  SonarQube, Sonar way
+SonarCloud automatically analyzes and decorates pull requests on GitHub, Bitbucket, Azure DevOps
 ________________________________________________________________________________
 
 cd folder
@@ -66,6 +71,37 @@ ________________________________________________________________________________
 training-code/.github/workflows/dotnet.yml
 
 YAML file (triggers)
+
+
+YAML is a data serialization language that is often used for writing configuration files.
+YAML is a human-readable data-serialization language. It is commonly used for configuration files and in applications where data is being stored or transmitted.
+
+XML
+Extensible Markup Language is a markup language and file format for storing, transmitting, and reconstructing arbitrary data.
+It defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+
+
+The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.
+It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.
+
+
+CSS
+Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.
+
+
+JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.
+Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.
+
+
+
+Command Line Interface (CLI) vs. Graphical User Interface (GUI)
+
+What is GUI and CLI?
+A GUI is a graphical representation in which the users can interact with software or devices through clickable icons.
+A CLI is a console or text-based representation in which the user types commands into a terminal to operate and navigate the software or devices.
+
+
+_________________________________________________________________________________________________________________________________________________
 
 name: .NET
 

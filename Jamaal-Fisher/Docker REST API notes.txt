@@ -1,0 +1,320 @@
+azure.resourcemanager
+azure.resourcemanager.resources
+-coverlet.collector
+microsoft.aspnet.webapi.client
+microsoft.aspnet.webapi.core   (removed)
+microsoft.azure.management.compute
+microsoft.azure.management.network
+-microsoft.data.sqlclient
+-microsoft.net.test.sdk
+-serilog
+-serilog.sinks.console
+-serilog.sinks.file
+system.collections
+system.console
+-system.data.sqlclient
+system.linq
+system.linq.queryable
+system.net.http
+system.net.http.json
+system.runtime
+system.runtime.caching
+system.runtime.extensions
+system.runtime.serialization.json
+system.runtime.serialization.xml
+system.text.json
+system.xml.xmlserializer
+-xunit
+-xunit.runner.visualstudio
+
+
+____________________________________
+
+microsoft.visualstudio.azure.containers.tools.targets
+Swashbuckle.AspNetCore
+
+Microsoft.AspNetCore.Mvc
+
+Microsoft.AspNetCore.Razor.Design
+______________________________
+
+
+Microsoft.AspNetCore.Authentication.JwtBearer
+
+System.IdentityModel.Tokens.Jwt
+
+______________________
+
+Swashbuckle.AspNetCore
+
+
+Swashbuckle.AspNetCore.Swagger
+Swashbuckle.AspNetCore.SwaggerGen
+Swashbuckle.AspNetCore.SwaggerUI
+
+_____________________
+
+newtonsoft.json
+microsoft.visualstudio.azure.containers.tools.targets
+
+
+_________________________________
+
+system.componentmodel.dataannotations
+system.componentmodel.dataannotations.schema
+system.identitymodel.tokens.??
+
+microsoft.entityframeworkcore.tools
+microsoft.entityframeworkcore.tools.sqlserver
+
+
+microsoft.entityframeworkcore.tools.design  (for the DB first approach)
+
+
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+dotnet ef migrations add "init" -c .\PokemonDbContext.cs --startup-project ..\PokemonApi\PokemonApi.csproj
+
+add new item --->  class library
+
+dotnet ef dbcontext scaffold -o Entities "connection string from Azure SQL database server ID db ID user ID password" microsoft.entityframeworkcore.tools.sqlserver --table Pokemon --table Ability
+
+
+
+
+
+
+
+hyper v  enable  ??
+
+dotnet ef migrations ad init
+________________________________
+
+
+mkdir reponame
+cd reponame
+code .
+
+
+
+node
+
+
+___________________________________
+
+Dockerfile
+
+FROM image:alpine
+
+COPY . /app
+WORKDIR /app
+CMD image app.js
+
+
+FROM cevicheapi:alpine
+
+COPY . /p1-assignment
+WORKDIR /p1-assignment
+CMD cevicheapi RestaurantReviews.sln
+
+
+
+
+docker build -t reponame .
+
+docker image ls
+
+docker run reponame
+
+
+
+docker pull dockerrepo/reponame
+
+docker run dockerrepo/reponame
+
+
+______________________________________
+
+
+docker run ubuntu
+
+docker ps
+
+docker ps -a
+
+docker run -it ubuntu
+
+
+
+echo hello
+whoami
+echo $0
+history
+
+!2
+!3
+!4
+
+
+apt-get
+nano
+
+
+
+apt list
+
+apt update
+
+apt list
+
+apt install nano
+
+ctrl + l   (clear)
+
+apt remove nano
+
+
+pwd
+
+ls
+
+ls -1
+
+ls -l
+
+cd ~  (home directory)
+
+
+mkdir test
+
+mv test docker
+
+
+cd docker
+
+
+touch hello.txt
+
+rm -r directoryname/
+
+
+_________________________________________
+
+docker-compose --version
+
+
+docker image rm 123 123
+
+docker image ls -q
+
+
+docker container rm -f $(docker container ls -aq)
+
+docker image rm -f $(docker image ls -aq)
+
+________________________________________________
+
+
+cd backend
+
+cd ../frontend
+
+npm i
+
+
+______________________________________
+
+do
+
+{
+	"name": "",
+	"price": 0,
+	"is_published": true,
+	"tags": ["",""],
+	"author": 
+	{
+		"first": "",
+		"last": ""
+	}
+}
+
+
+
+yaml
+
+
+---
+________________________________________________
+
+dotnet new nameapi -? DockerAPI
+
+
+
+sudo apt-get update
+
+sudo apt-get install
+
+
+________________________________________________
+
+
+setup docker rest api:
+
+edit /lib/systemd/system/docker.service
+ExecStart=/usr/bin/dockerd -H fd:// -H=tcp://0.0.0.0:5555
+systemctl daemon-reload
+sudo service docker restart
+
+
+____________________________________________________
+
+
+cd folder
+
+ls
+
+cd PokemonApi
+
+docker build -t pokemonapp -f Dockerfile .
+
+cd ..
+
+docker build -t pokemonapp -f PokemonApi/Dockerfile .
+
+"." means current directory
+
+docker images
+
+docker create			// for a new container
+
+docker run -it -p 5000:80 pokemonapp
+
+localhost:5000/WeatherForecast
+
+docker image push registry -host 5000/myadmin/pokemonapp
+
+bathwatermelody/cevicheapi
+
+docker image tag myimage myname/myimage:latest
+
+docker image tag cevicheapi bathwatermelody/cevicheapi:latest
+
+
+deployment center  (in the Azure app service)
+
+registry settings
+container registry
+
+single container
+docker hub
+
+full image name and tag bathwatermelody/cevicheapi:latest
+
+
+
+
+log stream
+
+Azure server URL /WeatherForecast   (API name ?  "manual deployment")
