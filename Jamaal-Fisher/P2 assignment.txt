@@ -106,7 +106,7 @@ intro to ORM and EF Core								5/23/2022
 Node.js, Typescript, Angular								5/24/2022
 Data Binding, Services, Dependency Injection						5/25/2022
 Pipes, Routing, Observables								5/26/2022
-
+P2 Presentations									6/1/2022	(Alchemy, Vanquish, Amplifire, Synergy)
 
 
 __________________________________________________________________________________
@@ -135,6 +135,90 @@ Companies' Work Flow
 dev -->  test  ---->  staging  ---->  main ----> hotfix
 
 
+____________________________________________________________________________
+
+
+
+
+
+The spoonacular Nutrition, Recipe, and Food API allows you to access over 365,000 recipes and 86,000 food products.
+Our food ontology and semantic recipe search engine makes it possible to search for recipes using natural language queries, such as “gluten free brownies without sugar” or “low fat vegan cupcakes.”
+You can automatically calculate the nutritional information for any recipe, analyze recipe costs, visualize ingredient lists, find recipes for what’s in your fridge,
+find recipes based on special diets, nutritional requirements, or favorite ingredients, classify recipes into types and cuisines, convert ingredient amounts, or even compute an entire meal plan.
+With our powerful API, you can create many kinds of food and especially nutrition apps.
+
+Special diets/dietary requirements currently available include: vegan, vegetarian, pescetarian, gluten free, grain free, dairy free, high protein, low sodium, low carb, Paleo, Primal, ketogenic, FODMAP, and Whole 30.
+We will soon be adding Weight Watcher points, too.
+
+
+__________________________________________________________________________________
+
+Jamaal, introducing for Team Amplifire:
+
+including myself,
+Gabriel,
+our Scrum Master, Marcos,
+and our Team Leader, Harsh
+
+just wanna start with just a quick question for the class and everyone in attendance, by show of hands:
+does anyone here consider themselves to be a "foodie"?  either you're passionate about food recipes or, like myself, like to try every possible food that is out there, from many different cultures.
+
+is anyone here on a diet? or consider themselves to be a "picky eater"?  let's say you've given yourself strict guidelines on what you can and can't eat, or maybe you know what you like and don't want too much more than that.
+
+that's alright.  no matter your cravings, come on down to Parlez Entree, that's right Parlez Entree!
+
+(parlez is the French verb meaning "to speak or talk", entree is derived from the French verb meaning "to enter", but in English we know it as a dish served as the main course of a meal.)
+
+so just enter our website, login, enter your ingredients, enter your nutrition guidelines, and we'll talk dinner!
+
+we've developed a library that allows you to access over 350 thousand recipes with a variety of over 80 thousand food products.
+
+with our nutrition API, our search engine becomes a personalized ontology of your food preferences using keyword queries, whatever ingredients your heart follows.
+
+you can also set a range finder of calories, protein, fat, and carbohydrates.  need to trim down?  just limit the calorie or fat ranges.  need to bulk up?  increase the protein range.
+
+we also have a "jokes and trivia" section where you can enjoy a few laughs or learn some new fun facts that you wouldn't have known otherwise.
+
+
+Tech Stack:
+
+for backend:
+C#, SQL, ASP.NET, Entity framework with database first approach,
+unit testing, sonar cloud, Ci/Cd pipeline, docker
+
+for front end:
+html, css, typescript, angular
+
+for uploading application, azure
+
+to collaborate between team member git, thru github
+
+
+next up, I'll have our scrum master Marcos break down our brainstorming process and workflow......
+
+
+*** The Database First Approach provides an alternative to the Code First and Model First approaches to the Entity Data Model.
+It creates model codes (classes, properties, DbContext etc.) from the database in the project and those classes become the link between the database and controller.
+
+
+
+
+after Marcos, home page, random search.....
+
+
+made an angular component, started w/ html, then css, then ts
+
+within the component decorator, I declared 2 observables and used the ngOnInIt method to establish my front end business logic
+
+fully utilize the dependency injection by calling the service outside of that component from the injectable decorator in jokeandtrivia.service.ts file
+
+here I'm able to consume the API from the respective HTTP headers:  one for jokes, one for trivia.
+
+
+initialize the directive or component after Angular first displays the data-bound properties and sets the directive or component's input properties. See details in Initializing a component or directive in this document.
+
+
+next up, I'll have our team leader Harsh break down our ingredients and nutrition page......
 
 
 
@@ -472,3 +556,51 @@ Two times
 What does fruit have that makes it taste sweet?
 Fructose
 
+__________________________________________
+
+
+rgb(43, 100, 131)
+dark one
+
+rgb(108,203,241)
+one shade light
+
+__________________________
+
+
+
+https://parlezentree.azurewebsites.net/
+
+
+
+
+'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random',
+  headers: {
+    'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    'X-RapidAPI-Key': '5cec28a64fmsh409c42b11206bc8p14eaafjsn1cb2fedef506'
+  }
+8p14eaafjsn1cb2fedef506'
+  }
+
+
+'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/trivia/random',
+  headers: {
+    'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+    'X-RapidAPI-Key': '5cec28a64fmsh409c42b11206bc8p14eaafjsn1cb2fedef506'
+  }
+_______________________________________________________________________
+
+
+
+
+20,25,30 mins = roughly 3.5 mins each
+
+
+1st Parlez Entrée Overview: @Jamaal Fisher  (Introducing group member, tell the functionality, etc)
+2nd Layout brainstorm and workflow: @Marcos Fonseca  (How we created the layout and how we split each member assignment);
+3rd Backend: @Harsh4598  (API, Swagger, SonarCloud, etc)
+4th Login: @Gabriel P. Garcia  (Show how it works)
+5th Home Page (Random + Search): @Marcos Fonseca (Show how it works)
+6th Jokes Page: @Jamaal Fisher  (Show how it works)
+7th Ingredients and Nutrition Page: @Harsh4598  (Show how it works)
+8th Open for Questions: All group members.

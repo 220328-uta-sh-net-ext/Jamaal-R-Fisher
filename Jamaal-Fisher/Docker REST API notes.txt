@@ -81,9 +81,14 @@ add new item --->  class library
 
 dotnet ef dbcontext scaffold -o Entities "connection string from Azure SQL database server ID db ID user ID password" microsoft.entityframeworkcore.tools.sqlserver --table Pokemon --table Ability
 
+_____________________________________________________
+
+
+https://localhost<portnumber>/api/controller/action
 
 
 
+______________________________________________________________
 
 
 
@@ -318,3 +323,98 @@ full image name and tag bathwatermelody/cevicheapi:latest
 log stream
 
 Azure server URL /WeatherForecast   (API name ?  "manual deployment")
+
+
+_____________________________________________________________________________
+
+
+
+
+Languages
+
+Introduction to C#
+Connecting .NET Applications to SQL Server with ADO.NET
+Developing Web Applications with ASP.NET Web Forms
+HTML/CSS
+JavaScript
+SQL
+LINQ
+TypeScript
+XML/JSON Serialization
+HTTP
+Linux/Ubuntu
+
+
+Skills
+
+Visual Studio
+VS Code
+Postman
+Docker Desktop
+Node.js
+Angular
+Git Bash
+Windows PowerShell
+Microsoft Azure SQL Database
+
+
+DevOps
+
+Swagger UI
+xUnit
+Serilog
+TDD
+Azure Data Studio
+SonarCloud
+Entity Framework Core
+REST API
+Figma
+Adobe Creative Cloud
+Trello
+________________________________________________________
+
+Languages
+
+Introduction to C#
+SQL
+HTML/CSS
+XML/JSON Serialization
+TypeScript
+Linux/Ubuntu
+
+DevOps
+
+Git Bash/Windows PowerShell
+LINQ
+Swagger UI
+Postman
+Figma
+Trello
+
+Server Technologies
+
+Connecting .NET Applications to SQL Server with ADO.NET
+Visual Studio/VS Code
+Azure Data Studio
+Docker Desktop
+Node.js
+Adobe Creative Cloud
+
+Web Technologies
+
+Developing Web Applications with ASP.NET Web Forms
+REST API
+Entity Framework Core
+Angular CLI
+JavaScript
+HTTP
+
+Testing
+
+TDD
+xUnit
+Serilog
+SonarCloud
+Jasmine
+Karma
+
