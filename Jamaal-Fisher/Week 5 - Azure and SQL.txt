@@ -9,6 +9,100 @@ Entity Framework  - .NET app
 
 SQL client app - Azure Data Studio
 
+
+__________________________________________________
+
+C#  (reference types, value types)
+
+SIGNED vs.  UNSIGNED INTEGRAL TYPES
+
+Signed integral types:
+sbyte  : -128 to 127
+short  : -32768 to 32767
+int    : -2147483648 to 2147483647
+long   : -9223372036854775808 to 9223372036854775807
+
+Unsigned integral types:
+byte   : 0 to 255
+ushort : 0 to 65535
+uint   : 0 to 4294967295
+ulong  : 0 to 18446744073709551615
+
+
+Floating point types:
+float  : -3.402823E+38 to 3.402823E+38 (with ~6-9 digits of precision)
+double : -1.79769313486232E+308 to 1.79769313486232E+308 (with ~15-17 digits of precision)
+decimal: -79228162514264337593543950335 to 79228162514264337593543950335 (with 28-29 digits of precision)
+
+_________________________________________________________________
+
+SQL
+
+Data types in SQL Server are organized into the following categories:
+- Exact numerics
+- Unicode character strings
+- Approximate numerics
+- Binary strings
+- Date and time
+- Other data types
+- Character strings
+
+In SQL Server, based on their storage characteristics, some data types are designated as belonging to the following groups:
+- Large value data types: varchar(max), and nvarchar(max)
+- Large object data types: text, ntext, image, varbinary(max), and xml
+
+Exact numerics:
+bigint
+numeric
+bit
+smallint
+decimal
+smallmoney
+int
+tinyint
+money
+
+Approximate numerics:
+float
+real
+
+Date and time:
+date
+datetimeoffset
+datetime2
+smalldatetime
+datetime
+time
+
+Character strings:
+char
+varchar
+text
+
+Unicode character strings:
+nchar
+nvarchar
+ntext
+
+Binary strings:
+binary
+varbinary
+image
+
+Other data types:
+cursor
+rowversion
+hierarchyid
+uniqueidentifier
+sql_variant
+xml
+Spatial Geometry Types
+Spatial Geography Types
+table
+
+
+
+
 ______________________________________________________
 
 
@@ -17,6 +111,95 @@ ______________________________________________________
 - text formats like XML/JSON, hierarchical containers with attributes
 
 - relational database, like a spreadsheet - tables, rows, columns, represent identity with primary keys, represent relationships with foreign keys
+
+
+
+RDBMS - relational database management system
+
+process of keeping data from repeating as few times as possible. it takes up less space
+
+
+schema - you can bucket together different tables.  the defaut schema is dbo
+
+master.schema.table
+
+
+columns - fields
+rows - records
+
+primary key - minimum number of columns you need to uniquely identify a record.
+
+
+database diagram - key vs. infinity symbol  (one to many relationship)
+
+________________________________________________________________________
+
+SELECT DISTINCT -  shows values only once
+
+SELECT TOP(3) * - shows top 3 from all
+
+not equal  <>  or  !=
+
+SELECT column  FROM  schema.table WHERE column = field OR column = field
+
+SELECT *  FROM  schema.table WHERE column = field AND column = field
+
+SELECT column  FROM  schema.table WHERE column IN('field', 'field', 'field')
+
+SELECT column  FROM  schema.table WHERE column NOT IN('field', 'field', 'field')
+
+
+SELECT *  FROM  schema.table WHERE column = field AND (column = field OR column = field)
+
+
+SELECT *  FROM  schema.table WHERE column LIKE 'A%'
+SELECT *  FROM  schema.table WHERE column NOT LIKE 'B%'
+
+
+SELECT column  FROM  schema.table WHERE column > 1000
+
+SELECT column  FROM  schema.table WHERE column BETWEEN 1000 AND 2000
+
+______________________________________________________________________
+
+JOIN by default is an INNER JOIN
+
+
+SELECT column1, column2, column3
+FROM schema.table1
+JOIN schema.table2 ON schema.table1.column4 = schema.table2.column4
+
+
+OUTER JOIN
+
+LEFT OUTER JOIN
+RIGHT OUTER JOIN
+
+
+INNER JOIN - fetches data if present in both the tables.
+
+OUTER JOIN are of 3 types:
+
+LEFT OUTER JOIN - fetches data if present in the left table.
+RIGHT OUTER JOIN - fetches data if present in the right table.
+FULL OUTER JOIN - fetches data if present in either of the two tables.
+CROSS JOIN, as the name suggests, does [n X m] that joins everything to everything.
+Similar to scenario where we simply lists the tables for joining (in the FROM clause of the SELECT statement), using commas to separate them.
+
+
+ORDER BY column
+ORDER BY column   DESC
+
+
+_______________________________________________________________________________
+
+4 core objects of ADO.NET Data Providers
+
+SqlConnection - represents connection to the database - connection string - stored in web.config - ConfigurationManager
+SqlCommand - command sent to the database for retrieving or manipulating data - used by SqlConnection
+SqlDataReader - provides access in read-only operations - uses both SqlConnection and SqlCommand
+SqlDataAdapter - stores data in DataSet - disconnected architecture
+
 
 
 __________________________________________________________________
@@ -38,8 +221,41 @@ consistent - not allowed to violate database constraints
 isolated - concurrent transactions should not be able to interfere with each other
 durable - the transaction is not considered done until written to permanent (non-volatile) storage
 
+__________________________________________________________
 
 
+ArithmeticException
+	thrown by math errors
+NullReferenceException
+	thrown when using a reference variable that points to null
+IndexOutOfRangeException
+	thrown when a collection is accessed out-of-bounds
+StackOverflowException
+	thrown when an application runs out of resources
+
+
+__________________________________________________________________________
+
+Debugging
+
+BreakPoint is a flag or marker indicating a place to pause the current execution of a program.
+
+Step Into (F11), Step Over (F10), and Continue (F5) are commands for controlling Debugging process.
+
+Step Into - execute just the current code statement
+Step Over - execute entire block and go to the next code statement
+Step Out - useful when inside a code block to complete execution and go to the end of the code block.
+red square - stops program execution, quits debugging, closes any open watch windows, and returns to code editor.
+
+______________________________________________________________________________________________________________
+
+SQL (Structured Query Language)
+
+DDL (Data Definition Language) - statements that define database structure or scheme, like CREATE, ALTER, DROP.
+DML (Data Manipulation Language) - statements used for managing data within tables, like SELECT, INSERT, UPDATE, DELETE.
+TCL (Transaction Control Language) - manages how DML statements are issued and executed. (WHERE, FROM)  ??
+
+CRUD - create, read, update, delete
 
 
 __________________________________________________________________
@@ -63,6 +279,24 @@ one to one - in C# - one class with all the data of both, or two classes with on
 one to many - in C# - two classes, one with a property/field of the other and/or the other one with a collection property/field
 	in SQL - two tables and one of them has FOREIGN KEY (not UNIQUE) to the other.
 SQL does not support many to many relationships.
+
+_____________________________________________________________
+
+CHAR is a fixed length field; VARCHAR is a variable length field.
+
+If you are storing strings with a wildly variable length such as names, then use a VARCHAR.
+if the length is always the same, then use a CHAR because it is slightly more size-efficient, and also slightly faster.
+
+
+
+
+
+
+
+
+
+
+
 
 ______________________________________________________________
 
@@ -389,6 +623,25 @@ WHERE Album.AlbumID IS NULL;
 
 
 _____________________________________________________
+
+
+
+You can write LINQ queries in C# for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports IEnumerable or the generic IEnumerable<T> interface.
+LINQ support is also provided by third parties for many Web services and other database implementations.
+
+Obtaining a Data Source
+Filtering
+Ordering
+Grouping
+Joining
+
+
+
+
+
+__________________________________________________
+
+
 
 Data Manipulation Language (DML)
 SELECT, INSERT (INSERT INTO), UPDATE, DELETE - operate on rows

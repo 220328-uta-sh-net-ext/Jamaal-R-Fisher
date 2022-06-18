@@ -43,6 +43,44 @@ dotnet build (terminal compile program)
 dotnet run (terminal execute program)
 dotnet publish --configuration Release
 
+_______________________________________________________
+
+The main difference between ASP.net and ADO.net
+
+ADO.net is a data access technology that uses a standard set of components to communicate between relational and non-relational systems. 
+ASP.net is an open-source framework that is a server-side web application used for web development and to create dynamic web pages.
+Both have their applications over others.
+
+
+connected architecture - involves processing the result set while the connection is open as you receive it row by row.  open connections to the database are a performance bottleneck
+
+disconnected architecture - involves using a DataAdapter to put the results in a DataSet, then closing the connection, then processing the data in the DataSet
+
+____________________________________________________________________
+
+Disadvantages and advantages 
+
+1. ADO.NET was designed for use in a disconnected architecture, as you point out.
+There are many advantages to this.
+Are there disadvantages? Might one have to plan for extra validation and reconcilliation of Database updates for records which were modified by other users in the time one was working with some "disconnected" data?
+THis is not new to ADO.NET, so is it a disadvantage?
+
+2. ADO.NET can be more complex than previous models. With flexibility can come complexity.
+Is this a disadvantage? Maybe for some, maybe not for others.
+
+3. ADO.NET abstracts away some of the more esoteric programming required to access a database. Within products like Visual Studio, one often does not even need to write code to perform some basic data operations, given the drag and drop nature of some new controls in vs. Examples would be the ability for a user of vs to create a project datasource, drop a DataGridView control onto a form, and bind it to a table or query in the project datasource without having to write a single line of code.
+
+Is this an advantage? Is it an advantage for the beginner, who then "never has to write a line of code", and therefore, never learns how to write a line of code?
+
+4. ADO.NET represented a paradigm shift from ADODB, and has required developers (this one included) accustomed to old ADODB to learn a completely new Data Access model. Like anything new, it was unfamiliar at first, and therefore uncomfortable. However, now I couldn't do without it.
+
+Was this an advantage, or disadvantage?
+
+Depends on the point of veiw. Hope that helped.
+
+
+
+
 __________________________________________________________________________
 
 docs.microsoft.com/en-us/dotnet/core/tools
@@ -69,9 +107,16 @@ The if statement: selects a statement to execute based on the value of a Boolean
 The switch statement: selects a statement list to execute based on a pattern match with an expression.
 _______________________________________________________________
 
+objects vs. classes.
 
 Objects are real-world entities and instance of a class.
 Classes are blueprints for objects.  They are the building blocks of our code
+
+
+Methods vs. functions.
+
+methods belong to the behaviour of an object, which means it will reside within the class
+functions depict the behaviour of a program and doesn't necessarily have to be in the class
 
 
 ________________________________________________________________________________

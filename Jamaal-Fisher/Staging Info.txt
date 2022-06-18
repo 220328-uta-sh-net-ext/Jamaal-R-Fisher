@@ -1,0 +1,113 @@
+Staging, post-Training
+
+https://revature.zoom.us/rec/share/9RlwNy3pqrS_1wOlTr0VOp26O-LhPRkhis4KLaUSXjfEUR9dUdtY0cSVXapitSQm.8p_oXDhcnr4KGr0T%20
+wm*35z=w
+
+
+How is the schedule different?  What's similar?
+
+preparing for interviews, working on soft skills
+structured in pockets of time
+daily standup at 10am (30 min to 1 hour)
+daily coding challenge (30 min to 1 hour)
+be fully available
+working on your choice up until 3pm
+
+
+What is your primary responsibility during Staging while interviewing?  After selection?
+
+preparing for interviews, working on soft skills
+RSVP
+attend all staging meetings
+whatever is needed for profile or certification
+
+
+What changes about communication strategies while in Staging?  Why?
+
+with your staging managers, as well as setting up interviews and attending interviews with clients.
+all info that you need will come from your staging team (parting ways with your trainer)
+
+
+
+
+the time between training and your client project when you will continue to develop and prepare to be selected by clients, onboarded by clients, and launch your career.
+
+honing tech skills
+refining soft skills
+enhancing professionalism
+improving adaptability
+encouraging ambition
+increasing agency
+
+
+staging team:
+actively marketing - 
+selected - whoever sent you the email on last day of training regarding staging.
+
+
+self development kit:
+review and renew - time to review weak areas and renew passion for strong ones, time to focus on whole person career development
+identify new resources and processes - communication strategies, tech and professionalism, tutorials
+documentation - appreciate the classics, take the time to go into the documentation of your tech and your company, be familiar with it
+
+
+never procrastinate mindset:
+time is everything.  there are thousands of packages being downloaded with npm, and you should always keep downloading new knowledge and keep coding.
+
+
+inner desire to expand:
+your motivation.  don't forget.  remember why you started this journey.
+
+
+lifelong learning, attitude of gratitude, grit
+
+what to know for Day 1:
+hours are 10am - 6pm
+check your email
+RSVP to calendar invites
+read through Associate Staging Handbook (received on last day of training)
+delivery and sales will use the phone to reach you (703 area code)
+
+__________________________________
+
+10am
+https://revature.zoom.us/j/92149219227?pwd=WjloS2lQNWtOb2ljdHpmdUVEZHJqZz09
+
+Zoom Link / nterview Preparation Course / Staging Intake
+Q&A session 2:15pm est
+
+_________________________________________
+
+
+docs.microsoft.com
+
+Exam AZ-400
+
+everything within Products / .NET
+
+
+___________________________________________
+
+what can get you fired:
+
+unprofessionalism
+repeated pattern of bad behaviors (not listening)
+hand holding, being reactive but not proactive
+formal addressing on questioning (say good morning)
+
+
+____________________________________
+
+Interview prep:
+
+don't stay in theory (use prior hands-on experience preferably)
+ask questions.  don't be afraid.  open-end questions, peeling the onion.  what are the preferred methods going forward?
+be the best developer you can be.
+written confirmed communications
+
+__________________________________________
+
+https://www.devpath.fm/
+
+
+iMocha, Appian, .NET
