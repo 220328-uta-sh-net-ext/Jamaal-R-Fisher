@@ -6,6 +6,15 @@ Entity Framework is an Object Relational Mapping (ORM) framework. It is an enhan
 Enables .NET developers to work with a database using .NET objects.
 Eliminates the need for most of the data-access code that typically needs to be written.
 
+
+ADO.NET provides better performance as it is directly connected to the data source and handles raw SQL connections and SQL queries between the application and the database,
+which makes the processing faster than Entity Framework does.
+
+Entity Framework is a high-level framework that focus on speeding up the development by doing less coding.
+It translates LINQ queries to SQL first with ADO.NET and then execute the queries.
+
+
+
 EF supports the following model development approaches:
 
 Generate a model from an existing database.
@@ -189,6 +198,17 @@ ________________________________________________________________________________
 Components - basic building blocks of our application
 Components are the most basic UI building block of an Angular app. An Angular app contains a tree of Angular components.
 
+Angular components are a subset of directives, always associated with a template. Unlike other directives, only one component can be instantiated for a given element in a template.
+
+A component must belong to an NgModule in order for it to be available to another component or application. To make it a member of an NgModule, list it in the declarations field of the NgModule metadata.
+
+
+
+directives
+
+Directives are classes that add additional behavior to elements in your Angular applications. Use Angular's built-in directives to manage forms, lists, styles, and what users see.
+
+
 
 
 constructor
@@ -212,7 +232,24 @@ ______________________
 
 import keyword - like using keyword for namespace and class
 
+
+The let keyword is block scoped
+The var keyword is not block scoped
+
+A local variable is not possible with var keyword
+The var keyword should not be used while building a new typescript application.
+
+the const keyword is for block-scoped variables and immutable variables
+For const objects, only its reference is immutable.
+
+
+
 ________________________________________
+
+Decorators are a design pattern that is used to separate modification or decoration of a class without modifying the original source code.
+In AngularJS, decorators are functions that allow a service, directive or filter to be modified prior to its usage.
+
+
 
 The Document Object Model (DOM) is a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
 
@@ -239,6 +276,27 @@ the emit method
 catch the emitted event by creating a method.
 
 @Input()
+
+The @Input() decorator in a child component or directive signifies that the property can receive its value from its parent component.
+
+
+
+___________________________________________________
+
+
+
+Directives are classes that add additional behavior to elements in your Angular applications. Use Angular's built-in directives to manage forms, lists, styles, and what users see.
+
+Structural directives are directives which change the DOM layout by adding and removing DOM element.  NgIf, NgForOf, NgSwitch
+
+Attribute directives change the appearance or behavior of DOM elements and Angular components.
+
+
+
+Component is used to break up the application into smaller components. But Directive is used to design re-usable components, which is more behavior-oriented.
+
+
+
 
 
 structural directives  - ngSwitchCase, ngSwitchDefault - used to refactor code - *ngFor
@@ -327,13 +385,19 @@ error()
 complete()
 
 
+
+Promises are used in Angular to resolve asynchronous operations, and Observables are used when the data comes from an external source like an API.
+Promises can be resolved with a single value or an array of values, and Observables emit one or more values over time.
+
+
+
+
+
 Subjects - allows values to be multicasted to many observers.
 
 Behavior
 Replay
 Async
-
-
 
 ______________________________________________________
 
@@ -342,7 +406,8 @@ ng g c login
 
 ng g s login
 
-________________________________________________
+
+_________________________________________
 
 
 
@@ -356,6 +421,252 @@ expect().toBe()
 
 
 ng test
+_____________________________________________________________
+
+Asynchronous programming is a technique that enables your program to start a potentially long-running task,
+and then rather than having to wait until that task has finished, to be able to continue to be responsive to other events while the task runs
+
+
+AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers.
+It can send and receive information in various formats, including JSON, XML, HTML, and text files.
+AJAX's most appealing characteristic is its "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
+
+The two major features of AJAX allow you to do the following:
+
+Make requests to the server without reloading the page
+Receive and work with data from the server
+
+
+callbacks.js
+promises.js
+index.html
+
+
+
+
+<body>
+	<script src="callbacks.js"></script>
+</body>
+
+	// OR.....
+
+<body>
+	<script src="promises.js"></script>
+</body>
+
+_________________________________________________________________
+
+callback syntax
+
+
+
+const posts = [
+	{ title: 'Post One', body: 'This is post one'},
+	{ title: 'Post Two', body: 'This is post two'},
+]
+
+function getPosts() {
+	setTimeout(() => {
+		let output = '';
+		posts.forEach((post, index) => {
+			output += `<li>${post.title}</li>`;
+		});
+		document.body.innerHTML = output;
+	}, 1000);
+}
+
+function createPost(post, callback) {
+	setTimeout(() => {
+		posts.push(post);
+		callback();
+	}, 2000);
+}
+
+createPost({ title: 'Post Three', body: 'This is post three' }, getPosts);
+
+
+_______________________________________________________
+
+
+promise syntax w/ const error = false
+
+
+
+const posts = [
+	{ title: 'Post One', body: 'This is post one'},
+	{ title: 'Post Two', body: 'This is post two'},
+]
+
+function getPosts() {
+	setTimeout(() => {
+		let output = '';
+		posts.forEach((post, index) => {
+			output += `<li>${post.title}</li>`;
+		});
+		document.body.innerHTML = output;
+	}, 1000);
+}
+
+function createPost(post) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			posts.push(post);
+
+			const error = false;
+
+			if(!error) {
+				resolve();
+			} else {
+				reject('Error: Something went wrong');
+			}
+		}, 2000);
+	});
+}
+
+createPost({ title: 'Post Three', body: 'This is post three' })
+	.then(getPosts);
+
+
+_________________________________________________________
+
+
+promise syntax w/ const error = true
+
+
+
+const posts = [
+	{ title: 'Post One', body: 'This is post one'},
+	{ title: 'Post Two', body: 'This is post two'},
+]
+
+function getPosts() {
+	setTimeout(() => {
+		let output = '';
+		posts.forEach((post, index) => {
+			output += `<li>${post.title}</li>`;
+		});
+		document.body.innerHTML = output;
+	}, 1000);
+}
+
+function createPost(post) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			posts.push(post);
+
+			const error = true;
+
+			if(!error) {
+				resolve();
+			} else {
+				reject('Error: Something went wrong');
+			}
+		}, 2000);
+	});
+}
+
+createPost({ title: 'Post Three', body: 'This is post three' })
+	.then(getPosts)
+	.catch(err => console.log(err));
+
+
+_______________________________________________________
+
+
+
+promise syntax w/ const error = false & fetch method
+
+
+
+const posts = [
+	{ title: 'Post One', body: 'This is post one'},
+	{ title: 'Post Two', body: 'This is post two'},
+]
+
+function getPosts() {
+	setTimeout(() => {
+		let output = '';
+		posts.forEach((post, index) => {
+			output += `<li>${post.title}</li>`;
+		});
+		document.body.innerHTML = output;
+	}, 1000);
+}
+
+function createPost(post) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			posts.push(post);
+
+			const error = false;
+
+			if(!error) {
+				resolve();
+			} else {
+				reject('Error: Something went wrong');
+			}
+		}, 2000);
+	});
+}
+
+const promise1 = Promise.resolve('Hello World');
+
+const promise2 = 10;
+
+const promise3 = new Promise((resolve, reject) =>
+	setTimeout(resolve, 2000, 'Goodbye')
+);
+
+const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res =>
+	res.json()
+);
+
+Promise.all([promise1, promise2, promise3, promise4]).then(values =>
+	console.log(values)
+);
+
+
+
+_____________________________________________________
+
+
+typescript navbar with okta authentication and async promise
+
+
+
+
+import { Component, Inject, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
+import { AuthState, OktaAuth } from '@okta/okta-auth-js';
+import { filter, map, Observable } from 'rxjs';
+import { NavbarService } from '../navbar.service';
+
+@Component({
+  selector: 'navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class NavbarComponent implements OnInit {
+  goToHome(){
+    console.log("hatr")
+    this.router.navigate(["home"])
+  }
+  public name$!: Observable<string>;
+  constructor(public nav: NavbarService,private router:Router, @Inject(OKTA_AUTH) private _oktaAuth: OktaAuth,private _okta:OktaAuthStateService) { }
+
+  public async signOut(): Promise<void> {
+    await this._oktaAuth.signOut();
+  }
+  ngOnInit(): void {
+    this.name$ = this._okta.authState$.pipe(
+      filter((authState: AuthState) => !!authState && !!authState.isAuthenticated),
+      map((authState: AuthState) => authState.idToken?.claims.name ?? '')
+    );
+  }
+
+}
+
 
 
 

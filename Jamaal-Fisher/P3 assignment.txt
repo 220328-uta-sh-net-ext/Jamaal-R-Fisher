@@ -1,0 +1,407 @@
+P3 
+front-end
+
+Translagenix
+
+google translate
+voice recognition
+mobile adjustment ???
+
+______________________________________________
+
+
+#d0e1f9 - background;
+#283655 - darkest color - its on nav bar
+#4D648D - this extra color shade between that 2 color u can use it on buttons or background for any componant
+#283655 - darkest color - its on nav bar also can use on buttons
+
+
+
+62a3f7d0558e430c868a53b732787e01
+
+eastus
+
+dev-32904001.okta.com
+
+_________________________
+
+https://aka.ms/csspeech/region
+
+https://aka.ms/speech/tts-languages
+
+https://www.w3.org/TR/media-source/
+
+_______________________________________
+
+dashboard
+
+profile file  --->  username, profile points
+
+
+
+word a day
+
+change back to learning words
+
+swagger ui ---> https://translagenix.azurewebsites.net/swagger/index.html
+
+game
+
+random word --->  translated word
+
+text to speech
+
+learned word --->  did not learn
+
+
+new phrase to learn
+
+try to pronounciate here
+
+https://translagenix-frontend.azurewebsites.net/
+
+
+___________________________
+
+async javascript
+
+the same JSON file
+
+querying different parts of data
+
+
+arrays 
+
+
+
+_____________________________________________
+
+login user authentication - okta  randy gabe, kevin
+
+
+voice to text recognition  - jamaal, steve, harsh
+
+
+text from file, user  - briceson, edith, vlad
+
+
+______________________________________
+
+back-end
+
+database, EF core - sean, marcos, jermaine, kevin
+
+pipeline, git, repo -  daniel
+
+_______________________________________________
+
+current JS troubleshooting
+
+http://is.gd/annyang_restarts
+
+
+_____________________________________________
+
+https://itnext.io/tutorial-build-a-text-translation-app-with-azure-cognitive-services-3dd7f5d013c4
+
+
+https://linguin.ai/users/sign_up
+
+
+https://www.scriptix.io/
+
+
+https://cloud.google.com/speech-to-text/docs/before-you-begin
+https://cloud.google.com/speech-to-text/docs/transcribe-api
+
+
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started-text-to-speech?pivots=programming-language-javascript&tabs=terminal
+
+
+__________________________________
+
+Model Setup 										4/14/2022  1:42 pm recording @2:02:00
+Repository Interface and Database Folder						4/18/2022
+Testing											4/19/2022
+Code Coverage and Logging								4/20/2022  (averaging reviews is business logic, ....  is data logic)
+LINQ / SOLID										4/21/2022
+Azure/SQL Server set up									4/22/2022
+Liskov substitution/dependency inversion principles/SQL Query/Nuget			4/25/2022
+Creating Tables										4/26/2022
+Working with queries in a SQL Database in Azure						4/27/2022 - 4/28/2022
+DML and Constraints									4/28/2022  (recording after 2:30pm is manipulating Pokemon tables, then SQLConnection)
+Normalization (and Pokemon dependency inversion)					4/29/2022
+P0 Presentations									5/3/2022   (Kevin, Harsh, Vladimir, Sean, Briceson, Marcos, Leo, Gabriel, Jermaine)
+
+___________________________________________________________________________________________________________________________________________________________
+
+
+P1 intro										5/4/2022
+Exploring API in Visual Studio, Postman, & Swagger (API vs MVC project file)		5/5/2022    (API = BL, Swagger = UI  ???)
+Model Building/Parameter Building, XML Serializing in Postman, API Consuming	 	5/6/2022    (System.Runtime.Caching, Microsoft.AspNet.WebApi.Client)
+Delegates and LINQ									5/9/2022
+Team Development									5/10/2022
+Cloud Computing / Docker Engine and setup						5/11/2022
+Docker Container commands and instructions						5/12/2022
+Web API service setup									5/13/2022
+P1 Presentations									5/17/2022
+
+_______________________________________________________________________________
+
+P2 intro/exploring Docker workflows with YAML file in GitHub, SonarCloud		5/18/2022
+HTML and CSS intro									5/19/2022
+Javascript										5/20/2022
+intro to ORM and EF Core								5/23/2022
+Node.js, Typescript, Angular								5/24/2022
+Data Binding, Services, Dependency Injection						5/25/2022
+Pipes, Routing, Observables								5/26/2022
+P2 Presentations									6/1/2022	(Alchemy, Vanquish, Amplifire, Synergy)
+
+____________________________________________________
+
+
+We used Angular NPM install packages to build our 2 components.
+
+For our speech-to-text functions, we used Annyang, which is a tiny JavaScript Speech Recognition library that allows users to control features with voice commands.
+
+Annyang has no dependencies, only has about 2 KB of data space, and is free to use and modify under the MIT license.
+
+It includes methods that initialize, start and close our Voice Recognition.
+
+In Typescript, we used Axios to make API calls to our subscription key.
+
+Because Typescript not directly readable by the browser, we have to transpile the Typescript into Javascript before running it in the browser or in node.
+
+So we have Axios translation methods that receives the JSON response from the API parses that JSON string into an object variable named "translatedText".
+
+That "translatedText" variable is then displayed in HTML and stylized in CSS for the user to see in the browser.
+
+
+_______________________________________________________
+
+
+For the Learning Words component, we had to start with a sort of inversed strategy to achieve a text-to-speech functionality.
+
+Once the user lands on the page, they are given a random word or phrase called from our API with an RxJS observable and service, that's a Reactive Extension for JavaScript.
+
+The observable provides support for us passing messages in Typescript to different parts of our application for event handling and async programming,
+while the service gathers and organizes the business logic, models, data, and functions in Typescript.
+
+Then, they are given the option to select their language of choice and then the Translate button will, of course, translate the word to the right side of the page with our Annyang library methods.
+
+Now this is were the fun begins!
+
+The user can click the Speak Text button which activates our SpeechSynthesisVoice interface....  (AI speaks once)
+
+This interface generates a voice supported by Azure Cognitive Services Translator,
+which are a purpose-built collection of algorithms and APIs that help developers add speech capabilities to various types of websites, apps and AI agents.
+
+So once the interface speaks to the user in the selected translated language.... (AI speaks twice)
+
+they can now use the inverse Annyang speech-to-text functionality, similar to the previous component, and try a few attempts to properly pronounce the translated phrase.
+
+Given a brief moment of time, the user voice is recognized by the typescript methods, and if pronounced successfully, it will transpile back from the Annyang Speech Recognition and display what was just said.
+
+And if that is too daunting of a task, the user will also have options to slow down the speech if necessary, or speed up the selected rate.
+
+In due time, the user can judge themselves on whether they have successfully pronounced and learned this phrase, or they can skip it.
+
+Both functions will have the API call another random word or phrase, but only the learned button will add points to the user's profile.
+
+
+
+
+A text-to-speech functionality.
+Users are given a random word or phrase to learn.
+Users select their language of choice to translate.
+The Speech Synthesis interface pronounces the word or phrase for you.
+Users can record their pronounciations to verify the accuracy.
+
+
+
+
+
+
+
+
+
+
+___________________________________________________
+
+Service.ts
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { catchError, throwError } from 'rxjs';
+import { Subject } from 'rxjs/internal/Subject';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class JokeandtriviaService {
+
+  Joke:any[] = [];
+  Trivia:any[] = [];
+
+  subject:Subject<any[]> = new Subject<any[]>();
+  triviasubject:Subject<any[]> = new Subject<any[]>();
+  getJoke(): void{
+    this.http.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/jokes/random", {headers:{
+    "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+    "X-RapidAPI-Key": "5cec28a64fmsh409c42b11206bc8p14eaafjsn1cb2fedef506"
+  }})
+    .pipe(
+      catchError((e) => {
+        return throwError(e)
+      })
+    )
+    .subscribe((data) =>{
+      console.log(data);
+      this.Joke = data as any[];
+      this.subject.next(this.Joke);
+    })
+  }
+
+  getTrivia(): void{
+    this.http.get<any[]>('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/trivia/random', {headers:{
+      "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      "X-RapidAPI-Key": "5cec28a64fmsh409c42b11206bc8p14eaafjsn1cb2fedef506"
+    }})
+    .pipe(
+      catchError((e) => {
+        return throwError(e)
+      })
+    )
+    .subscribe((data) =>{
+      console.log(data);
+      this.Trivia = data as any[];
+      this.triviasubject.next(this.Trivia);
+    })
+  }
+
+  constructor(private http:HttpClient) { }
+}
+
+
+___________________________________________________________________________________________________________
+
+
+Observable in Component.ts
+
+
+import { Component, OnInit } from '@angular/core';
+import { NavbarService } from '../navbar.service';
+import { Observable } from 'rxjs';
+import { JokeandtriviaService } from '../jokeandtrivia.service';
+
+@Component
+  ({
+    selector: 'app-joke',
+    templateUrl: './joke.component.html',
+    styleUrls: ['./joke.component.css']
+  })
+export class JokeComponent implements OnInit {
+  joketext: string = "";
+  triviatext: string = "";
+  jokeservice: Observable<any[]> = new Observable<any[]>();
+  triviaservice: Observable<any[]> = new Observable<any[]>();
+
+  constructor(private nav: NavbarService, private joke: JokeandtriviaService) {
+
+  }
+
+  ngOnInit(): void {
+    this.nav.show();
+    this.joke.getJoke();
+    this.jokeservice = this.joke.subject;
+    this.joke.getTrivia();
+    this.triviaservice = this.joke.triviasubject;
+
+    this.jokeservice.forEach(element => {
+      this.joketext = Array.from(Object.values(element))[0];
+    })
+
+    this.triviaservice.forEach(element => {
+      this.triviatext = Array.from(Object.values(element))[0];
+    })
+
+  }
+
+}
+
+
+______________________________________________________________________________________________
+
+
+Languages
+
+<div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+  <button type="button" (click)="startVoiceRecognition()">Record</button>
+  <select name="recognizedLanguage" id="language" [(ngModel)]="recognizedLanguage">
+    <option value="en-US">English (US)</option>
+    <option value="af">Afrikaans</option>
+    <option value="ar-SA">Arabic (Saudi Arabia)</option>
+    <option value="ar-EG">Arabic (Egypt)</option>
+    <option value="ar-IQ">Arabic (Iraq)</option>
+    <option value="ar-JO">Arabic (Jordan)</option>
+    <option value="ar-MA">Arabic (Morocco)</option>
+    <option value="ar-YE">Arabic (Yemen)</option>
+    <option value="ar-LB">Arabic (Lebanon)</option>
+    <option value="bg">Bulgarian</option>
+    <option value="cs">Czech</option>
+    <option value="nl-NL">Dutch</option>
+    <option value="en-US">English (US)</option>
+    <option value="en-UK">English (UK)</option>
+    <option value="en-IN">English (India)</option>
+    <option value="fi">Finnish</option>
+    <option value="fr-FR">French</option>
+    <option value="de-DE">German</option>
+    <option value="el-GR">Greek</option>
+    <option value="he">Hebrew</option>
+    <option value="hu">Hungarian</option>
+    <option value="id">Indonesian</option>
+    <option value="it-IT">Italian</option>
+    <option value="ja">Japanese</option>
+    <option value="ko">Korean</option>
+    <option value="la">Latin</option>
+    <option value="zh-CN">Mandarin Chinese</option>
+    <option value="zh-HK">Simplified Hong Kong</option>
+    <option value="zh-yue">Yue Chinese (Traditional Hong Kong)</option>
+    <option value="no-NO">Norwegian</option>
+    <option value="pl">Polish</option>
+    <option value="pt-br">Portuguese (Brasil)</option>
+    <option value="pt-PT">Portuguese (Portugal)</option>
+    <option value="es-AR">Spanish (Argentina)</option>
+    <option value="es-CO">Spanish (Colombia)</option>
+    <option value="es-DO">Spanish (Dominican Republic)</option>
+    <option value="es-SV">Spanish (El Salvador)</option>
+    <option value="es-MX">Spanish (Mexico)</option>
+    <option value="es-PA">Spanish (Panama)</option>
+    <option value="es-PE">Spanish (Peru)</option>
+    <option value="es-PR">Spanish (Puerto Rico)</option>
+    <option value="es-PY">Spanish (Paraguay)</option>
+    <option value="es-ES">Spanish (Spain)</option>
+    <option value="es-VE">Spanish (Venezuela)</option>
+    <option value="sv-SE">Swedish</option>
+    <option value="tr">Turkish</option>
+    <option value="zh-TW">Traditional Taiwan</option>
+    <option value="ru">Russian</option>
+    <option value="zu">Zulu</option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>

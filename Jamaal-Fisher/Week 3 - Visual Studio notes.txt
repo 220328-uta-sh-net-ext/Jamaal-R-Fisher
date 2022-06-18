@@ -282,9 +282,35 @@ ________________________________________________________________________________
 
 other types:
 struct
+
+
+
+
 enum
+
+An enumeration type (or enum type) is a value type defined by a set of named constants of the underlying integral numeric type.
+To define an enumeration type, use the enum keyword and specify the names of enum members.
+
+By default, the associated constant values of enum members are of type int; they start with zero and increase by one following the definition text order.
+You can explicitly specify any other integral numeric type as an underlying type of an enumeration type. You can also explicitly specify the associated constant values.
+You cannot define a method inside the definition of an enumeration type. To add functionality to an enumeration type, create an extension method.
+
+
 interface
+
+An interface defines a contract. Any class or struct that implements that contract must provide an implementation of the members defined in the interface.
+
+
 delegate
+
+A delegate is a type that represents references to methods with a particular parameter list and return type.
+When you instantiate a delegate, you can associate its instance with any method with a compatible signature and return type. You can invoke (or call) the method through the delegate instance.
+
+Delegates are used to pass methods as arguments to other methods. Event handlers are nothing more than methods that are invoked through delegates.
+You create a custom method, and a class such as a windows control can call your method when a certain event occurs.
+
+
+_________________________________________________________________________________________________________________________________
 
 
 inheritance:
@@ -318,8 +344,8 @@ polymorphism - ability to implement inherited properties and methods in differen
 
 "A PIE"
 
-method overloading - same name in same class, but different data type/parameters
-method overriding   - re-defining the method of a base class in a child class
+method overloading - same name in same class, but different data type/parameters (Compile Time Polymorphism)
+method overriding   - re-defining the method of a base class in a child class (Run Time Polymorphism)
 
 
 Method overloading can be done by changing:  
@@ -356,10 +382,10 @@ You cannot use the virtual modifier with the static, abstract, private, or overr
 
 
 
-
 abstract enables you to create incomplete implementation of whatever you applied it to and it must be implemented in a derived class.
 
 abstract method with only method declaration and no implementation.
+
 abstract class allows you to have all types of members.
 abstract class (and concrete class) can implement one or more interfaces by which multiple inheritance is achieved, but class can only inherit from one class.
 
@@ -369,6 +395,13 @@ interface can only have methods, properties, events, indexers.  they cannot have
 abstract class and interface cannot be instantiated but is meant to be implemented/inherited.
 - implicitly used by interfaces
 - explicitly used by abstract classes
+
+abstract class vs. interface
+
+An abstract class allows you to create functionality that subclasses can implement or override.
+An interface only allows you to define functionality, not implement it. And whereas a class can extend only one abstract class, it can take advantage of multiple interfaces.
+
+
 
 
 public abstract class EmployeeOperations
@@ -398,7 +431,8 @@ An abstract method is implicitly a virtual method.
 Abstract method declarations are only permitted in abstract classes.
 Because an abstract method declaration provides no actual implementation, there is no method body; the method declaration simply ends with a semicolon and there are no curly braces ({ }) following the signature.
 
-
+An Abstract method is a method without a body. The implementation of an abstract method is done by a derived class.
+When the derived class inherits the abstract method from the abstract class, it must override the abstract method. This requirement is enforced at compile time and is also called dynamic polymorphism.
 
 
 

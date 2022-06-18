@@ -139,3 +139,48 @@ RegularExpressionValidator
 CustomValidator
 
 IIS (Internet Information Services)
+
+
+
+_________________________________________________________________________________________________________
+
+
+
+What is REST ? What are abstract methods ? What is Interface ? What is Truncate and Delete commands in sql ? What are directives in angular ? What is routing ? What are the HTTP response codes ?
+What is the difference between let and var ? What are SOLID principles ? What is method overloading and overriding ? What is a contructor ? How do you connect Api to the database ?
+How do you style a selector in CSS file ? How to connect Angular to the api ? What is JSON ? What is authentication and authorization
+
+Getting to know period asking about background and interests - SOLID concepts - Truncate, Delete, Drop - Encapsulation
+What is Entity Framework - ADO.NET and ASP.NET - API and web app deployment utilizing Azure - Connection differences between ADO.NET and Entity Framework
+ How you modeled a database (or class) using Entity Framework - Angular routing - Error and exception handling in Entity Framework - Composite, foreign, and primary key relations 
+DevOps experience in Github (conflicts and merge error
+
+
+
+_____________________________________________________________________
+
+
+
+Typescript is a superset of JavaScript.  it's complied/transpiled to JavaScript
+
+offers support for interfaces, abstraction, datatypes like enums and never
+
+type conversion
+modular design
+modifiers
+
+use npm to install typescript
+
+floating-point numbers
+decimal
+hex
+binary
+octal
+
+let is an alternative of var
+string is a text-based value in single or double quotes
+backtick ` creates a string template
+expression is an evaluated statement enclosed by brackets and preceded by a $
+tuple is an array with a fixed length,   let x: [string, number] = ["hello", 10];
+any is a datatype that can be used to represent all possible types
+void is for functions that don't return a value

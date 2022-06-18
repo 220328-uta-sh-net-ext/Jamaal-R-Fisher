@@ -1,0 +1,229 @@
+Interview Prep
+
+
+Interview questions asked during interview: 
+
+Difference between varchar and char 
+
+What is function in sql? 
+
+Is ado.net quicker or faster than entity framework 
+
+What are the disadvantages of using Ado.net 
+
+What is the difference between a  directive and a component? 
+
+What is a directive in angular? 
+
+Tell us about your experience at Revature and your projects 
+
+How did you connect to your backend? 
+
+Are you familiar with authorization? 
+
+In What area do you have the most experience ? 
+
+Describe polymorphism 
+
+Are you familiar with sql? 
+
+What is an aggregate function? 
+
+Why do we use repositories? 
+
+If we have two get methods in a controller, how do we specify which one we want to call? 
+
+What is attribute routing? 
+
+Give the syntax for attribute routing. 
+
+Are you familiar with unit testing? 
+
+Are you familiar with normalization?
+
+What are some types of joins?
+
+Which is faster? truncate or delete?
+
+whatever you tell them you have experience in is what they are goign to focus their questions on btw.
+
+
+
+
+
+
+Asked about recent project and what I did during the project?
+What type of database did you use during the project?
+Did you use external API for your project?
+What is entity framework?
+How do you use entity framework with your project?
+Did you use authentication during your project?
+What service did you use for the pipeline?
+Do you know what aggregate functions are?
+Did you use git and git commands during your project?
+How do you deploy to docker and azure?
+Are you familiar with SQL?
+How do you select employees using queries in SQL?
+How do you get the sum of employees in SQL? 
+What is a HAVING in SQL?
+What are the pillars of OOP?
+What is polymorphism?
+What is method overriding and overloading?
+Is method overloading compile time or runtime?
+Do you use unit testing and how did you use it?
+What services did you use in azure and did you use azure database?
+
+
+
+
+Have you used Store Procedures?
+
+What is the difference between, drop, truncate and delete?
+
+How would you select a unique record?
+
+If I had a student table and I wanted to query the student’s name with a unique key, how would I do it?
+
+Have you used triggers?
+
+What are directives and what are the types of directives in Angular?
+
+What is the purpose of the routing module?
+
+What is a sealed class in C#?
+
+What is the default class and member in C#?
+
+Was there a feature or function that was implemented into a project because of your idea or suggestion?
+
+What are the modifiers in C#?
+
+What are some data types in JavaScript?
+
+What are filters and how do you use them?
+
+Can a static method be overwritten?
+
+What is method overriding?
+
+Have you used method overriding?
+
+What is method overloading?
+
+Can you give me an example or method overloading?
+
+What are the different types of constructors?
+
+What's the difference between let and var?
+
+
+
+What are filters and how do you use them?
+
+Can a static method be overwritten?
+
+What is method overriding?
+
+Have you used method overriding?
+
+What is method overloading?
+
+Can you give me an example or method overloading?
+
+What are the different types of constructors?
+Was there a feature or function that was implemented into a project because of your idea or suggestion?
+What are directives and what are the types of directives in Angular?
+What is a HAVING in SQL?
+What are the pillars of OOP?
+What is polymorphism?
+
+
+
+What's Singleton?
+What's async?
+What's the OOP Principles?
+Have you used Moq?
+Have you used Store Procedures?
+What's the diffrence between Store Procedures and View
+What's in a HTTP request?
+Have you used Azure, and what roles did it take in your project
+What are events and delegates
+If I want to return a unquie id to get the sum of accounts that it has, how would you go about it?
+
+
+
+
+3 collections of standard .Net
+
+the constructor types
+
+What is OOP? what are the 4 pillars
+
+difference between .toString() and Convert.toString()
+
+tell me about Polymorphism
+
+access level of private, protected and internal
+
+what is method overloading and method overriding
+
+What is CLR
+
+Can static methods be overwritten?
+
+Can multiple inheritance be used in c#? How to bypass it with c#
+
+difference between abstract and interface
+
+Difference between Delete and Truncate
+
+What does COMMIT and ROLLBACK do?
+
+What is Normalization?
+
+
+
+What roles and tasks I worked on for my projects 
+
+ADO.Net, how it is used and implemented 
+Entity Framework, how it works and how it is implemented 
+Angular Components, how it connects to each other and to backend 
+What forms of Abstraction did I use in the projects 
+How did I implement interfaces in the project 
+How did I implement the CI/CD pipeline in the project 
+What is part of a Dockerfile 
+How did we publish our API and application 
+How LINQ is used 
+What are Lamda Expressions 
+What are Delegates 
+What are Functions in SQL 
+What services did I use in Angular 
+When making a component, what are the files that are created with the component 
+What is CSS used for 
+What types of CSS are there 
+What sections are shown from SonarCloud
+Questions lead to each other, asked about how we used it in the projects. Sometimes I got just a question about a topic, but this is roughly what was asked in my interview
+
+
+they asked me about my background in Telecommunications and how DevOps was integrated.
+
+they asked me about how the controllers were used in our P2.
+
+a good number of P2 questions ensued:
+- HTTP verbs/methods
+- consuming API
+- exception handling
+- Entity Framework
+
+what are delegates and events?
+
+what are components?  what are they composed of and what type of files are created?
+
+what are observables?
+
+what is async programming?
+
+they gave me a hypothetical SQL query to explain:  the answer led me to discuss querying two tables with different joins.
+
+be sure to understand the differences between inner joins, outer joins, full joins and cross joins.
+

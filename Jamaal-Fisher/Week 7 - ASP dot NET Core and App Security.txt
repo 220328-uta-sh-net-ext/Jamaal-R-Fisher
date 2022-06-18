@@ -1,3 +1,12 @@
+The main difference between ASP.net and ADO.net
+
+ADO.net is a data access technology that uses a standard set of components to communicate between relational and non-relational systems. 
+ASP.net is an open-source framework that is a server-side web application used for web development and to create dynamic web pages.
+Both have their applications over others.
+
+_________________________________________________________
+
+
 Each year OWASP (the Open Web Application Security Project) publishes the top ten security vulnerabilities.
 It represents a broad consensus about the most critical security risks to web applications.
 
@@ -39,6 +48,31 @@ a compact URL-safe means of representing claims to be transferred between two pa
 
 IDaaS (Identity as a Service)
 cloud-based authentication built and operated by a third-party provider.
+
+
+___________________________________________________________________________
+
+
+
+Caching is the act of storing data in an intermediate-layer, making subsequent data retrievals faster.
+
+Conceptually, caching is a performance optimization strategy and design consideration.
+Caching can significantly improve app performance by making infrequently changing (or expensive to retrieve) data more readily available.
+
+Caching can significantly improve the performance and scalability of an app by reducing the work required to generate content.
+Caching works best with data that changes infrequently and is expensive to generate. Caching makes a copy of data that can be returned much faster than from the source.
+Apps should be written and tested to never depend on cached data.
+
+ASP.NET Core supports several different caches. The simplest cache is based on the IMemoryCache.
+IMemoryCache represents a cache stored in the memory of the web server. Apps running on a server farm (multiple servers) should ensure sessions are sticky when using the in-memory cache.
+
+Sticky sessions ensure that requests from a client all go to the same server. For example, Azure Web apps use Application Request Routing (ARR) to route all requests to the same server.
+Non-sticky sessions in a web farm require a distributed cache to avoid cache consistency problems.
+For some apps, a distributed cache can support higher scale-out than an in-memory cache. Using a distributed cache offloads the cache memory to an external process.
+
+
+
+
 
 
 ___________________________________________________________
@@ -188,7 +222,38 @@ secure
 
 Docker Engine sparked the Containerization Movement
 
+____________________________________________
 
+Dockerfile
+
+
+FROM node:alpine
+COPY . /app
+WORKDIR /app
+CMD node app.js
+
+
+_________________________________________
+
+steps to push to dockerhub:
+docker build -t rest-api -f RestaurantAPI/Dockerfile . 
+docker images  (or docker image ls)
+docker create --name "container-name" "image id"
+
+check if the container is created using docker ps -a
+
+docker run -it -p 5000:80 rest-api
+docker container commit container-id dockerhubrepo:tagname
+docker push dockerhubrepo:tagname
+
+____________________________________________________
+
+test it out at https://labs.play-with-docker.com/
+
+
+
+
+__________________________________________
 
 
 Pros

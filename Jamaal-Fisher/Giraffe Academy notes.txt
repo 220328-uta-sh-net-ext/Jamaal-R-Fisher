@@ -541,3 +541,67 @@ If you wanted to find the n^{th} Fibonacci number F(n), you can break it down in
 Then, adding the solutions to these subproblems together gives the answer to the original question, F(n - 1) + F(n - 2) = F(n)
 which means the problem has optimal substructure, since a solution F(n) to the original problem can be formed from the solutions to the subproblems.
 These subproblems are also overlapping - for example, we would need F(4) to calculate both F(5) and F(6).
+
+
+
+
+
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________
+
+
+Program.cs
+
+
+
+
+using System;
+
+namespace CSharp_Delegates
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			MathService service = new MathService();
+			var result service.MathDelegate(4.5, 5.78);				// called delegate according to set parameters, but the delegate function can be reassigned using same parameters
+
+			Console.WriteLine(result);
+		}
+	}
+}
+
+
+
+MathService.cs
+
+
+
+namespace CSharp_Delegates
+{
+	public class MathService
+	{
+		public delegate double ResultHandler(double value1, double value2);		// delegate.  like an interface for your methods.
+
+		public ResultHandler MathDelegate;						// declared assignment to the delegate, but a field initializer cannot reference non-static field, method or property
+
+		public MathService()								// default constructor.
+		{
+			MathDelegate  = new ResultHandler(AddNumbers);				//  or MultiplyNumbers
+		}
+
+		private double AddNumbers(double value1, double value2)
+		{
+			return value1 + value2;
+		}
+
+		private double MultiplyNumbers(double value1, double value2)
+		{
+			return value1 * value2;		
+		}
+	}
+}
