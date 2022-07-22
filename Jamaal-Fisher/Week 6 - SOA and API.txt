@@ -78,6 +78,8 @@ SOAP needs more bandwidth for its usage whereas REST doesn't need much bandwidth
 While SOAP and REST share similarities over the HTTP protocol, SOAP is a more rigid set of messaging patterns than REST.
 REST follows the object-oriented programming paradigm of noun-verb. REST is very data-driven, compared to SOAP, which is strongly function-driven.
 
+Simple object access protocol 
+
 
 
 Guiding principles of SOA

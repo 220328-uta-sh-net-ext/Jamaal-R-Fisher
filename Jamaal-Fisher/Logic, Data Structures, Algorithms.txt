@@ -1,0 +1,511 @@
+Logic
+
+
+use recursion for binary searching
+
+
+_______________________________________________________________
+
+DeMorgan's Law
+
+the complement of a union is the intersection of the complements.
+
+or the complement of the intersection is the union of the complements.
+
+
+the negation of a conjunction is the disjunction of the negations.
+
+or the negation of a disjunction is the conjunction of the negations.
+
+
+-(p ^ q) = -p v -q
+
+-(p v q) = -p ^ -q
+
+
+_______________________________________________________________________
+
+
+
+We can also think of A ∩ B ∩ C as the two-step operation (A ∩ B) ∩ C.
+
+A ∩ B ∩ C = (A ∩ B) ∩ C.
+
+Similarly, we have A ∩ B ∩ C = A ∩ (B ∩ C).
+
+Likewise, A ∪ B ∪ C = (A ∪ B) ∪ C = A ∪ (B ∪ C).
+
+
+
+The fact that the diagrams are different indicates that (A ∪ B) ∩ C != A ∪ (B ∩ C) in general.
+Thus, an expression such as A ∪ B ∩ C is absolutely meaningless because we can’t tell whether it means (A ∪ B) ∩ C or A ∪ (B ∩ C).
+
+
+Given sets A1, A2,..., An, the set A1 ∪ A2 ∪ A3 ∪ ··· ∪ An consists of everything that is in at least one of the sets Ai.
+
+Likewise A1 ∩ A2 ∩ A3 ∩ ··· ∩ An consists of everything that is common to all of the sets Ai.
+
+
+
+Suppose A1, A2,..., An are sets. Then:
+
+A1 ∪ A2 ∪ A3 ∪ ··· ∪ An = {x : x ∈ Ai for at least one set Ai, for 1 ≤ i ≤ n}
+
+A1 ∩ A2 ∩ A3 ∩ ··· ∩ An = {x : x ∈ Ai for every set Ai, for 1 ≤ i ≤ n}
+
+
+
+page 37, sigma notation
+
+__________________________________________________________________
+
+
+
+logic ----> math ----> algorithms ----> code
+
+
+"book of proof" by Hammock
+
+
+logic is a systematic way of thinking that allows us to deduce new information from old information, and to parse the meaning of sentences.
+
+
+_________________________________________________________
+
+
+The fact that the diagrams are different indicates that (A ∪ B) ∩ C != A ∪ (B ∩ C) in general.
+Thus, an expression such as A ∪ B ∩ C is absolutely meaningless because we can’t tell whether it means (A ∪ B) ∩ C or A ∪ (B ∩ C).
+
+
+
+composite proposition
+
+conjunction -  similar to intersection, uses AND  (p ^ q)
+disjunction - similar to union, uses OR  (p v q)
+
+
+idempotence   (p = p v q = p ^ p)
+
+
+identity  (p = p v F = p ^ T)
+T = p v T
+F = p ^ F
+
+
+complements:
+fallacy   (p ^ -p = F)
+tautology   (p v -p = T)
+
+
+commutativity:
+p (T, T, F, F)
+q (T, F, T, F)
+
+p v q (disjunction = T, T, T, F)
+q v p (disjunction = T, T, T, F)
+
+p ^ q (conjunction = T, F, F, F)
+q ^ p (conjunction = T, F, F, F)
+
+
+associativity:
+p ^ (q ^ r) = (p ^ q) ^ r
+p v (q v r) = (p v q) v r
+
+
+distributivity:
+p ^ (q v r) = (p ^ q) v (p ^ r)
+p v (q ^ r) = (p v q) ^ (p v r)
+
+________________________________________________________________
+
+
+• The empty set: null = {}
+• The natural numbers: N = {1,2,3,4,5,...}
+• The integers: Z = {...,−3,−2,−1,0,1,2,3,4,5,...}
+• The rational numbers: Q = {x : x = m/n, where m,n ∈ Z and n != 0}
+• The real numbers: R
+
+We visualize the set R of real numbers as an infinitely long number line.
+... −4 ... −3 ... −2 ... −1 ... 0 ... 1 ... 2 ... 3 ... 4 ...
+
+
+
+set-builder notation
+
+X = {expression : rule}
+
+the elements of X are understood to be all values of “expression” that are specified by “rule.”
+ 
+the expression E = {2n : n ∈ Z} reads as “E equals the set of all things of form 2n, such that n is an element of Z.”
+
+
+
+____________________________________________________________________
+
+
+the Cartesian product
+
+A × B = {(a,b) : a ∈ A,b ∈ B}
+
+Thus A × B is a set of ordered pairs of elements from A and B.
+
+For example, if A = {k,l,m} and B = {q, r}, then A × B = {(k, q),(k, r),(l, q),(l, r),(m, q),(m, r)}
+
+
+
+the Cartesian power
+
+For any set A and positive integer n, the Cartesian power A`n is
+
+A`n = A × A × ··· × A = {(x1, x2, ... , xn) : x1, x2,..., xn ∈ A}.
+
+
+
+subsets
+
+If a finite set has n elements, then it has 2`n subsets.
+
+The empty set is a subset of all sets, that is, null ⊆ B for any set B.
+
+
+
+power set
+
+The power set of A is the set of all subsets of A.
+
+For example, suppose A = {1,2,3}.  The power set of A is P(A) = {null, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}}.
+
+If a finite set A has n elements, then it has 2`n subsets, and thus its power set has 2`n elements.
+
+If A is a finite set, then |P(A)| = 2`A
+
+
+______________________________________________________________________________________
+
+division algorithm
+
+when a/b, q = quotient and r = remainder
+
+a = qb + r
+
+while 0 ≤ r < b
+
+r = a − qb
+
+___________________________________________________________
+
+an array is a sequence of elements all having the same type and size, whereas a record or structure is a sequence of elements having different types and sizes
+
+
+
+dynamic processing approach  ---->  memoization
+
+herder node
+
+binary search left right subtree
+
+____________________________________________________
+
+
+API Controllers / ASP.NET Core 6.0
+
+docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-6.0
+
+
+
+
+____________________________________________________________
+
+
+Algorithms
+
+____________________________________________________________
+
+github.com/williamfiset/data-structures
+
+
+data structure is a way of organizing data so that it can be used effectively.
+
+essential ingredients in creating fast and powerful algorithms.
+manage and organize data.
+make code cleaner and easier to understand.
+
+
+abstract data type is an abstraction of a data structure which provides only the interface to which a data structure must adhere to.
+
+the interface does not give any specific details about how something should be implemented or in what programming language.
+
+
+
+abstraction vs. implementation
+
+list ----> dynamic array, linked list
+
+queue ----> linked list based queue, array  based queue, stack based queue
+
+map ----> tree map, hash map, hash table
+
+vehicle ----> golf cart, bicycle, smart car
+
+
+
+how much time does this algorithm need to finish
+
+how much space does this algorithm need
+
+
+_______________________________________________________________________________
+
+big O notation - worst case, quantify performance as input size become arbitrarily large.  ("O" not "0")
+
+n			size of the input
+
+constant time:		O(1)
+logarithmic time:	O(log(n))
+linear time:		O(n)
+linearithmic time:	O(nlog(n))
+quadric time:		O(n`2)
+cubic time:		O(n`3)
+exponential time:	O(b`n), b > 1
+factorial time:		O(n!)
+
+
+properties of big O
+
+O(n + c) = O(n)
+O(cn) = O(n), c > 0
+
+
+finding all subsets of a set					O(2`n)
+finding all permutations of a string				O(n!)
+sorting using mergesoft						O(nlog(n))
+iterating over all the cells in a matrix of size n by m		O(nm)
+
+_____________________________________________________________________________________________
+
+
+
+
+f 			function that describes the running time of a particular algorithm for an input of size n
+
+f(n) = 7log(n)`3 + 15n`2 + 2n`3 + 8
+
+O(f(n)) = O(n`3)
+
+
+
+
+___________________________________________________________
+
+factorial
+
+factorial, in mathematics, the product of all positive integers less than or equal to a given positive integer and denoted by that integer and an exclamation point.
+
+Thus, factorial seven is written 7!, meaning 1 × 2 × 3 × 4 × 5 × 6 × 7.
+
+n! = n * (n - 1) * (n - 2) * ... * 1
+
+1! = 1
+2! = 2 * 1 = 2
+3! = 3 * 2 * 1  = 6
+4! = 4 * 3 * 2 * 1 = 24
+5! = 5 * 4 * 3 * 2 * 1 = 120
+
+
+________________________________________________________________________________
+
+since i goes from [0,n] the amount of looping done is directly determined by what i is.
+remark that if i=0, we do n work, if i=1, we do n-1 work, if i=2, we do n-2 work, etc.
+
+n + (n-1) + (n-2) + (n-3) + ... + 3 + 2 + 1
+
+n(n + 1) /2
+
+
+therefore, O(n(n + 1) /2) = O(n`2 /2 + n /2) = O(n`2)
+
+
+FOR (i := 0; i < n; i = i + 1)
+	FOR (j := i; j < n; j = j + 1)
+
+
+
+___________________________________________________________________________________
+
+
+suppose we have a sorted array and we want to find the index of a particular value in the array, if it exists.  what is the time complexity of the following algorithm?
+
+
+low := 0
+high := n-1
+
+Ans: O(log2(n)) = O(log(n))
+
+WHILE low <= high DO
+
+	mid := (low + high) / 2
+
+	if array [mid] == value: return mid
+	else if array [mid] < value: low = mid + 1
+	else if array [mid] > value: high = mid - 1
+
+return -1 // Value not found 
+
+_________________________________________________________________________________
+
+
+an array is a sequence of elements all having the same type and size, whereas a record or structure is a sequence of elements having different types and sizes
+
+______________________________________________________________
+
+
+static array is a fixed length container containing n elements indexable from the range [0, n-1].
+
+each slot/index in the array can be referenced with a number.
+
+
+- storing and accessing sequential data
+- temporarily storing objects
+- used by IO routines as buffers
+- lookup tables and inverse lookup tables
+- can be used to return multiple values from a function
+- used in dynamic programming to cache answers to subproblems
+
+
+dynamic array can grow and shrink in size
+
+- using a static array is one way to implement
+- create a static array with an initial capacity
+- add elements to the underlying static array, keeping track of the number of elements
+- if adding another element will exceed the capacity, then create a new static array with twice the capacity and copy the original elements into it
+
+
+_____________________________________________________________________________
+
+
+linked list is a sequential list of nodes that hold data which point to other nodes also containing data.
+
+
+data ---> data ---> data ---> data ---> null
+
+- used in many list, queue, and stack implementations
+- great for creating circular lists
+- can easily model real world objects such as trains
+- used in separate chaining, which is present certain hashtable implementations to deal with hashing collisions
+- often used in the implementation of adjacency lists for graphs
+
+
+node:		an object containing data and pointers
+
+head:		1st node
+tail:		last node
+pointer:	reference to another node
+
+the nodes are represented as structs and classes.
+
+
+
+
+
+singly linked vs. doubly linked
+
+
+singly linked
+only hold a reference to the next node.  implementation always maintains a reference to the head to the linked list and a reference to the tail for quick additions/removals.
+
+pros - uses less memory
+cons - cannot easily access previous elements
+
+
+doubly linked
+each node holds a reference to the previous and next node.  implementation always maintains a reference to the head and the tail of the linked list to do quick additions/removals from both ends.
+
+pros - can be traversed backwards
+cons - takes 2x memory
+
+
+_____________________________________________________________________________________________
+
+
+stack is a one-ended linear data structure which models a real world stack by having two primary operations, namely push and pop.
+
+top pointer, LIFO, clean out null value to prevent memory leaks
+
+- used by undo mechanisms in text editors.
+- used in compiler syntax checking for matching brackets and braces
+- can be used to model a pile of books or plates
+- used behind the scenes to support recursion by keeping track of the previous function calls
+- can be used to do a Depth First Search (DFS) on a graph
+
+
+____________________________________________________________________________________________________________
+
+
+
+queue is a linear data structure which models real world queues by having two primary operations, namely enqueue and dequeue. FIFO
+
+enqueue - add element to the back
+dequeue - remove from the front
+peek - look at the front element without removing
+
+- any waiting line models a queue
+- can be used to efficiently keep track of the x most recently added elements
+- web server request management where you want first come first serve
+- breadth first search (BFS) graph traversal
+
+
+breadth first search - start at a node and then traverse the entire graph.
+
+
+
+priority queue is an abstract data type (ADT) that operates similar to a normal queue except that each element has a certain priority.
+the priority of the elements in the priority queue determine the order in which elements are removed from the PQ.
+
+- used in certain implementations of Dijkstra's Shortest Path algorithm
+- anytime you need to dynamically fetch the next best or next worst element
+- used in Huffman coding, which is often used for lossless data compression.
+- best first search (BFS) algorithms such as A* use PQ's to continuously grab the next most promising node.
+- used by minimum spanning tree (MST) algorithms
+
+
+use a heap to implement a priority queue.
+
+priority queues only support comparable data, meaning data inserted must be able to be ordered greatest to least or least to greatest.
+
+min priority queue
+max priority queue
+binary heap priority queue
+
+heap is a tree based data structure that satisfies the heap invariant (also called heap property).  must be a tree, not a cycle.
+
+max heap - parent node is greater than the child node
+min heap - parent node is less than the child node
+
+binary heap - a binary tree that supports the heap invariant.  every node has exactly two children.
+fibonacci heap
+binomial heap
+pairing heap
+
+
+let i be the parent node index
+left child index: 2i + 1
+right child index: 2i + 2
+
+
+__________________________________________________________________________________________________
+
+lexicographical order (alphabet order, dictionary order)
+
+lex(s1, s2) = -1		if s1 < s2
+lex(s1, s2) =  0		if s1 = s2
+lex(s1, s2) = +1		if s1 > s2
+
+nlex(s1, s2) = -(-1) = +1	s1 < s2
+nlex(s1, s2) = -( 0) =  0	s1 = s2
+nlex(s1, s2) = -(+1) = -1	s1 > s2
+
+________________________________________________________________________
+
+
+hashtable provides a constant time lookup and update for mapping from a key (the node value) to a value (the index)

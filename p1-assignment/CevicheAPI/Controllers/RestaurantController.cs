@@ -19,10 +19,66 @@ namespace CevicheAPI.Controllers
         // Action Methods ways to access or manipulate the resources, HTTP verbs/methods (GET, PUT, POST, DELETE, PATCH, HEAD)
         // Attribute explicitly defines the function.  can be seen in Postman.
         [HttpGet]
-        public string Get()
+        public ActionResult<List<Restaurant>> Get()
         {
-            return "Hello Restaurant!";
-            // return _restaurants;       
+            // return "Hello Restaurant!";
+            return Ok(_restaurants);       
+        }
+
+        [HttpGet("name")]
+        [ProducesResponseType(200, Type = typeof(Restaurant))]
+        [ProducesResponseType(404)]
+
+        public ActionResult<Restaurant> Get(string name)
+        {
+            var rest = _restaurants.Find(x => x.Name.Contains(name));
+            if (rest == null)
+                return NotFound($" Restaurant {name} you are looking for is not in the database");
+            return Ok(rest);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        public ActionResult Post([FromBody] Restaurant rest) 
+        {
+            if (rest == null)
+                return BadRequest("Invalid restaurant.  Please try again with valid values.");
+            _restaurants.Add(rest);
+            return CreatedAtAction("Get", rest);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+
+        public ActionResult Put([FromBody] Restaurant rest, [FromRoute] string name)
+        {
+            if (name == null)
+                return BadRequest("Cannot modify restaurant without name");
+            var restaurant = _restaurants.Find(x => x.Name.Contains(name));
+            if (restaurant == null)
+                return NotFound("Restaurant not found.");
+            restaurant.Id = rest.Id;
+            restaurant.Name = rest.Name;
+            restaurant.Rating = rest.Rating;
+            restaurant.TotalRatings = rest.TotalRatings;
+            restaurant.UserReview = rest.UserReview;
+            restaurant.Zipcode = rest.Zipcode;
+            return Created("Get", rest);
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(string name)
+        {
+            if (name == null)
+                return BadRequest("Cannot modify restaurant without name");
+            var restaurant = _restaurants.Find(x => x.Name.Contains(name));
+            if (restaurant == null)
+                return NotFound("Restaurant not found.");
+            _restaurants.Remove(restaurant);
+            return Ok($"Restaurant {name} deleted.");
         }
     }
 }
