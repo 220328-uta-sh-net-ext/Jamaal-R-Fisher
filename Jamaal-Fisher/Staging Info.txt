@@ -20,6 +20,8 @@ preparing for interviews, working on soft skills
 RSVP
 attend all staging meetings
 whatever is needed for profile or certification
+client interviews always take FIRST PRIORITY
+ALWAYS CLICK THE CHECK-IN BUTTON EVERYDAY on the Revature Staging Curriculum
 
 
 What changes about communication strategies while in Staging?  Why?
@@ -73,10 +75,27 @@ __________________________________
 10am
 https://revature.zoom.us/j/92149219227?pwd=WjloS2lQNWtOb2ljdHpmdUVEZHJqZz09
 
-Zoom Link / nterview Preparation Course / Staging Intake
+https://vimeo.com/645267004/9018ff8e47
+
+
+Zoom Link / Interview Preparation Course / Staging Intake
 Q&A session 2:15pm est
 
+
+https://revature.zoom.us/my/stagingactivity
+
+a=pSn9gb
 _________________________________________
+
+project onboarding
+
+https://revature.zoom.us/j/98335809352?pwd=NWVmZ1JNcXlRQXdrd3dVOHZ6ZGFZQT09
+
+Meeting ID: 983 3580 9352
+Passcode: 599223
+
+
+_______________________________________
 
 
 docs.microsoft.com
@@ -105,9 +124,171 @@ ask questions.  don't be afraid.  open-end questions, peeling the onion.  what a
 be the best developer you can be.
 written confirmed communications
 
+The STAR Method:
+S = Situation - introduce the situation to set the scene and provide context.
+T = Tasks - describe the task.  what needed to be done and why?
+A = Actions - explain the action you took.
+R = Results - describe the result in terms of benefits realized.
+
+__________________________________________________________
+
+SWOT (strengths, weaknesses, opportunities, and threats) analysis is a framework used to evaluate a company's competitive position and to develop strategic planning.
+SWOT analysis assesses internal and external factors, as well as current and future potential.
+
+A SWOT analysis is designed to facilitate a realistic, fact-based, data-driven look at the strengths and weaknesses of an organization, initiatives, or within its industry.
+The organization needs to keep the analysis accurate by avoiding pre-conceived beliefs or gray areas and instead focusing on real-life contexts.
+Companies should use it as a guide and not necessarily as a prescription.
+
+
+Strengths: Areas you are already excelling in. Your strengths are an assessment of yourself.
+For example, a strength may be Strong backend technical skills or Comfortable speaking to strangers. 
+
+Weaknesses: Areas of improvement. Your weaknesses are also an assessment of yourself.
+For example, a weakness may be User experience design or Nervous under pressure. 
+
+Opportunities: Areas of potential success. Opportunities are an assessment of things outside of yourself, external factors.
+For example, an opportunity may be Clients available in an industry I already know well, or Staging is offering a primer on new skills. 
+
+Threats: Areas of potential risk. Threats are an assessment of things outside of yourself, external factors.
+For example, a threat may be My laptop is wearing out or I just spilled ketchup on my best suit.
+
+
+Strengths
+1. What is our competitive advantage?
+2. What resources do we have?
+3. What products are performing well?
+
+Weaknesses
+1. Where can we improve?
+2. What products are underperforming?
+3. Where are we lacking resources?
+
+Opportunities
+1. What technology can we use to improve operations?
+2. Can we expand our core operations?
+3. What new market segments can we explore?
+
+Threats
+1. What new regulations threaten operations?
+2. What do our competitors do well?
+3. What consumer trends threaten business?
+
+
 __________________________________________
 
 https://www.devpath.fm/
 
 
 iMocha, Appian, .NET
+
+
+________________________________________
+
+JIRA service desk questions/requests
+
+https://revature.zoom.us/j/92149219227?pwd=WjloS2lQNWtOb2ljdHpmdUVEZHJqZz09
+
+CONNECT
+
+https://connect.revature.net
+__________________________________________________
+
+staging handbook is on the Saturday modules of the Revature Staging Curriculum
+
+
+________________________________________________
+
+
+Showcase recordings: https://revature.zoom.us/rec/play/ff0bRcOv0IEbs_3i-LNHCwMefDR0h9xpXTTaOm8N7F47lU-XT5PI5AjQLuaOuwzj1_xiNj9ZCzNQBvDr.o-w7W50x6UcxWHOh
+
+Password: 4=cA.gEP
+
+_____________________________________________
+
+A servant leader shares power, puts the needs of others first, helps individuals develop and optimize performance, is willing to learn from others, and forsakes personal advancement and rewards.
+Servant leaders concentrate on performance planning, day-to-day coaching, and helping people achieve.
+
+www.scrum.org
+
+resources --->  courses
+
+
+____________________________________
+
+daily standup
+1.) yesterday
+2.) today
+3.) blockers
+
+https://www.youtube.com/watch?v=WxiuE-1ujCM
+https://www.youtube.com/watch?v=2Vt7Ik8Ublw
+
+
+___________________________________________
+
+Chedro Cardenas
+Shanker Rao
+Antony Xavier
+
+
+shanker.rao@revature.com
+antony.xavier@revature.com
+
+_________________________________________________
+
+
+Instructions
+During this course you will need to use a bunch of tools. All the information related to which tools to use when, is provided within the relevant lessons. 
+
+RevPro: You have access to the entire course content in RevPro. Please note that once you complete a lesson, you will need to record your progress by using the “Mark as Complete” button on each lesson.  
+
+Outlook: Keep an eye on your inbox for important communication about this course. You may receive emails from the manager or expert as well as a few notifications.  
+
+Zoom: We will use Zoom meetings for the "Many to Many" or “One to Many” activities and/or presentations.
+Zoom meetings are already configured and you will find the links to join relevant activities within different lessons.  
+
+Discord Chat Server: Join “Revature – Interview Preparation” to quickly contact your peers, managers, and trainers. 
+
+Link to join Discord Server: https://discord.gg/hj9F7Rewk6
+
+Forms: There are some feedback/survey forms embedded within a few lessons of this course.
+Whenever you see a form, you must fill out the forms so that we know about your progress as well as what you think about the course.
+When you fill out the forms, make sure you enter correct email address. Once you submit the form, you will receive an email with the responses that you entered.  
+
+getAbstract: This is an exceptional platform where you will be able to read summaries of some highly useful books.
+There are also a few activities that involve reading some book summaries and reflecting on your understanding of what you read.
+https://www.getabstract.com/en/compilation/79?u=Revature
+
+Live Activity: Peer-focused learning and practice activities where you will collaborate with your peers/trainers/staging manager. 
+
+Offline Activity: You will have videos or articles to read in the course. Most of these activities will require you to fill out some forms or make notes.
+These activities can be completed without collaboration. The forms that you fill out or the notes that you take will be referred to in Live Activities. 
+
+TRIAD: Role-playing activity in which you will play different characters such as an Interviewer, Interviewee, or Observer improvising a scenario under some guidance. 
+
+SWOT: Strengths, Weaknesses, Opportunities, and Threats.  
+
+
+___________________________________________________
+
+free events
+
+https://www.meetup.com/TheLab-ms/events/286323630
+
+__________________________________________________________
+
+living & working in different states
+
+https://www.kiplinger.com/taxes/state-tax/603630/living-and-working-in-different-states-can-be-a-tax-headache
+
+
+____________________________________________________
+
+
+Kate (317) 910 6484
+
+Sandeep (929) 310 7366
+
+
+
+

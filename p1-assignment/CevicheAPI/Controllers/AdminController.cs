@@ -18,10 +18,26 @@ namespace CevicheAPI.Controllers
         // Action Methods ways to access or manipulate the resources, HTTP verbs/methods (GET, PUT, POST, DELETE, PATCH, HEAD)
         // Attribute explicitly defines the function.  can be seen in Postman.
         [HttpGet]
-        public string Get()
+        public ActionResult<List<Admin>> Get()
         {
-            return "Hello Admin!";
-            // return _admins;       
+            // return "Hello Admin!";
+            return Ok(_admins);
+        }
+
+        [HttpGet("name")]
+
+        // [ProducesResponseType(StatusCodes.Status200OK)]
+        // [ProducesResponseType(StatusCodes.Status404NotFound)]
+
+        [ProducesResponseType(200, Type = typeof(Admin))]
+        [ProducesResponseType(404)]
+
+        public ActionResult<Admin> Get(string name)
+        {
+            var boss = _admins.Find(x => x.AdminName.Contains(name));
+            if (boss == null)
+                return NotFound($" Admin {name} you are looking for is not in the database");
+            return Ok(boss);
         }
     }
 }

@@ -1,0 +1,330 @@
+React JS
+
+
+- a JavaScript library for creating user interfaces
+- it optimizes the DOM manipulation by writing very simple code
+- used for applications where the data keeps changing very frequently
+
+
+in React JS, components reside in virtual DOM and these components will be available as nodes in actual DOM
+
+
+
+React components implement a render() method that takes input data and returns what to display.
+
+This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by render() via this.props.
+JSX is optional and not required to use React.
+
+class HelloMessage extends React.Component {
+ 	render() {
+		return <div>Hello {this.props.name}</div>;
+	}
+}
+
+root.render(<HelloMessage name="Taylor" />);
+
+
+
+
+In addition to taking input data (accessed via this.props), a component can maintain internal state data (accessed via this.state).
+When a component’s state data changes, the rendered markup will be updated by re-invoking render().
+
+class Timer extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { seconds: 0 };
+	}
+
+	tick() {
+		this.setState(state => ({
+			seconds: state.seconds + 1
+		}));
+	}
+
+	componentDidMount() {
+		this.interval = setInterval(() => this.tick(), 1000);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval);
+	}
+
+	render() {
+		return (
+			<div>
+				Seconds: {this.state.seconds}
+			</div>
+		);
+	}
+}
+
+root.render(<Timer />);
+
+
+Using props and state, we can put together a small Todo application.
+This example uses state to track the current list of items as well as the text that the user has entered.
+Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.
+
+
+React allows you to interface with other libraries and frameworks.
+This example uses remarkable, an external Markdown library, to convert the <textarea>’s value in real time.
+
+
+
+___________________________________________________________________________________
+
+
+- create user interface of application through interactive components
+- build components using the special syntax of JavaScript (JSX)
+- handle data efficiently using state and props
+- understanding lifecycle phases and implement hooks
+- performing http get, post, put and delete requests
+- configure routes in the application
+- create single page application
+- style react application using CSS, bootstrap, react-bootstrap and Material UI
+- manage state efficiently using Redux architecture
+
+____________________________________________________________________________________________
+
+
+KEY FEATURES of React are:
+
+- component-based architecture
+a component is the smallest unit in a React application.  Anything that you want to render on the browser can be rendered through components.  Components help in maintainability and reusability.
+
+- Virtual DOM
+React uses virtual DOM concept for DOM manipulation which improves the performance of the application
+
+- Unidirectional data flow
+React's one-way data flow (also called one-way binding) keeps everything modular and fast and easy for debugging
+
+- JSX syntax
+React used JSX syntax which is similar to XML and HTML syntax, which makes it easy for writing markup and binding events in components
+
+- SEO performance
+the SEO performance can be improved using the server-side rendering concept.  We can develop isomorphic applications using React which increases the SEO performance
+
+_____________________________________________________________________________________________
+
+React vs Angular
+
+React is a small view library, Angular is a full framework
+React covers only the rendering and event handling part, Angular provides the complete solution for front-end development
+React - presentation code in JavaScript powered by JSX, Angular - presentation code in HTML embedded with JavaScript expressions
+React's core size is smaller than Angular, so bit fast; Angular being a framework contains a lot of code, resulting in longer load time
+React is very flexible, Angular has less flexibility
+React - great performer, since it uses Virtual DOM; Angular - uses actual DOM which affects its performance
+
+
+
+__________________________________________________________________________________________
+
+create-react-app
+
+which provides a modern build setup allowed you to quickly create and run React applications with minimal configuration.  the create-react-app is a command-line interface (CLI).
+
+
+1.) install Node.js with version 14+
+2.) install create-react-app
+3.) once the installation is done, create a React app
+4.) to run the application, navigate to the folder my-app and run the npm start command
+
+after successful compilation, the application will be loaded in the browser at the port "http://localhost:3000"
+
+
+_____________________________________________________________________________________________
+
+src/index.js
+
+ReactDOM.render is used to render an element or component to the virtual DOM
+
+- the 1st argument specifies what needs to be rendered
+- the 2nd argument specifies where to render
+
+the root element is present in index.html
+
+ReactDOM.render(<h1>Hello React!<h1/>, document.getElementById('root'));
+
+
+
+
+React.StrictMode
+a helper component which helps the developers in identifying the problems in the application.  it does not render any visible UI.
+
+- identifying components with unsafe lifecycles
+- warning about legacy string ref API usage
+- warning about deprecated findDOMNode usage
+- detecting unexpected side effects
+- detecting legacy context API
+
+
+________________________________________________________________________________________________
+
+
+CHALLENGES
+
+1.) entire page will get re-rendered even when a section of the page undergoes changes (eg. feedback section)
+2.) you will have to re-write code for each item even though they have similar behavior
+3.) you will have to take additional care to make sure that the functionality of one part of the application does not interfere with another part
+
+if you implement the above wireframe by dividing them into components (encapsulating its own data and presentation logic then you can achieve modularity and re-usability
+
+
+
+
+_______________________________________________________________________________________________
+
+
+
+The Document Object Model (DOM) is a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.
+
+data binding provides the communication between a component and the DOM.
+
+1-way data binding 
+use string interpolation to add values from variables in component
+simple property and event binding
+
+2-way data binding
+in 1-way changes in the template are not reflected in the component, this is solved by using 2-way data binding
+
+
+________________________________________________________________________
+
+Virtual DOM
+
+
+Virtual DOM is an abstraction of actual DOM where components are the nodes.  we programmatically modify virtual DOM by updating components.  these updates are internally handled by React and in turn, updated in actual DOM.
+
+DOM manipulation is expensive, because it requires traversal through entire DOM tree to find the element to be updated.  if these updates are very frequent, this leads to a poor performance of an application.
+
+
+whenever any updates happens in the application, the virtual DOM gets modified.  React computes the difference between the previous virtual tree and the current virtual tree.
+
+based on these differences, React will figure out how to make updates to the actual DOM efficiently
+
+
+
+________________________________________________________________________
+
+
+2 types of components:
+
+- class-based components
+- functional components
+
+
+functional components are created as a simple JavaScript function, returns the HTML elements
+
+name should be Pascal Casing
+
+React.createElement helps to create an element in plain JavaScript
+
+
+
+React.createElement("h1", {}, "Hello World!!!");
+- h1 is the HTML element to be used
+- {} are attributes of an element can be mentioned
+- "Hello World!!!" is the content to be appended to the h1 element
+- export default App; the App component must be exported so that it could be used in any other files
+
+
+
+to display elements of a component, the component must be rendered (ReactDOM.reader method is used, index.js)
+
+
+___________________________________________________________________________
+
+
+- creation of a component
+- rendering a component
+
+1.) create App component in App.js and create an element to render "Hello World" in the heading format
+2.) in index.js, render App component using the ReactDOM.render method
+3.) observe output (localhost:3000)
+
+
+
+***** React Components in Customer Service Portal - Case Study
+
+
+
+
+________________________________________________________________________
+
+
+
+Microsoft SQL Server Management Studio Setup:
+- connect to local database
+- new query
+- highlight command, then execute
+- new table --> new query
+
+
+identity keyword
+The MS SQL Server uses the IDENTITY keyword to perform an auto-increment feature.
+
+
+
+Visual Studio setup:
+- ASP.NET and web development
+- .NET desktop development
+- .NET Core cross-platform development
+
+Dependencies (analyzers, frameworks)
+all the packages needed for the project
+
+Properties --> launchSettings.json
+details of how the project should be started
+
+Controllers
+where all the API endpoint methods should be written
+
+appsettings.json
+configuration values and database details
+
+Program.cs
+main program, entry point of our project, creates web host to help API listen to our HTTP requests
+
+Startup.cs
+configure all of the services needed for the app.  services are reusable components used across the app w/ dependency injection
+configure method --> middleware, the app's requesting pipeline
+
+public void ConfigureServices(IServiceCollection services)
+{
+	//  enable CORS
+	services.AddCors(c => 
+	{
+		c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+	});
+
+	// JSON Serializer
+	services.AddControllersWithViews()
+	
+	services.AddControllers();
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+	app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+}
+
+
+Models folder
+create each class needed for app
+each class has properties for database
+
+
+ASP.NET Core Web Application
+
+
+
+
+
+Visual Studio code setup:
+
+
+Postman setup:
+
+
+Node.JS setup:

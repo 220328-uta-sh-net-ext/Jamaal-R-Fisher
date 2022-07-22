@@ -180,8 +180,8 @@ Examples: Google Apps, Microsoft Office 365.
 
 
 deployment models:
-Public Cloud
-Private Cloud
+Public Cloud - makes it possible for anybody to access systems and services
+Private Cloud - exact opposite of the public cloud.  proprietary environment is dedicated to your business
 Hybrid Cloud
 Community Cloud
 
@@ -201,6 +201,11 @@ because the user doesn't own the infrastructure limited control and access to cl
 the cost can become an ongoing monthly expense compared to traditional methods like the initial one-time investment
 another drawback is security
 
+
+top 3 cloud service providers:
+AWS (Amazon)
+Azure (Microsoft)
+GCP (Google)
 
 ________________________________________________________________________________
 
